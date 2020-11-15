@@ -1,0 +1,92 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+
+<div class="container {{opacity}}">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+            <app-ec-sidebar></app-ec-sidebar>
+        </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-user"></i> Customer</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg">
+        <div class="add-contact">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="sub-title">
+                Create New Contact
+              </div>
+            </div>
+          </div>
+          <form>
+            <div class="row mt-3">
+              <div class="col-md-4 form-group">
+                <label>First Name</label>
+                <input class="form-control" type="text" [(ngModel)]="customer.firstname" name='firstname'>
+              </div>
+
+              <div class="col-md-4 form-group">
+                <label>Last Name</label>
+                <input class="form-control" type="text" [(ngModel)]="customer.lastname" name='lastname'>
+              </div>
+
+              <div class="col-md-4 form-group">
+                <label>Email</label>
+                <input class="form-control" type="text" [(ngModel)]="customer.email" name='email'>
+              </div>
+
+              <div class="col-md-4 form-group">
+                <label>Phone</label>
+                <input class="form-control" type="number" [(ngModel)]="customer.phonenumber" name='phonenumber'
+                  (keypress)="keyPress($event)">
+              </div>
+              <div class="col-md-4 form-group">
+                <label>Address 1</label>
+                <textarea class="form-control" [(ngModel)]="customer.address1" name='address1'></textarea>
+              </div>
+              <div class="col-md-4 form-group">
+                <label>Address 2</label>
+                <textarea class="form-control" [(ngModel)]="customer.address2" name='address2'></textarea>
+              </div>
+              <div class="col-md-4 form-group">
+                <label>Country</label>
+                <input class="form-control" type="text" [(ngModel)]="customer.country" name='country'>
+              </div>
+              <div class="col-md-4 form-group">
+                <label>State</label>
+                <input class="form-control" type="text" [(ngModel)]="customer.state" name='state'>
+              </div>
+              <div class="col-md-4 form-group">
+                <label>Postal Code</label>
+                <input class="form-control" type="text" [(ngModel)]="customer.postalcode" name='postalcode'
+                  (keypress)="keyPress($event)">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12 border-top pt-2">
+                <!-- <a class="custom-btn btn black-btn" (click)="onClear_Clicked()">Clear</a> -->
+                <a class="custom-btn btn" (click)="onSaveCustomer()">Save</a>
+              </div>
+            </div>
+          </form>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

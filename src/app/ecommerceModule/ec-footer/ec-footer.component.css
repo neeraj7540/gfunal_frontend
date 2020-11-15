@@ -1,0 +1,17 @@
+.box-content{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background: #fff;
+}
+
+.p-box-title {
+    font-size: 16px;
+    color: #171717;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.footer-info{
+    border: 1px #b5b3b3 solid;
+    padding: 20px;
+}

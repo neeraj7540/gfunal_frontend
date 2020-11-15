@@ -1,0 +1,75 @@
+.search-domain label {
+    font-size: 18px;
+    color: #4a4a4a;    
+    font-weight: 400;
+}
+.search-domain input {
+
+    width: 100%;
+    padding: 11px 11px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+
+}
+.search-domain p {
+    font-size: 13px;
+    font-weight: normal;
+    color: #333;
+    line-height: 18px;
+    margin-top: 11px;
+}
+.domain-outer{
+    background: #fff;
+    padding: 7px 20px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    color: #000;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.domain-outer label {
+    margin: 0;
+    float: left;
+    padding: 15px 0;
+}
+.domain-outer label span {
+    margin-right: 10px;
+    font-weight: normal;
+    font-weight: 600;
+}
+.expired {
+    float: right;
+    font-size: 14px;
+    padding: 0 0;
+}
+.opacity{
+    opacity: 0.5;
+  }
+
+  .list-icon{
+    color: #fc8330;
+    font-size: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  a.btn.custom-btn2 {
+    position: relative;
+    top: -38px;
+    font-weight: 500;
+    border-radius: 54px;
+    background: linear-gradient(40deg, #ff6f08, #ff8c3b) !important;
+    border: 1px solid #fd720f;
+    box-shadow: inset 0 0 1px 1px #fff;
+    padding: 8px 19px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.domain-outer a {
+    cursor: pointer;
+    color: #000;
+}

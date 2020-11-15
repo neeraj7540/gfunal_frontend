@@ -1,0 +1,37 @@
+.sidebar-inner ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.sidebar-inner ul li  {
+    padding: 12px 10px;
+    margin: 0 8px;
+    display: block;
+    color: #050625;
+    font-size: 16px;
+    background: #FFF;
+    margin-bottom: 3px;
+    box-shadow: 3px 3px #CCC;
+}
+.sidebar-inner ul li i{
+    color:#5d5d5d;
+}
+.sidebar-inner ul li  i {
+    font-size: 20px;
+    padding-right: 5px;
+}
+.sidebar-inner ul li a:hover,.sidebar-inner ul li.active{
+    background: #e3dfdf;
+}
+
+.btn-block{display: block;}
+.image-sec {
+    text-align: center;
+}
+.cross-icon{width:25px;height: auto;}
+.mt-10{margin-top: 10px;}
+
+.activeStep {
+    background-color:#a5a2a2 !important;
+    color: white;
+  }

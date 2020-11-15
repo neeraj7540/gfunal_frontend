@@ -1,0 +1,182 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-percent"></i> Discounts</h1>
+        </div>
+      </div>
+       <div class="inner-content fill-bg mt-1">
+
+        <div class="row">
+          <div class="col-md-5">
+            <div class="lead-serach">
+              <input class="" placeholder="Search..." type="text">
+              <button type="submit" class="lead-s-btn"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          <div class="col-md-7">
+              <a class="custom-btn simple btn float-right" href="#">Add Discount</a>
+              <a class="custom-btn simple btn float-right" target="_blank" href="{{url}}">Preview</a>
+           </div>
+        </div>
+       <div class="row mt-3">
+        <div class="col-md-12">
+          <div class="cover-box p-0">
+            <div class="table-responsive border-rounded dark-header">
+            <table class="table table-striped mb-0 toggle-table">
+              <thead class="thead-dark">
+                <div class="tbl" >
+                  <tr>
+                  <th>Discount Code</th>
+                  <th>Type</th>
+                  <th>Start Date</th>
+                  <th>End date</th>
+                  <th width="50"></th>
+                </tr>
+                </div>
+                
+              </thead>
+              <tbody>
+                <div class="tbls" >
+                   <tr>
+                  <td>CX58FR6592s</td>
+                  <td>Coupon</td>
+                  <td>30/03/2020</td>
+                  <td>25/04/2020</td>
+                  <td width="50"><button class="drop-arrow" type="button" (click)="order1.toggle()" mdbWavesEffect>
+                      <i class="fas fa-sort-down"></i>
+                    </button>
+                  </td>
+               </tr>
+               <tr>
+                 <td colspan="6" class="p-0 border-0">
+                   <div class="detail-outer" mdbCollapse [isCollapsed]="true" #order1="bs-collapse">
+                    <div class="lead-detail-sec">
+                       <label class="font-design">Discription:</label>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                       <label class="font-design">Minimum Requirement:</label>
+                       <p>Buy course of 100$ to avail this discount</p>
+                    </div>
+                   </div>
+                 </td>
+               </tr> 
+                </div>
+               
+                  
+              
+              
+              </tbody>
+            </table>
+            
+          </div>
+           <!-- Pagination -->
+           <div class="pagination-sec mt-2">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination pg-blue justify-content-md-end justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" tabindex="-1" mdbWavesEffect>Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+                <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
+                <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+                <li class="page-item">
+                  <a class="page-link" mdbWavesEffect>Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+       <!-- <div class="row">
+         
+          <div class="col-md-6">
+            <div class="product-detail-box">
+              <div class="p-box-title">Add Description</div>
+              <div class="box-content">
+                <div class="form-group">
+                  <label>Discount Code</label>
+                  <input class="form-control" type="text" placeholder="e.g. spring sale"
+                    [(ngModel)]="discount.discountCode">
+                </div>
+              </div>
+            </div>
+
+            <div class="product-detail-box mt-3">
+              <div class="p-box-title">Types</div>
+              <div class="box-content">
+                <div class="form-group mb-0"><label><input name="discountType" value="0"
+                      [(ngModel)]="discount.discountType" type="radio"> Percentage </label></div>
+                <div class="form-group mb-0"><label><input name="discountType" value="1"
+                      [(ngModel)]="discount.discountType" type="radio"> Fixed Amount </label></div>
+                <div class="form-group">
+                  <input class="form-control" [(ngModel)]="discount.discount" type="text" placeholder="Discount Value">
+                </div>
+              </div>
+            </div>
+            <div class="product-detail-box mt-3">
+              <div class="p-box-title">Minimum Requirements</div>
+              <div class="box-content">
+                <div class="form-group mb-0"><label>
+                    <input name="requirement" value="0" [(ngModel)]="discount.minRequirementType" type="radio"> None
+                  </label></div>
+                <div class="form-group mb-0"><label>
+                    <input name="requirement" type="radio" value="1" [(ngModel)]="discount.minRequirementType"> Minimum
+                    Purchase Amt. <input type="text" [(ngModel)]="discount.minTotal"
+                      [disabled]="discount.minRequirementType === '0'"> </label></div>
+              </div>
+            </div>
+
+            <div class="product-detail-box mt-3">
+              <div class="p-box-title">Active Dates</div>
+              <div class="box-content">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label>Start Date</label>
+                    <input class="form-control" type="date" [(ngModel)]="discount.activeDates.startDate" onkeydown="return false">
+                  </div>
+                  <div class="col-md-6">
+                    <label>End Date</label>
+                    <input class="form-control" type="date" [(ngModel)]="discount.activeDates.endDate" onkeydown="return false">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="product-detail-box">
+              <div class="p-box-title">Summary</div>
+              <div class="box-content">
+                <textarea class="form-control" [(ngModel)]="discount.summary"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 text-center pt-3 mt-3 border-top">
+            <a class="btn custom-btn" (click)="onSave()"> Save </a>
+          </div>
+        </div>-->
+      </div> 
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,160 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+      <div class='col-lg-3 col-5'>
+        <a href="#" class="logo">
+          <img src="assets/images/logo-alt-1.png" alt="logo">
+        </a>
+      </div>
+      <div class="col-lg-9 col-7 justify-content-lg-space-between">
+        <ul class="cust-menu">
+          <!-- <li>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+      </li> -->
+          <li>
+            <a (click)="openAnnouncements()"><i class="fa fa-bell"></i></a>
+          </li>
+          <li class="dropdown" mdbDropdown>
+
+            <a mdbDropdownToggle mdbBtn (click)="getProfile()" class="dropdown-toggle btn custom-blank-btn waves-light"
+              type="button" mdbWavesEffect>
+              <i class="fa fa-user"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-primary">
+              <div class="user-profile">
+                <div class="form-row">
+                  <div class="col-3">
+                    <div class="prof-pic"><img src="{{studentProfile?.userImage}}"></div>
+                  </div>
+                  <div class="col-9">
+                    <label>{{studentProfile.firstName | titlecase}} {{studentProfile.lastName | titlecase}}</label>
+                    <span>ID : {{studentProfile._id}}</span>
+                  </div>
+                </div>
+              </div>
+              <!-- <a class="dropdown-item" href="#">My Account</a> -->
+              <a class="dropdown-item" (click)="buyCourse()">Buy Course</a>
+              <a class="dropdown-item" (click)="changePasswordModal.show()">Change Password</a>
+
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--/.Modal Start-->
+<div mdbModal #changePasswordModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="mychangePasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100">Change Password</h4>
+      </div>
+      <div *ngIf="check(); then loading else nothing">
+      </div>
+      <ng-template #loading>
+        <app-manualloader></app-manualloader>
+      </ng-template>
+      <ng-template #nothing>
+      </ng-template>
+      <div class="modal-body">
+        <form>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">Old Password</label>
+              <input type="password" name="oldPassword" id="oldPassword" [(ngModel)]="changePasswordParams.oldPassword"
+                class="form-control" placeholder="Old Password">
+            </div>
+
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">New Password</label>
+              <input type="password" id="newPassword" name="newPassword" [(ngModel)]="changePasswordParams.newPassword"
+                class="form-control" placeholder="New Password">
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">Confirm Password</label>
+              <input type="password" name="confirmPassword" id="confirmPassword"
+                [(ngModel)]="changePasswordParams.confirmPassword" class="form-control" placeholder="Confirm Password">
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="warning" class="waves-light btn-md" aria-label="Close"
+          (click)="changePasswordModal.hide()" mdbWavesEffect>Close</button>
+        <button (click)="changePassword()" type="button" mdbBtn color="primary"
+          class="red accent-2 btn-md relative waves-light" mdbWavesEffect>Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.Modal End-->
+
+
+<!--/.Modal Start-->
+<!-- <div mdbModal #notificationModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myNotificationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100">Notifications</h4>
+      </div>
+      <div *ngIf="check(); then loading else nothing">
+      </div>
+      <ng-template #loading>
+        <app-manualloader></app-manualloader>
+      </ng-template>
+      <ng-template #nothing>
+      </ng-template>
+      <div class="modal-body">
+
+        <ul class="w3-ul w3-card-4">
+          <li class="w3-bar">
+            <span class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+            <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+              <span class="w3-large">Mike</span><br>
+              <span>Web Designer</span>
+            </div>
+          </li>
+
+          <li class="w3-bar">
+            <span class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+            <img src="img_avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+              <span class="w3-large">Jill</span><br>
+              <span>Support</span>
+            </div>
+          </li>
+
+          <li class="w3-bar">
+            <span class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+            <img src="img_avatar6.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+              <span class="w3-large">Jane</span><br>
+              <span>Accountant</span>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="warning" class="waves-light btn-md" aria-label="Close"
+          (click)="notificationModal.hide()" mdbWavesEffect>Close</button>
+        <button (click)="changePassword()" type="button" mdbBtn color="primary"
+          class="red accent-2 btn-md relative waves-light" mdbWavesEffect>Submit</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--/.Modal End-->

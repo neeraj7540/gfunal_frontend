@@ -1,0 +1,45 @@
+<div class="sidebar-inner">
+
+  <div class="profile-sec">
+    <div class="image-sec">
+      <!-- profile image-sec -->
+      <div class="profile-pic">
+        <img src="../../assets/images/harry.jpg">
+      </div>
+      <div class="name">{{name}}</div>
+    </div>
+    <div class="profile-complition">
+      <!-- profile-complition -->
+      <div class="full-bar">
+        <div class="complition" style="width:50%"></div>
+      </div>
+      <div class="figure-status">
+        Profile <span>50%</span> complete
+      </div>
+    </div>
+    <div class="stats">
+      <div class="visitors">
+        Monthly visitors
+      </div>
+      <span class="visitors-counts">5,000</span>
+    </div>
+    <div class="stats">
+      <div class="visitors">
+        Contacts
+      </div>
+      <span class="visitors-counts">2,75,000</span>
+    </div>
+
+  </div>
+  <ul (click)="onClick($event)">
+    <li><a class={{dashboardCSS}}><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+    <li><a class={{contactsCSS}}><i class="fa fa-phone"></i> Contacts</a></li>
+    <li><a class={{domainsCSS}}><i class="fa fa-globe"></i> Domains</a></li>
+    <li><a class={{landingPagesCSS}}><i class="fa fa-home"></i> Landing pages</a></li>
+    <li><a class={{leadsCSS}}><i class="fa fa-user"></i> Leads</a></li>
+    <li><a class={{invoicesCSS}}><i class="fa fa-file"></i> Invoices</a></li>
+    <li><a href="#"><i class="fa fa fa-cogs"></i> Affiliate Program</a></li>
+    <li><a href="#"><i class="fa fa-paper-plane"></i> Custom Package</a></li>
+    <li><a href="#"><i class="fas fa-chart-line"></i>Geographical Stats</a></li>
+  </ul>
+</div>

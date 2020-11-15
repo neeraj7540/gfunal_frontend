@@ -1,0 +1,27 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+      <div class='col-lg-3 col-5'>
+        <a href="#" class="logo">
+          <img src="assets/images/logo-alt-1.png" alt="logo">
+        </a>
+      </div>
+      <div *ngIf="!isUserLoggedInAcadmy()" class="col-lg-9 col-7 justify-content-lg-space-between">
+        <ul class="cust-menu">
+          <li>
+            <a (click)="openLoginPage()">Login</a><span>/</span> <a (click)="openSignupPage()">Signup</a>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="isUserLoggedInAcadmy()" class="col-lg-9 col-7 justify-content-lg-space-between">
+        <ul class="cust-menu">
+          <li>
+            <a (click)="openDashboard()">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+.box-content{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background: #fff;
+}
+
+.p-box-title {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 600;
+
+}
+.shipping-label{
+    font-size: 18px;
+    line-height: 35px;
+    margin-bottom: 12px;
+    color: #555;
+}
+.black-btn.simple {
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 4px 20px;
+    min-width: auto;
+    font-weight: 300 !important;
+    font-size: 13px !important;
+    min-width: 90px !important;
+
+}
+
+.orange-btn.simple {
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 4px 20px;
+    min-width: auto;
+    font-weight: 300 !important;
+    font-size: 13px !important;
+    min-width: 90px;
+
+}
+.custom-table th, .custom-table td {
+
+    padding: 7px 8px !important;
+
+}
+.ec-action a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #666;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 2px;
+    margin: 0 3px !important;
+    font-size: 17px;
+}
+.form-control.sm-height {
+    height: 31px !important;
+    padding: 5px !important;
+    min-height: inherit !important;
+    border-radius: 0 !important;
+}
+.shipping-origin label {
+    color: orange;
+    font-size: 16px;
+
+}
+.shipping-origin p {
+    font-size: 15px;
+    color: #606060;
+
+}
+.cntry {
+    font-size: 14px !important;
+    color: #777 !important;
+}
+.ellipsis-btn {
+    color: #868686 !important;
+    font-size: 20px;
+    padding: 0;
+    box-shadow: none;
+    font-weight: 400 !important;
+
+}
+.ellipsis-btn {
+    position: relative;
+    width: 50px;    
+    display: inline-block;
+}
+.ellipsis-btn:active{
+    box-shadow: none !important;
+}
+.ellipsis-btn .dropdown-menu{
+    left: inherit;
+    right: 0;    
+    border: 1px solid #ccc;    
+    padding: 9px;    
+    box-shadow: 0 0 2px #ccc;
+    top: -15px;
+}
+.ellipsis-btn .dropdown-menu a{
+    color: #666;
+    font-size: 14px;
+}
+.gray-bg {
+    background: #eee;
+}
+/* .custom-table {
+    border: 1px solid #ccc;
+} */

@@ -1,0 +1,146 @@
+.sidebar-inner ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.sidebar-inner ul li{
+    position: relative;
+}
+.sidebar-inner ul li a {
+    padding: 12px 17px;
+    display: block;
+    color: #050625;
+font-size: 16px;
+background: #e6e6e6;
+margin-bottom: 3px;
+}
+.sidebar-inner ul li a i{
+    color:#5d5d5d;
+}
+.sidebar-inner ul li a i {
+    font-size: 20px;
+    padding-right: 5px;
+
+}
+.sidebar-inner ul li a:hover,.sidebar-inner ul li a.active{
+    background: #fd8e41;
+    color:#fff;
+}
+.sidebar-inner ul li a:hover i,.sidebar-inner ul li a.active i{
+    color:#fff;
+}
+
+
+.sidebar-inner ul li a.dropdown-toggle {
+    position: absolute;
+    right: 8px;
+    top: 0;
+    margin: 0 !important;
+    font-size: 22px;
+    padding: 6px 15px;
+}
+
+
+.dropdown-menu.sub-menu {
+    transform: translate(0);
+    border: 0;
+    width: 100%;
+    position: relative;
+    top: 0px;
+}
+.dropdown-menu.sub-menu li{
+    margin-bottom: 0;
+    background: #f4f4f4 !important;
+}
+.dropdown-menu.sub-menu li a{
+    margin-bottom: 0 !important;
+    background: #f4f4f4 !important;
+    padding:8px 27px 8px 37px !important;
+}
+.dropdown-menu.sub-menu li:last-child {
+margin-bottom:3px !important;
+} 
+
+.dropdown-menu.sub-menu li a:hover{
+    background: #fd8e41 !important;
+}
+.sidebar-inner ul li {
+    clear: both;
+}
+
+
+
+
+.image-sec {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/********** Profile ***************/
+
+.profile-sec {
+    padding: 20px 20px;
+}
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    border: 6px solid #fbab73;
+    box-shadow: 2px 2px 5px #333;
+}
+.profile-pic img {
+    position: relative;
+    transform: translatex(-50%);
+    left: 50%;
+}
+.name {
+    font-size: 18px;
+    padding: 9px 0;
+    font-weight: 500;
+}
+.profile-complition {
+    margin: 10px 0;
+
+}
+
+.full-bar {
+    background: #979797;
+    height: 18px;
+    width: 180px;
+    margin: 0 auto;
+    border-radius: 14px;
+overflow: hidden;
+}
+
+.complition{
+background: #fc8330;
+height: 18px;
+}
+.figure-status {
+   text-align: center;
+    font-size: 13px;
+    padding-top: 2px;
+}
+.figure-status span{
+   color:  #fc8330; 
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    color: #8c8c8c;
+    border-bottom: 3px solid #cccccc;
+    padding: 12px 0 2px;
+    font-size: 13px;
+    
+}

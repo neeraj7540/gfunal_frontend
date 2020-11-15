@@ -1,0 +1,45 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="far fa-file-alt"></i> Add Page</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg p-3">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="post-title">
+              <input placeholder="Page Title" type="text" [(ngModel)]="addPageParam.pageTitle">
+            </div>
+            <div class="post-editor">
+              <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                [(ngModel)]="addPageParam.pageDescription" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <a class="btn custom-btn w-100" target="_blank" href="{{url}}">Preview</a>
+            <a *ngIf="!existedPageId" class="btn custom-btn w-100" (click)="save()">Save</a>
+            <a *ngIf="existedPageId" class="btn custom-btn w-100" (click)="update()">Update</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

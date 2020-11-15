@@ -1,0 +1,111 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-dashboardsidebar name={{name}}></app-dashboardsidebar>
+    </div>
+    <div class="w-100">
+
+      <div class="content">
+        <div class="page-title">
+          <h1> Terms</h1>
+          <!-- <span class="expired"><a class="btn custom-btn2"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+              Back</a></span> -->
+        </div>
+
+      </div>
+      <div class="inner-content fill-bg">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="main-title">
+              <h4>Work on your <strong class="weight">own terms & earn commission</strong></h4>
+              <span>
+                <p>Ready to earn some extra money?</p>
+              </span>
+            </div>
+
+            <!--Join Program-->
+            <div class="terms-content img-center-mob">
+              <div class="row">
+                <div class="col-md-2 col-lg-2 pad-r margin-r ">
+                  <img class="img-terms" src="assets/images/join-icon.png">
+                </div>
+                <div class="col-md-10 col-lg-10 pad-l">
+                  <div class="terms-title">
+                    <h5>Product that sells itself</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                      nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Affiliate-->
+            <div class="terms-content img-center-mob">
+              <div class="row">
+                <div class="col-md-2 col-lg-2 pad-r margin-r ">
+                  <img class="img-terms" src="assets/images/affiliate-icon.png">
+                </div>
+                <div class="col-md-10 col-lg-10 pad-l">
+                  <div class="terms-title">
+                    <h5>Product that sells itself</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                      nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--affiliate_marketing-->
+            <div class="terms-content img-center-mob">
+              <div class="row">
+                <div class="col-md-2 col-lg-2 pad-r margin-r ">
+                  <img class="img-terms" src="assets/images/affiliate_marketing.png">
+                </div>
+                <div class="col-md-10 col-lg-10 pad-l">
+                  <div class="terms-title">
+                    <h5>Product that sells itself</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                      nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--FORM-->
+          <div class="col-lg-12">
+            <div class="bg-white">
+              <div class="main-title">
+                <div class="partner-text ">
+                  <div class="title-boxx">
+                    <h5 class="text-black float-left">Become a partner</h5>
+                    <mdb-checkbox class="text-right" [checked]="false" [default]="true" (change) = "OnCheck_Clicked($event)">I accept <a href="">Affiliate
+                        Program terms and conditions.</a></mdb-checkbox>
+                  </div>
+                  <div class="list-nd-btn">
+                    <span class="expired float-right"><a class="btn custom-btn" (click) = "OnJoinProgram_Clicked()">Join The Affiliate Program</a></span>
+                    <ul class="note-list">
+                      <li>First Month Commission: <strong>30%</strong></li>
+                      <li>Subsequent Months: <strong>25%</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

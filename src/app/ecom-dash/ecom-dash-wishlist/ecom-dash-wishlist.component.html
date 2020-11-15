@@ -1,0 +1,88 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-ecom-dash-header [headerDat]="headerData"></app-ecom-dash-header>
+<div class="index-desktop">
+  <div>
+    <div class="index-headingDiv">
+      <span class="index-heading">My Wishlist </span>
+      <span class="index-count index-heading">
+        {{wishlistCount}} items
+      </span>
+    </div>
+    <div >
+      <span class="index-wishListContainer" >
+        <div class="itemcard-itemCard " *ngFor="let wish of wishListData">
+          <div class="itemcard-itemImageDiv">
+            <a href="#" target="_blank">
+              <img class="itemcard-itemImage" src="{{wish.productImages}}"></a>
+            <div class="itemcard-removeIcon" (click) = "onRemoveItem(wish.id)">
+              <span class="myntraweb-sprite itemcard-removeMark sprites-remove"><span>✕</span></span>
+            </div>
+            <div class="itemcard-shim"></div>
+          </div>
+          <div class="sizeselect-sizeDisplayDiv">
+            <div class="sizeselect-sizeDisplayHeader">
+              <span class="sizeselect-sizeSelectLabel">Select a size</span>
+              <span class="myntraweb-sprite sizeselect-sizeDisplayRemoveMark sprites-remove"></span>
+            </div>
+            <div class="sizeselect-sizeButtonsContaier">
+              <button class="sizeselect-sizeButton">M</button>
+            </div>
+          </div>
+          <div class="itemcard-itemActions">
+            <div class="itemdetails-itemDetails">
+              <p class="itemdetails-itemDetailsLabel">{{wish.descriptionTitle}}</p>
+              <p class="itemdetails-itemDetailsDescription"></p>
+              <div class="itemdetails-itemPricing">
+                <span class="itemdetails-boldFont">{{wish.price | currency : 'INR'}} </span>
+                <!-- <span class="itemdetails-strike">
+                  Rs.3,900
+                </span> -->
+                <span class="itemdetails-discountPercent">
+                </span>
+              </div>
+            </div>
+            <div class="itemcard-actionDiv">
+              <span class="itemcard-flex undefined">
+                <a class="itemcard-moveToBag itemcard-boldFont" (click)= "onAddToBag_Click(wish)">MOVE TO BAG</a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </span>
+    </div>
+  </div>
+  <div class="halfcard-leftCardContainer">
+    <div class="halfcard-leftCard undefined " style="right: -34%;">
+      <div class="halfcard-actualContent" tabindex="0">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---Footer Start---->
+<div class="checkout-footer">
+  <div class="content">
+    <div class="images">
+      <!--<div class="footer-bank-ssl"></div>-->
+      <div class="footer-bank-visa"></div>
+      <div class="footer-bank-mc"></div>
+      <div class="footer-bank-ae"></div>
+      <!--<div class="footer-bank-dc"></div>-->
+      <div class="footer-bank-nb"></div>
+      <div class="footer-bank-cod"></div>
+      <div class="footer-bank-rupay"></div>
+      <div class="footer-bank-paypal"></div>
+      <!-- <div class="footer-bank-bhim"></div>-->
+    </div>
+    <a href="/contactus" class="contact-us"> <span>Need Help ? Contact Us</span> </a>
+  </div>
+</div>
+<!---Footer Start---->

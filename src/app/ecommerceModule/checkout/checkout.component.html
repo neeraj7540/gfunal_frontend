@@ -1,0 +1,192 @@
+<app-dashboardheader></app-dashboardheader>
+
+   <div class="container">
+
+      <div class="d-flex content-wrapper">
+        <div class="sidebar">
+          <app-ec-sidebar></app-ec-sidebar>
+        </div>
+        <div class="w-100">
+    <div class="content">
+      <div class="page-title">
+        <h1><i class="fa fa-user"></i> Checkout</h1> 
+      </div>
+    </div>
+
+      <div class="inner-content fill-bg mt-1">       
+      <div class="row"> <!--Row-->
+        <div class="col-md-12">
+             
+              <div class="product-detail-box"> <!--box-->
+                  <div class="p-box-title">Customer Accounts</div>
+                  <div class="box-content">
+                    <div class="check-opt"> <!--Check option-->
+                     <div class="chk"><input name="name1" type="radio"></div>
+                      <div class="point-list">
+                         <h3>Account are Disabled</h3>
+                         <p>Customer will only be able to check out as guests.</p>
+                      </div>
+                    </div>
+
+                    <div class="check-opt"> <!--Check option-->
+                        <div class="chk"><input name="name1" type="radio"></div>
+                         <div class="point-list">
+                            <h3>Account are Optional</h3>
+                            <p>Customer will beable to check out with a customer account or as a guest</p>
+                         </div>
+                       </div>
+
+                       <div class="check-opt"> <!--Check option-->
+                          <div class="chk"><input name="name1" type="radio"></div>
+                           <div class="point-list">
+                              <h3>Account are Required</h3>
+                              <p>Customer will only be able to check out if they have a customer account</p>
+                           </div>
+                         </div>
+                  </div>
+              </div>   
+
+
+              <div class="product-detail-box mt-3"> <!--box-->
+                <div class="p-box-title">Form Options</div>
+                <div class="box-content">
+                  <div class="row"> <!--Row-->
+                    <div class="col-md-12">
+                    <h3 class="inner-title">Full Name</h3>
+                  <div class="check-opt"> <!--Check option-->                   
+                   <div class="chk"><input name="name2" type="radio"></div>
+                    <div class="point-list">                      
+                       <p>Require first name</p>
+                    </div>
+                  </div>
+
+                  <div class="check-opt"> <!--Check option-->                   
+                    <div class="chk"><input name="name2" type="radio"></div>
+                     <div class="point-list">                      
+                        <p>Require first and last name</p>
+                     </div>
+                   </div>
+                   </div>
+                  </div>
+
+                  <div class="row border-top pt-1"> <!--Row-->
+                      <div class="col-md-12">
+                      <h3 class="inner-title">Company Name</h3>
+                    <div class="check-opt"> <!--Check option-->                   
+                     <div class="chk"><input name="name2" type="radio"></div>
+                      <div class="point-list">                      
+                         <p>Optional</p>
+                      </div>
+                    </div>
+  
+                    <div class="check-opt"> <!--Check option-->                   
+                      <div class="chk"><input name="name2" type="radio"></div>
+                       <div class="point-list">                      
+                          <p>Require</p>
+                       </div>
+                     </div>
+                     </div>
+                    </div>
+
+                    <div class="row border-top pt-1"> <!--Row-->
+                      <div class="col-md-12">
+                      <h3 class="inner-title">Shipping adress phone number</h3>
+                    <div class="check-opt"> <!--Check option-->                   
+                     <div class="chk"><input name="name3" type="radio"></div>
+                      <div class="point-list">                      
+                         <p>Optional</p>
+                      </div>
+                    </div>
+  
+                    <div class="check-opt"> <!--Check option-->                   
+                      <div class="chk"><input name="name3" type="radio"></div>
+                       <div class="point-list">                      
+                          <p>Require</p>
+                       </div>
+                     </div>
+                     </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="product-detail-box mt-3"> <!--box-->
+              <div class="p-box-title">Order Processing</div>
+              <div class="box-content">
+                <div class="row"> <!--Row-->
+                  <div class="col-md-12">
+                  <h3 class="inner-title">While the customer checking out</h3>
+                <div class="check-opt"> <!--Check option-->                   
+                 <div class="chk"><input name="name2" type="radio"></div>
+                  <div class="point-list">
+                    <h3>Use the shipping address as the biling address by default</h3>                      
+                     <p>Reduces the number of fields required to check out. The billing address can still be edited.</p>
+                  </div>
+                </div>
+
+                <div class="check-opt"> <!--Check option-->                   
+                  <div class="chk"><input name="name2" type="radio"></div>
+                   <div class="point-list">   
+                     <h3>Enable address autocpmpletion</h3>                   
+                      <p>Gives customer address suggestions when they enter their shipping and billing address.</p>
+                   </div>
+                 </div>
+                 </div>
+                </div>
+
+                <div class="row border-top pt-1"> <!--Row-->
+                    <div class="col-md-12">
+                    <h3 class="inner-title">After an order has been placed</h3>
+                  <div class="check-opt"> <!--Check option-->                   
+                   <div class="chk"><input name="name2" type="radio"></div>
+                    <div class="point-list">                      
+                       <p>Automatically fulfill the order's line items</p>
+                    </div>
+                  </div>
+
+                  <div class="check-opt"> <!--Check option-->                   
+                    <div class="chk"><input name="name2" type="radio"></div>
+                     <div class="point-list">                      
+                        <p>Do not automatically fulfill any of the order's line items</p>
+                     </div>
+                   </div>
+                   </div>
+                  </div>
+
+                  <div class="row border-top pt-1"> <!--Row-->
+                    <div class="col-md-12">
+                    <h3 class="inner-title">After an order has been fulfilled and paid.</h3>
+                  <div class="check-opt"> <!--Check option-->                   
+                   <div class="chk"><input name="name3" type="radio"></div>
+                    <div class="point-list"> 
+                      <h3>Automaticall archive the older</h3>                     
+                       <p>Fullfilled orders will be automatically removed from the open orders list.</p>
+                    </div>
+                  </div>              
+                   </div>
+                  </div>
+                  <div class="row border-top pt-2">
+                    <div class="col-md-12">
+                        <div class="point-list">                    
+                             <p class="pb-0">Additional Scripts</p>
+                          </div>
+                      <textarea class="form-control"></textarea>
+                      <p>Any customizations you'd like to appear on the order status page of the checkout. <a href="">Learn More</a></p>
+                    </div>
+                  </div>
+              </div>
+          </div>  
+          </div>
+  
+
+
+    <div class="col-md-12 text-center mt-3 border-top pt-3"> 
+      <a class="btn custom-btn" href="#">Save</a>
+     </div>
+</div>
+      </div>
+
+    </div> </div>
+
+  </div>
+  <app-dashboardfooter></app-dashboardfooter>
+
+

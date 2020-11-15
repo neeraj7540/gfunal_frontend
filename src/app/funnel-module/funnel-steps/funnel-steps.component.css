@@ -1,0 +1,63 @@
+.mg0pd0{margin:0;padding:0;}
+.inner-content {
+    padding: 10px 25px;
+}
+.template-thumb {
+    margin-bottom: 22px;
+}
+
+.template-img {
+    border: 7px solid #fff;
+    box-shadow: 0 0 3px #bbb;
+    position: relative;
+}
+.template-img img {
+    width: 100%;
+}
+.overlay-cont {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    background: #000000a6;
+    transform: scale(0);
+    transition: all ease 0.5s;
+    text-align: center;
+    width: 100%;
+padding-top: 83px;
+}
+.template-thumb:hover .overlay-cont{
+    transform: scale(1);
+    transition: all ease 0.5s;
+}
+.btn.btn-square {
+    color: #fff;
+    box-shadow: none;
+    padding: 10px 5px;
+    background: #f9964b;
+    border-radius: 0;
+    width: 146px;
+    border: 1px solid #f9964b;
+}
+.btn.btn-square.transparent {
+    background: transparent;
+    border:1px solid #fff;
+}
+.template-name {
+    font-size: 16px;
+    padding: 7px 4px;
+}
+.buy-domain {
+
+    font-size: 14px;
+    margin-top: 6px;
+
+}
+.buy-domain a {
+    color: orange !important;
+
+}
+input::placeholder {
+    color: #bbb !important;
+    font-weight: 300;
+}

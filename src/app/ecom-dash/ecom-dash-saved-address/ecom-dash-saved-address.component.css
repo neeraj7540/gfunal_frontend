@@ -1,0 +1,334 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  .mt-15{margin-top:15px;}
+  
+  .page-fullWidthComponent {
+    padding: 10px;
+    width: 65%;
+    margin: 0 auto;
+}
+.addAddressBar-cardWrapper {
+    height: 41px;
+}
+.addAddressBar-cardWrapper .addAddressBar-heading {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 8px;
+}
+.addAddressBar-cardWrapper .addAddressBar-card {
+    -webkit-box-shadow: 0px 0px 0px;
+    -moz-box-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 0px;
+    float: right;
+    border: 0.5px solid #d4d5d9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fd7705;
+    padding: 10px;
+    text-align: center;
+    width: 180px;
+    margin: auto;
+    cursor: pointer;
+}
+.addressList-addressSegmentation {
+    margin: 24px 0px 8px 0px;
+}
+.addressAccordian-addressAccordian {
+    background-color: white;
+    margin-bottom: 6px;
+    color: #696E79;
+    display: block;
+}
+.addressList-addressSegmentation {
+    font-weight: 800;
+    font-size: 13px;
+    margin: 16px 0px 8px 0;
+    text-transform: uppercase;
+}
+.addressAccordian-addressAccordian.addressAccordian-myAddress {
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 12px;
+}
+.addressAccordian-addressAccordian.addressAccordian-myAddress .addressAccordian-address {
+    width: 100%;
+}
+.addressAccordian-addressAccordian .addressAccordian-address {
+    display: inline-block;
+    padding: 12px;
+}
+.addressAccordian-addressAccordian .addressAccordian-address .addressAccordian-nameComponent {
+    margin-bottom: 8px;
+}
+.addressAccordian-addressAccordian .addressAccordian-address .addressAccordian-nameComponent .addressAccordian-name {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.addressAccordian-addressAccordian .addressAccordian-address .addressAccordian-nameComponent .addressAccordian-addressType {
+    float: right;
+    background-color: #F5F5F6;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    width: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    padding: 3px;
+}
+.addressAccordian-addressAccordian.addressAccordian-myAddress .addressAccordian-address .addressAccordian-addressDetails .addressAccordian-makeDefaultText {
+    cursor: pointer;
+    display: block;
+    color: #fd7705;
+    margin: 15px 0px 5px 0px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.addressAccordian-addressAccordian .addressAccordian-buttons .addressAccordian-button {
+    display: inline-block;
+    cursor: pointer;
+    width: 50%;
+    text-transform: uppercase;
+    padding: 14px 14px;
+    text-align: center;
+    font-weight: 800;
+}
+.addressAccordian-addressAccordian .addressAccordian-buttons {
+    width: 100%;
+    display: block;
+    color: #fd7705;
+    border-top: 1px solid #eaeaec;
+    position: relative;
+}
+.addressAccordian-buttonDivider {
+    border-left: 1px solid #eaeaec;
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 8px;
+}
+.addressAccordian-addressAccordian .addressAccordian-buttons .addressAccordian-button {
+    display: inline-block;
+    cursor: pointer;
+    width: 50%;
+    text-transform: uppercase;
+    padding: 14px 14px;
+    text-align: center;
+    font-weight: 800;
+}
+.sprite-secure {
+    background-position: -1198px -36px;
+    width: 26px;
+    height: 28px;
+}
+  [class^="sprite-"]:not([class^="sprite-card"]):not([class^="sprite-wallet"]):not([class^="sprite-upi"]) {
+    background-image: url(/assets/images/sprite-img.png);
+    background-size: 2327px 321px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+  .header .secureContainer .secure {
+    float: right;
+    letter-spacing: 3px;
+    color: #535766;
+    margin: 0 20px 0 0;
+  }
+  #mountRoot {
+    clear: both;
+    min-height: 420px;
+  }
+  .checkout-footer {
+    border-top: 1px solid
+    #f5f5f6;
+    margin: 0 0 10px 0;
+  }
+  .checkout-footer .content {
+    max-width: 980px;
+    padding-top: 10px;
+    margin: auto;
+  }
+  .checkout-footer .images {
+    display: inline-block;
+  }
+  .footer-bank-ssl {
+    background-position: -382px -4px;
+    width: 70px;
+    height: 37px;
+  }
+  .footer-bank-visa {
+    background-position: -4px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-mc {
+    background-position: -66px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-ae {
+    background-position: -130px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-dc {
+    background-position: -319px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-nb {
+    background-position: -532px -4px;
+    width: 68px;
+    height: 37px;
+  }
+  .footer-bank-cod {
+    background-position: -454px -4px;
+    width: 77px;
+    height: 37px;
+  }
+  .footer-bank-rupay {
+    background-position: -256px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-paypal {
+    background-position: -72px -271px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-bhim {
+    background-position: -4px -271px;
+    width: 60px;
+    height: 37px;
+  }
+  .checkout-footer .content .contact-us {
+    color:#282c3f;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .checkout-footer .content .contact-us span {
+    float: right;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  [class^="footer-bank"] {
+    background-image: url(/assets/images/sprite-img.png);
+    background-size: 2327px 321px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+
+ 
+@media (min-width: 480px){
+
+}
+  
+  /*-------Media Query Begins--------*/
+  
+  @media screen and (max-width: 1366px) {
+    .header .checkout-steps {
+      margin: 0 0 0 24%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  
+  @media screen and (max-width: 1240px) {
+    .header .checkout-steps {
+      margin: 0 0 0 21%;
+      width: 100%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    .header .checkout-steps {
+      margin: 0 0 0 18%;
+      width: 100%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .header .checkout-steps {
+      margin: 0 0 0 17%;
+      width: 100%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header .checkout-steps {
+      margin: 0 0 0 26%;
+      width: 100%;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+  }
+  @media screen and (max-width: 480px) {
+    #mountRoot {
+      margin-top: 30px;
+    }
+    .header .checkout-steps {
+      margin: 2% 0 0 -16%;
+      width: 85%;
+      top: 12%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    
+    .checkout-footer .content .contact-us span {
+      float: right;
+      font-size: 14px;
+      padding: 10px 0;
+      margin-top: -40px;
+      margin-right: 25px;
+    }
+    .checkout-footer{
+      margin: 0px 0px 10px 10px;
+    }
+  }
+  

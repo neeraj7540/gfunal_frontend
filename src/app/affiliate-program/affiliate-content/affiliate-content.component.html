@@ -1,0 +1,82 @@
+<!-- <div *ngIf="check(); then loading else nothing">
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+  </ng-template> -->
+
+<!-- <app-dashboardheader name={{name}}></app-dashboardheader> -->
+
+<div>
+  <div class="content">
+    <div class="page-title">
+      <h1>
+        <div class="settings-icon">
+            <!-- <img src="../../assets/images/d-icon1.png"> -->
+        </div> Affiliate Program
+      </h1>
+    </div>
+  </div>
+  <div class="inner-content fill-bg">
+    <div class="row">
+      <div class="col-md-3 col-xs-12" (click) = "onLanding_Clicked()">
+        <div class="box">
+          <a>
+            <div class="box-section">
+              <div class="icon-section">
+                <img src="../../assets/images/lp-settings.png">
+              </div>
+                <h6>Landing Pages</h6>              
+            </div>
+          </a>
+          
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12" (click) = "onEcommerce_Clicked()">
+        <div class="box">
+          <a>
+            <div class="box-section">
+              <div class="icon-section">
+                <img src="../../assets/images/ecom-settings.png">
+              </div>
+              <a>
+                <h6>Ecommerce</h6>
+              </a>
+            </div>
+          </a>
+         
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12" (click) = "onCourseBuilder_Clicked()">
+        <div class="box">
+          <a>
+            <div class="box-section">
+              <div class="icon-section">
+                <img src="../../assets/images/course-builder-settings.png">
+              </div>
+              <a>
+                <h6>Course Builder</h6>
+              </a>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12" (click) = "onFunnels_Clicked()">
+        <div class="box">
+          <a>
+            <div class="box-section">
+              <div class="icon-section">
+                <img src="../../assets/images/funnels.png">
+              </div>
+              <a>
+                <h6>Funnels</h6>
+              </a>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

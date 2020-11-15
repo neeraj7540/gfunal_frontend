@@ -1,0 +1,115 @@
+<div *ngIf="check(); then loading else nothing"></div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+<app-course-sub-header nextPhase = "ACCESS LEVEL" isCurriculumSelected = "active" [categoryType]="categoryType"
+[templateType]="templateType" [academyId]="academyId" [coursename]="coursename"></app-course-sub-header>
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+  
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-course-edit-module-sidebar (onSideBarClick)='displaySelectedDiv($event)'
+        [ModuleDataList]="receivedModuleData" [LessonDataList]="receivedLessonData"></app-course-edit-module-sidebar>
+    </div>
+
+    <div class="w-100">
+      <div class="inner-content inner-content-subheader fill-bg"
+        [style.visibility]="isCurriculumVisible ? 'visible' : 'hidden'"
+        [style.display]="isCurriculumVisible ? '' : 'none'">
+        <div class="add-contact">
+          <div class="row">
+            <div class="col-md-12 mg0pd0">
+              <div class="build-course">
+                <figure><img class="cross-icon" src="../assets/images/course-curriculum-icon.png"></figure>
+                <h2 class="text-center"><strong>Let's build your course!</strong></h2>
+                <div class="curriculum-wrapper">
+                  <h6 class="text-center"><strong>The ‘Curriculum’ tab is where you'll determine<br>
+                      the layout of your course, add your content and include quizzes and more!<br>
+                      Click the 'Add Chapter' button on the left to get started.</strong></h6>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <app-course-add-module [style.visibility]="isAddModuleVisible ? 'visible' : 'hidden'"
+        [style.display]="isAddModuleVisible ? '' : 'none'" (onSideBarClick)='displaySelectedDiv($event)'>
+      </app-course-add-module>
+
+      <app-course-edit-module [style.visibility]="isEditModuleVisible ? 'visible' : 'hidden'"
+        [style.display]="isEditModuleVisible ? '' : 'none'" [moduleName]="moduleName" [moduleId]="moduleId"
+        (onSideBarClick)='displaySelectedDiv($event)'></app-course-edit-module>
+
+      <app-course-add-lesson [style.visibility]="isAddLessonVisible ? 'visible' : 'hidden'"
+        [style.display]="isAddLessonVisible ? '' : 'none'" [moduleTitle]="moduleName" [moduleId]="moduleId"
+        (onSideBarClick)='displaySelectedDiv($event)'></app-course-add-lesson>
+
+      <app-course-edit-lesson [style.visibility]="isEditLessonVisible ? 'visible' : 'hidden'"
+        [style.display]="isEditLessonVisible ? '' : 'none'" [moduleId]="moduleId" [lessonId]="lessonId"
+        [lessonname]="lessonname" [moduleTitle]="moduleName"></app-course-edit-lesson>
+
+      <app-course-lesson-add-video [style.visibility]="isLessonVideoVisible ? 'visible' : 'hidden'"
+        [style.display]="isLessonVideoVisible ? '' : 'none'" (onSideBarClick)='displaySelectedDiv($event)'></app-course-lesson-add-video>
+
+        <app-course-edit-lesson-add-video [style.visibility]="isEditLessonVideoVisible ? 'visible' : 'hidden'"
+        [style.display]="isEditLessonVideoVisible ? '' : 'none'" [videoTitle]="videoTitle" [videodescription]="videodescription"
+        [selectedVideoFileName]="selectedVideoFileName" [embendedVideoLink]="embendedVideoLink"
+        (onSideBarClick)='displaySelectedDiv($event)'></app-course-edit-lesson-add-video>
+
+      <app-course-lesson-add-quiz [style.visibility]="isLessonQuizVisible ? 'visible' : 'hidden'"
+        [style.display]="isLessonQuizVisible ? '' : 'none'" (onSideBarClick)='displaySelectedDiv($event)'></app-course-lesson-add-quiz>
+      
+      <app-course-lesson-edit-quiz [style.visibility]="isEditLessonQuizVisible ? 'visible' : 'hidden'"
+        [style.display]="isEditLessonQuizVisible ? '' : 'none'" (onSideBarClick)='displaySelectedDiv($event)'
+        [quiztitle]="quiztitle" [receivedData]="receivedData" [questionsData] = "questionsData" [receivedData2] = "receivedData2">
+      </app-course-lesson-edit-quiz>
+
+      <app-course-lesson-assignment [style.visibility]="isLessonAssignmentVisible ? 'visible' : 'hidden'"
+        [style.display]="isLessonAssignmentVisible ? '' : 'none'" (onSideBarClick)='displaySelectedDiv($event)'>
+      </app-course-lesson-assignment>
+      
+      <app-course-edit-lesson-assignment [style.visibility]="isEditLessonAssignmentVisible ? 'visible' : 'hidden'"
+        [style.display]="isEditLessonAssignmentVisible ? '' : 'none'" [addPostParam]="assignmentTitle"
+        (onSideBarClick)='displaySelectedDiv($event)'>
+      </app-course-edit-lesson-assignment>
+
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

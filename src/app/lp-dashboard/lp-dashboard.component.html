@@ -1,0 +1,168 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+  <!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Steps End-->
+
+  <div class="container {{opacity}}">
+
+      <div class="d-flex content-wrapper">
+        <div class="sidebar">
+          <app-inner-sidebar landdingPageID = {{landdingPageID}} dashboardCSS="active"></app-inner-sidebar>
+        </div>
+        <div class="w-100">
+    <div class="content">
+      <div class="page-title">
+        <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+      </div>
+    </div>
+      <div class="inner-content fill-bg">
+        <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-2">
+              <div class="dash-box c-green">
+                <div class="d-count">{{leadsCount}}</div>
+                <div class="d-icon"><img src="../../assets/images/d-icon1.png"></div>
+                <div class="d-name">Leads</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-2">
+                <div class="dash-box c-blue">
+                  <div class="d-count">{{contactsCount}}</div>
+                  <div class="d-icon"><img src="../../assets/images/d-icon2.png"></div>
+                  <div class="d-name">Contacts</div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 mb-2">
+                  <div class="dash-box c-purple">
+                    <div class="d-count">{{trafficRateCount}}</div>
+                    <div class="d-icon"><img src="../../assets/images/d-icon3.png"></div>
+                    <div class="d-name">Traffic Rate</div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 mb-2">
+                    <div class="dash-box c-black">
+                      <div class="d-count">{{affilatedEarningCount}}</div>
+                      <div class="d-icon"><img src="../../assets/images/d-icon4.png"></div>
+                      <div class="d-name">Affiliate Earnings </div>
+                    </div>
+                  </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-xl-8 mb-2">
+            <div class="cover-box">
+                <h2 class="heading">Page Visitors</h2>
+                <div class="graph1">
+                  <img src="../../assets/images/graph1.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 mb-2">
+          <div class="cover-box">
+<div class="toggle-btn">
+  <a href="#" class="days-btn seven-days active ">Last 7 days</a>
+  <a href="#" class="days-btn thirty-days">Last 30 days</a>
+</div>
+<div class="other-maps">
+  <h3>Gross Revenue</h3>
+  <span class="g-date">JUL 05 - JUL 11</span>
+  <div class="map-ot"><img src="../../assets/images/small-map.png"></div>
+</div>
+<div class="other-maps">
+  <h3>Successful Purchases</h3>
+  <span class="g-date">JUL 05 - JUL 11</span>
+  <div class="map-ot"><img src="../../assets/images/small-map.png"></div>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="cover-box p-0">
+            <div class="table-responsive border-rounded dark-header">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Date</th>
+                  <th>Order Id</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12-05-2019</td>
+                  <td>1003052</td>
+                  <td>Christian Garcia</td>
+                  <td>$ 150.00</td>
+                  <td>2</td>
+                  <td>$150.00</td>
+               </tr>
+               <tr>
+                  <td>12-05-2019</td>
+                  <td>1003052</td>
+                  <td>Christian Garcia</td>
+                  <td>$ 150.00</td>
+                  <td>2</td>
+                  <td>$150.00</td>
+               </tr>
+               <tr>
+                  <td>12-05-2019</td>
+                  <td>1003052</td>
+                  <td>Christian Garcia</td>
+                  <td>$ 150.00</td>
+                  <td>2</td>
+                  <td>$150.00</td>
+               </tr>
+         
+        
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div> </div>
+
+  </div>
+  <app-dashboardfooter></app-dashboardfooter>
+
+

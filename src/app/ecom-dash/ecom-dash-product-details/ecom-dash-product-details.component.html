@@ -1,0 +1,171 @@
+<app-ecom-dash-header [headerDat]="headerData"></app-ecom-dash-header>
+<main class="pdp-pdp-container">
+  <div class="breadcrumbs-container">
+    <a class="breadcrumbs-link">Home</a>
+    <span class="breadcrumbs-separator">/</span>
+    <a class="breadcrumbs-link">{{collectionName}}</a>
+
+    <span class="breadcrumbs-separator">/</span>
+    <a class="breadcrumbs-bold-link breadcrumbs-link"><strong>{{product.descriptionTitle}}</strong></a>
+    <span class="breadcrumbs-bold-separator breadcrumbs-separator">&gt;</span>
+  </div>
+  <div class="image-grid-container common-clearfix">
+    <div class="image-grid-col50">
+      <div *ngFor="let image of product.productImages" class="image-grid-imageContainer">
+        <div class="image-grid-image" [ngStyle]="{ 'background-image': 'url(' + image.Location + ')'}"></div>
+        <div class="image-grid-skeletonLoader"></div>
+      </div>
+    </div>
+    <!-- <div class="image-grid-col50">
+      <div class="image-grid-imageContainer">
+        <div class="image-grid-image" style="background-image: url('../assets/images/2.jpg');"></div>
+      
+        <div class="image-grid-skeletonLoader"></div>
+      </div>
+    </div> -->
+  </div>
+  <div class="pdp-description-container">
+    <div class="pdp-price-info">
+      <h1 class="pdp-title"><strong>{{product.band | titlecase}}</strong></h1>
+      <h1 class="pdp-name pdp-bb1">{{product.descriptionTitle | titlecase}}</h1>
+      <div class="pdp-discount-container">
+        <span class="pdp-price" tabindex="0"><strong>$
+            {{product.productDetails[0].size_Price_Quantity.price}}</strong></span>
+        <span class="pdp-mrp"><s>$ {{product.productDetails[0].size_Price_Quantity.price}}</s></span>
+        <!-- <span class="pdp-discount">(30% OFF)</span> -->
+      </div>
+      <p class="pdp-selling-price">
+        <span class="pdp-vatInfo">inclusive of all taxes</span>
+      </p>
+    </div>
+    <div class="size-buttons-size-container" id="sizeButtonsContainer">
+      <div class="size-buttons-size-header">
+        <h4 class="size-buttons-select-size"> Select Size </h4>
+      </div>
+      <div class="size-buttons-size-buttons mb-3">
+        <div *ngFor="let sizeItem of product.productDetails" class="size-buttons-tipAndBtnContainer"
+          (click)="onVarient_Selected(sizeItem)">
+          <div class="size-buttons-buttonContainer">
+            <button class="size-buttons-size-button size-buttons-size-button-default">
+              <span class="size-buttons-size-strike-hide"></span>
+              <p class="size-buttons-unified-size">{{sizeItem.size_Price_Quantity.size}}</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="size-buttons-size-header mt-3">
+        <h4 class="size-buttons-select-size"> SELECT COLOR </h4>
+      </div>-->
+      <div class="size-buttons-size-header mt-3">
+        <h4 class="size-buttons-select-size"> Select Color </h4>
+      </div> 
+      <div class="form-row">
+        <div class="col-md-6">
+          <select [(ngModel)]="selectedColor" class="form-control">
+            <option *ngFor="let color of product.productDetails" value="{{color.colorCode}}">{{color.colorCode}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-action-container pdp-fixed">
+      <div class="pdp-add-to-bag pdp-button pdp-flex pdp-center" (click)="onAddToBag_Click()">
+        <span class="myntraweb-sprite pdp-whiteBag sprites-whiteBag pdp-flex pdp-center"></span>
+        ADD TO BAG</div>
+      <div class=" pdp-add-to-wishlist pdp-button pdp-add-to-wishlist pdp-button pdp-flex pdp-center"
+        (click)="onWishlist_Click()">
+        <span class="myntraweb-sprite pdp-darkWishlistIcon sprites-darkWishlist pdp-flex pdp-center">
+        </span><span class="">WISHLIST</span>
+      </div>
+    </div>
+    <div class="pdp-productDescriptors">
+      <div class="pdp-productDescriptorsContainer">
+        <div>
+          <h4 class="pdp-product-description-title">Product Details
+            <span class="myntraweb-sprite pdp-productDetailsIcon sprites-productDetailsIcon">
+            </span></h4>
+          <p class="pdp-product-description-content" [innerHTML]="product.descriptionContent">
+          </p>
+        </div>
+        <!-- <div class="pdp-sizeFitDesc">
+          <h4 class="pdp-sizeFitDescTitle pdp-product-description-title">Size &amp; Fit</h4>
+          <p class="pdp-sizeFitDescContent pdp-product-description-content">The model (height 6') is wearing a size M
+          </p>
+        </div> -->
+        <!-- <div class="pdp-sizeFitDesc">
+          <h4 class="pdp-sizeFitDescTitle pdp-product-description-title">Material &amp; Care</h4>
+          <p class="pdp-sizeFitDescContent pdp-product-description-content">100% cotton<br>Machine-wash</p>
+        </div> -->
+        <!--  <div class="index-sizeFitDesc">
+                                                                  <h4 class="index-sizeFitDescTitle index-product-description-title" style="padding-bottom: 12px;"><strong>Specifications</strong></h4>
+                                                                  <div class="index-tableContainer">
+                                                                    <div class="index-row">
+                                                                      <div class="index-rowKey">Sleeve Styling</div>
+                                                                      <div class="index-rowValue">Regular Sleeves</div>
+                                                                    </div>
+                                                                    <div class="index-row">
+                                                                      <div class="index-rowKey">Multipack Set</div>
+                                                                      <div class="index-rowValue">Single</div>
+                                                                    </div>
+                                                                    <div class="index-row">
+                                                                      <div class="index-rowKey">Occasion</div>
+                                                                      <div class="index-rowValue">Casual</div>
+                                                                    </div>
+                                                                    <div class="index-row">
+                                                                      <div class="index-rowKey">Main Trend</div>
+                                                                    <div class="index-rowValue">Graphic Print Others</div></div>
+                                                                    <div class="index-row">
+                                                                      <div class="index-rowKey">Print or Pattern Type</div>
+                                                                  
+                                                                    <div class="index-rowValue">Graphic</div></div>
+                                                                    <div class="index-row">
+                                                                      <div class="index-rowKey">Neck</div>
+                                                                    <div class="index-rowValue">Round Neck</div></div>
+                                                                    <div class="index-row"><div class="index-rowKey">Pattern</div>
+                                                                    <div class="index-rowValue">Printed</div></div>
+                                                                    <div class="index-row"><div class="index-rowKey">Sleeve Length</div>
+                                                                    <div class="index-rowValue">Short Sleeves</div>
+                                                                  </div></div></div>-->
+      </div>
+    </div>
+
+    <!-- <div class="meta-container">
+                                                                        <div class="meta-info">
+                                                                        <div class="meta-desc">100% Original Products</div>
+                                                                      </div>
+                                                                     
+                                                                      <div class="meta-info">
+                                                                        <div class="meta-desc">Easy 30 days returns and exchanges</div>
+                                                                      </div>
+                            
+                                                                    </div> -->
+
+    <!-- <div class="supplier-desktopCodeSupplier">
+                                                                      <div class="supplier-supplier"><span>Product Code:
+                                                                        <span class="supplier-styleId"><strong>4318138</strong></span></span>
+                                                                      </div>
+                                                                   
+                                                              
+                                                                    </div> -->
+  </div>
+</main>
+
+<!---Footer Start---->
+<div class="checkout-footer">
+  <div class="content">
+    <div class="images">
+      <!--<div class="footer-bank-ssl"></div>-->
+      <div class="footer-bank-visa"></div>
+      <div class="footer-bank-mc"></div>
+      <div class="footer-bank-ae"></div>
+      <!--<div class="footer-bank-dc"></div>-->
+      <div class="footer-bank-nb"></div>
+      <div class="footer-bank-cod"></div>
+      <div class="footer-bank-rupay"></div>
+      <div class="footer-bank-paypal"></div>
+      <!-- <div class="footer-bank-bhim"></div>-->
+      <a href="/contactus" class="contact-us"> <span>Need Help ? Contact Us</span> </a>
+    </div>
+  </div>
+</div>
+<!---Footer Start---->

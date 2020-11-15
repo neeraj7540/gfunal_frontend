@@ -1,0 +1,107 @@
+.example-list {
+    width: 1000px;
+    max-width: 100%;
+    border: solid 1px #ccc;
+    min-height: 60px;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .example-box {
+    padding: 20px 10px;
+    border-right: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .saved-cats {
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  .cat-header {
+    display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 4px 0;
+  background: #fffc;
+  font-size: 14px;
+  color: #757474;
+  border-bottom: 1px solid #ccc;
+  font-weight: 600;
+  }
+  
+  
+  .cat-body .cat-name, .cat-header .cat-name {
+    padding: 0 12px;
+  }
+  .cat-body .post-count,.cat-header .post-count {
+    padding: 0 12px;
+  }
+  
+  .cat-row .cat-name{
+  float: left;
+  }
+  .cat-row .post-count{
+      float: right;
+      }
+  .cat-action {
+      width: 100%;
+      display: block;
+      padding: 0 13px;
+      font-size: 12px;
+      clear: both;
+      visibility: hidden;
+  }
+  .cat-row:hover .cat-action{
+      visibility: visible;
+  } 
+  .cat-action a{
+  color: #555;
+  }
+  .cat-action a:hover{
+      color:#FD7B1D;
+  }               
+  .cat-row {
+  padding:5px 0;
+  }
+  .cat-row:nth-child(2n) {
+      background: #e9e9e9;
+  
+  }
+  

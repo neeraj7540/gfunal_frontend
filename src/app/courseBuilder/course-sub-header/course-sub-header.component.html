@@ -1,0 +1,36 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+      <div class='col-lg-12 col-5'>
+        <ul class="nav nav-tabs" id="myTab-subheader" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link {{isCurriculumSelected}}" id="steps" data-toggle="tab" role="tab">
+              <strong>CURRICULUM</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{isAccessLevelSelected}}" id="settings" data-toggle="tab" role="tab">
+              <strong>ACCESS LEVEL</strong></a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link {{isPricingSelected}}" id="settings" data-toggle="tab" role="tab">
+              <strong>PRICING</strong></a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link {{isPublishSelected}}" id="settings" data-toggle="tab" role="tab">
+              <strong>PUBLISH</strong></a>
+          </li>
+
+          <div class="pull-right preview">
+            <a (click)="onNextPhase_Click()"
+            [style.visibility]="isDivVisible ? 'visible' : 'hidden'" 
+            [style.display]="isDivVisible ? '' : 'none'">
+            <strong><u> Go to {{nextPhase}}</u></strong></a>
+
+            <span class="expired"><a class="btn custom-btn" target="_blank" href="{{url}}" >Preview</a></span>
+          </div>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

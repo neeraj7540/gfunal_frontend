@@ -1,0 +1,86 @@
+<!-- <div>
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+<app-course-sub-header></app-course-sub-header> -->
+<!-- Steps Start-->
+<!-- <div class="steps">
+  <div class="container">
+    <div class="steps-bar">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+    </div>
+
+    <div class="points">
+      <div class="pin completed">
+          <span><i class="fa fa-check"></i></span>
+        <p>Store Preference</p>
+      </div>
+      <div class="pin current">
+          <span><i class="fa fa-check"></i></span>
+          <p>Select Template</p>
+        </div>
+        <div class="pin">
+            <span><i class="fa fa-check"></i></span>
+            <p>Customize Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Publish</p>
+            </div>
+    </div>
+  </div>
+</div> -->
+<!-- Steps End-->
+
+<!-- <div class="container">
+    <div class="d-flex content-wrapper">
+      <div class="sidebar">
+          <app-course-lesson-assignment-sidebar></app-course-lesson-assignment-sidebar>
+      </div>
+<div class="w-100"> -->
+    <div class="inner-content inner-content-subheader fill-bg">
+        <div class="add-contact">
+         <div class="row">
+         <div class="col-md-12">
+            <div class="pull-right">
+                <!-- <a class="custom-btn btn black-btn" (click) = "onDelete_Clicked()">Delete</a> -->
+                <a class="custom-btn btn" (click) = "OnAddAssignment_Click()">Save</a>
+                <!-- <a href="#" class="detail-icon"><i class="fa fa-2x fa-ellipsis-v" aria-hidden="true"></i></a> -->
+            </div>
+         </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <h4><strong>Assignment</strong></h4>
+                <div class="form-group module-section">
+                  <label>Assignment Title</label>
+                  <input class="form-control" type="text" [(ngModel)]="addPostParam.assignmentTitle">          
+                  <!-- <div class="mt-6">        
+                  <input type="checkbox" name="name" value="name"> <span class="save-draft">Save as draft</span> <i class="fa fa-info" aria-hidden="true"></i>
+                 </div> -->
+               </div>
+             </div>
+          <div class="col-md-12">
+              <div class="form-group content-section">
+                <label>Content</label>
+                <div class="post-editor">
+                  <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                                  [(ngModel)]="addPostParam.AssignmentContent" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+                </div>
+                <!-- <img style="float: left;" src="../assets/images/edit.png"> -->
+             </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter> -->

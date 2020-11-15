@@ -1,0 +1,33 @@
+.category-type {
+    text-align: center;
+    font-size: 44px;    
+    max-width: 658px;    
+    margin: 33px auto;    
+    line-height: 56px;    
+    font-weight: 300;    
+    font-family: 'Montserrat', sans-serif;
+}
+.categories ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: 0 auto;
+
+}
+.categories ul li {
+    width: 265px; 
+    list-style: none;    
+    min-width: 184px;
+}
+.categories ul li a {
+    color: #666;
+    font-size: 22px;    
+    font-weight: 300;    
+    padding: 15px 0;    
+    display: block;
+}
+.categories ul li a:hover {
+    color: #fc8a3a; 
+}

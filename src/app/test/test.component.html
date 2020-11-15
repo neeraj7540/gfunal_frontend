@@ -1,0 +1,12 @@
+<div *ngIf="check(); then loader else noloader">
+</div>
+
+<ng-template #loader>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #noloader></ng-template>
+
+
+<div id="gjs" class={{opacity}}>
+
+</div>

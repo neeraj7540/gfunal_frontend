@@ -1,0 +1,52 @@
+.setting-box {
+
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 2px #ccc;
+    padding: 15px;
+    background: #fff;
+    border-radius: 3px;
+margin-bottom: 30px;
+}
+.setting-box a {
+    color: #777;
+}
+.setting-box-title {
+    font-size: 20px;
+    color: #555;
+    margin: 10px 0;
+}
+.setting-box span {
+	width: 50px;
+	height: 50px;
+	background: #e6e6e6;
+	display: inline-block;
+	border-radius: 50%;
+	font-size: 29px;
+	padding-top: 11px;
+	border: 1px solid #ccc;
+    box-shadow: 0 0 1px #ccc;
+    transition: all ease 0.5s;
+}
+.setting-box p {
+    font-size: 14px;
+    line-height: 18px;
+
+}
+
+.setting-box:hover span{
+	width: 50px;
+	height: 50px;
+	background: #FC842E;
+	display: inline-block;
+	border-radius: 50%;
+	font-size: 29px;
+	padding-top: 11px;
+	border: 1px solid #FC842E;
+	box-shadow: 0 0 1px #ccc;
+    color: #fff;
+    transform: rotate3d(30deg)
+}
+.setting-box:hover .setting-box-title {
+    color: #FC842E; 
+}

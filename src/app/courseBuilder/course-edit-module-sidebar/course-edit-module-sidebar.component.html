@@ -1,0 +1,51 @@
+<div class="sidebar-inner">
+  <ul *ngFor="let module of ModuleDataList; let i = index">
+    <li>
+      <div><a (click)="moduleSelected(module)">{{module.moduleTitle}}</a>
+        <span class="pull-right"><a (click)="onModuleDeleted_Click(module)">
+            <i class="fa fa-trash big-trash"></i></a></span>
+        <span class="pull-right" style="padding-right: 10px;">
+          <button class="drop-arrow" type="button" (click)="onModuleHide_click(i)">
+            <img src="assets/images/module-down-icon.png" (click)="onExpand_Click(module)">
+          </button>
+        </span>
+      </div>
+      <br>
+      <div class="detail-outer" *ngIf="visibleIndex === i">
+        <ul *ngFor="let lesson of LessonDataList; let index = index">
+          <li class="active">
+            <div><a (click)="lessonSelected(lesson)">{{lesson.lessonTitle}} </a>
+              <span class="pull-right"><a (click)="onLessonDeleted_Click(lesson)"><i
+                    class="fa fa-trash big-trash"></i></a></span>
+              <span class="pull-right" style="padding-right: 10px;">
+                <button class="drop-arrow" type="button" (click)="onLessonHide_click(index)" mdbWavesEffect>
+                  <img src="assets/images/module-down-icon.png">
+                </button>
+              </span></div>
+            <br>
+            <div class="lesson-items" *ngIf="visibleLessonIndex === index">
+              <ul>
+                <li class="{{isVideoActive}}" (click)="OnVideo_Clicked(lesson,module)"><a><img class="cross-icon"
+                      src="../assets/images/course-video-icon.png">
+                    <div class="font12" style="margin-top: 5px;">Video</div>
+                  </a></li>
+                <li class="{{isQuizActive}}" (click)="OnQuiz_Clicked(lesson,module)"><a><img class="cross-icon"
+                      src="../assets/images/course-quiz-icon.png">
+                    <div class="font12">Quiz</div>
+                  </a></li>
+                <li class="{{isAssignmentActive}}" (click)="OnAssignment_Clicked(lesson,module)"><a><img
+                      class="cross-icon" src="../assets/images/course-assignment-icon.png">
+                    <div class="font12" style="margin-top: 2px;">Assignment</div>
+                  </a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a (click)="onAddLesson_Click(module,i)"><u>Add Lesson</u></a>
+    </li>
+  </ul>
+
+  <a class="custom-btn simple btn btn-block btn-module mt-10" style="margin-top: 10px;" (click)="onNewModule_Clicked()">
+    <img class="module-icon float-left" src="../assets/images/course-add-chapter-icon.png"> NEW MODULE </a>
+</div>

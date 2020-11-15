@@ -1,0 +1,194 @@
+<div *ngIf="check(); then loading else nothing"></div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+<!-- <app-course-sub-header nextPhase="PRICING" isAccessLevelSelected="active"></app-course-sub-header> -->
+<app-course-sub-header nextPhase="PUBLISH" isAccessLevelSelected="active"></app-course-sub-header>
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+
+
+<div class="container {{opacity}}">
+  <div class="d-flex content-wrapper">
+    <div class="w-100">
+      <div class="inner-content inner-content-subheader fill-bg">
+        <div class="add-contact">
+          <div class="row">
+            <div class="col-md-6">
+              <h4><strong>Access Levels</strong></h4>
+            </div>
+            <div class="col-md-6">
+              <div class="pull-right">
+                <!-- <a class="custom-btn btn black-btn" (click)="onSkip_Clicked()">Skip</a> -->
+                <a class="custom-btn btn" (click)="onSkip_Clicked()">Confirm</a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="course-heading">
+                <div class="text-center">
+                  <p><i class="fas fa-info-circle" aria-hidden="true"></i> Split your course into multiple access
+                    levels. For
+                    example Silver/Gold/Platinum or you can provide your course for free
+                    and one time payment options in the pricing section.</p>
+                  <!-- <div class="buttons-center">
+                <a class="custom-btn btn" (click)="basicModal.show()"> Add</a> -->
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="package-added buttons-center">
+
+                  <div class="curd-icons" [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                    [style.display]="isDivVisible ? '' : 'none'">
+                    <!-- <div class="edit">
+                      <a href="#"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                    </div> -->
+                    <div class="delete">
+                      <a (click)="onCoursePackageDelete()"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+
+                  <select class="form-control add-package" type="text" name='course'
+                    [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                    [style.display]="isDivVisible ? '' : 'none'" (change)="onPackageChange($event)">
+                    <option *ngFor="let accessDetails of AccessDetailsList" [selected]="accessDetails">
+                      {{accessDetails.name}}
+                    </option>
+                  </select>
+                  <a class="custom-btn btn" style="margin: 0,10,0,0;" (click)="basicModal.show()"> Add + </a>
+                  <!-- <a class="custom-btn btn" style="margin : 0;" [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                  [style.display]="isDivVisible ? '' : 'none'" (click)="SavePackageInformation()"> Save</a> -->
+                </div>
+              </div>
+              <hr class="section-hr">
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="pricing-module">
+                    <li *ngFor="let item of receivedData">
+                      <span class="time"></span>
+                      <span class="module"><strong>{{item.moduleTitle}}</strong>
+                        <!-- <br><span class="content-left" *ngFor="let item2 of item.lessonInfo">
+                          <img class="access-level-icon" src="../assets/images/course-access-level-icon.png">
+                          <span class="lesson-content">{{item2.lessonTitle}} </span>
+                        </span> -->
+
+                        <ul class="pricing-inner-module" *ngFor="let item2 of item.lessonInfo">
+                          <li>
+                            <span class="content-left"><img class="access-level-icon"
+                                src="../assets/images/course-access-level-icon.png">
+                              <span class="lesson-content"> {{item2.lessonTitle}} </span>
+                            </span>
+                          </li>
+                          <li [style.visibility]="isSideDivVisible ? 'visible' : 'hidden'">
+                            <label class="switch">
+                              <input id={{item2.lessonId}} type="checkbox" [checked]="item2.isIncludeInPackage"
+                                (click)="taxableItemChecked($event)">
+                              <span class="slider round"></span>
+                            </label>
+                          </li>
+                          <li [style.visibility]="isSideDivVisible ? 'visible' : 'hidden'">
+                            <select id={{item2.lessonId}} class="form-control  show-video" type="text" name='course'
+                              (change)="onChange($event)">
+                              <option>On Subscription</option>
+                              <option [selected]="item2.scheduleTime==='1'" [value] = "1">After 1 day</option>
+                              <option [selected]="item2.scheduleTime==='3'" [value] = "3">After 3 days</option>
+                              <option [selected]="item2.scheduleTime==='5'" [value] = "5">After 5 days</option>
+                              <option [selected]="item2.scheduleTime==='7'" [value] = "7">After 7 days</option>
+                              <option [selected]="item2.scheduleTime==='9'" [value] = "9">After 9 days</option>
+                              <option [selected]="item2.scheduleTime==='11'" [value] = "11">After 11 days</option>
+                              <option [selected]="item2.scheduleTime==='13'" [value] = "13">After 13 days</option>
+                              <option [selected]="item2.scheduleTime==='15'" [value] = "15">After 15 days</option>
+                              <option [selected]="item2.scheduleTime==='30'" [value] = "30">After 30 days</option>
+                            </select>
+                          </li>
+                        </ul>
+                      </span>
+                    </li>
+                  </ul>
+                  <div style="text-align:center">
+                    <a class="custom-btn btn" style="margin : 0;"
+                      [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                      [style.display]="isDivVisible ? '' : 'none'" (click)="SaveUpdatePackageInformation()"> {{saveUpdateBtnTxt}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel"><b>Access Details</b></h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-8">
+              <label>Package Name</label>
+              <input class="form-control" type="text" [(ngModel)]="packageName" name='packageName'>
+            </div>
+          </div>
+          <div class="addMadding"></div>
+          <div class="row">
+            <div class="col-md-8">
+              <label>Package Price</label>
+              <input class="form-control" type="text" placeholder="$ Price" [(ngModel)]="packagePrice"
+                name='packagePrice' (keypress)="keyPress($event)">
+            </div>
+          </div>
+          <div class="addMadding"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn custom-btn black-btn" aria-label="Close" (click)="basicModal.hide()"
+          mdbWavesEffect>Back</button>
+        <button type="button" class="btn custom-btn" mdbWavesEffect (click)="AddAccessPackage()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

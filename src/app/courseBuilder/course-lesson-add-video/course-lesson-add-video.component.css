@@ -1,0 +1,52 @@
+.mg0pd0{margin:0;padding:0;}
+.inner-content {
+    padding: 10px 25px;
+}
+.mt-6{margin-top: 6px;}
+.mt-20{margin-top: 20px;}
+.build-course figure{text-align: center;}
+.curriculum-wrapper{max-width: 680px; margin: 0 auto;}
+.module-section{background-color: #FFF;padding:10px;color: #000;}
+.fa-info{
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    padding: 1px 6px;
+    color: #CCC;
+}
+.fa-ellipsis-v{color:#6f6d6d;}
+.detail-icon{
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+}
+.save-draft{color:#6f6d6d;margin: 0 5px;}
+.upload{background-color: #FFF;}
+.upload-file{border:1px dashed #CCC;margin: 15px;position: relative;top:15px;}
+.file-text{color: #6f6d6d;font-weight: 600;text-align: center;margin-top:25px;}
+.or{color: #6f6d6d;font-weight: 600;text-align: center;}
+.upload-size{background-color:#ebebeb;}
+.upload-text {
+    color: #6f6d6d;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 250px;
+}
+.select-file{text-align: center;}
+.btn-bs-file{
+    position:relative;
+}
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width:0;
+    height:0;
+    outline: none;
+    cursor: inherit;
+}
+.btn-primary {
+    background-color: #fe7310 !important;
+    padding: 10px 55px !important;
+    margin-bottom: 25px;
+}

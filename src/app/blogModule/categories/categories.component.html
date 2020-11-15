@@ -1,0 +1,58 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing"></div>
+
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing></ng-template>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-blog-sidebar></app-blog-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="far fa-file-alt" style="width: 1.5em;"></i>Categories</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <div class="row mt-4">
+          <div class="col-md-5">
+            <h3 class="mb-2 sub-title">Add New Category</h3>
+            <div class="form-group">
+              <label>Name</label>
+              <input class="form-control" type="text" [(ngModel)]="categoryName">
+            </div>
+            <button *ngIf="!isEdit" (click)="addCategory();" class="btn custom-btn" value="Save">Add New
+              Category</button>
+            <button *ngIf="isEdit" (click)="updateCategory();" class="btn custom-btn" value="Save">Update
+              Category</button>
+          </div>
+
+          <div class="col-md-7">
+            <div class="saved-cats">
+              <div class="cat-header">
+                <div class="cat-name">Category Name</div>
+                <div class="post-count">Post Counts</div>
+              </div>
+              <div class="cat-body">
+                <div class="cat-row" *ngFor="let category of categories; let i = index">
+                  <!--category-list-item-->
+                  <div class="cat-name">{{category.key}}</div>
+                  <div class="post-count">{{category.count}}</div>
+                  <div class="cat-action">
+                    <a (click)="onEdit(category)">Edit</a> | <a (click)="onDelete(category,i)">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

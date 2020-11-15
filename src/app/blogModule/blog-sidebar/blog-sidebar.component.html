@@ -1,0 +1,21 @@
+<div class="sidebar-inner">
+  <ul>
+    <li><a (click)="openDashboard()"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+    <li class="dropdown" mdbDropdown><a (click)="openBlogPosts()"><i class="fas fa-thumbtack"></i> Blog Posts</a>
+      <a mdbDropdownToggle mdbBtn class="dropdown-toggle btn custom-blank-btn waves-light" type="button" mdbWavesEffect>
+      </a>
+      <ul class="dropdown-menu sub-menu">
+        <li><a (click)="addNewPost()"><i class="fas fa-thumbtack"></i> Add New Post</a></li>
+        <li><a href="/blog-categories/"><i class="far fa-file-alt" style="margin-right: 4px;"></i>Categories</a></li>
+      </ul>
+    </li>
+    <li><a (click)="openPages()"><i class="far fa-file-alt"></i> Pages</a></li>
+    <li><a href="/blog-comments/"><i class="fas fa-comments"></i> Comments</a></li>
+    <li><a><i class="fa fa-desktop"></i> Themes</a></li>
+    <li><a (click)="openHeader()"><i class="fas fa-heading"></i> Header</a></li>
+    <li><a href="/blog-footer/"><i class="fa fa-minus" style="position: relative;top: 6px;"></i> Footer</a></li>
+    <li><a href="/blog-menu/"><i class="fa fa-bars"></i> Menu</a></li>
+    <li><a href="/general-settings/"><i class="fa fa-cog"></i> General Settings</a></li>
+
+  </ul>
+</div>

@@ -1,0 +1,104 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+      <div class='col-lg-3 col-5'>
+        <a class="logo" (click)="openDashboard()">
+          <img src="{{ecomHeaderData?.ecommerceLogo?.Location}}" alt="logo">
+        </a>
+      </div>
+
+      <div class="col-lg-9 col-7 justify-content-lg-space-between">
+        <div class="row flex-lg-row-reverse">
+
+          <div class="dropdown mt-auto" mdbDropdown>
+            <a mdbDropdownToggle mdbBtn class="dropdown-toggle btn custom-blank-btn waves-light" type="button"
+              mdbWavesEffect>
+              {{ name }}
+            </a>
+
+            <div class="dropdown-menu dropdown-primary">
+              <!-- <a class="dropdown-item" href="#">My Account</a> -->
+              <a *ngIf="isUserLoggedIn" class="dropdown-item" (click)="openProfile()"><i class="fa fa-user-circle"></i>
+                Profile</a>
+              <a *ngIf="isUserLoggedIn" class="dropdown-item" (click)="openOrderlist()"><i
+                  class="fa fa-shopping-bag"></i> Orders</a>
+              <a *ngIf="isUserLoggedIn" class="dropdown-item" (click)="openWishlist()"><i class="fa fa-heart"></i>
+                Wishlist</a>
+              <a *ngIf="isUserLoggedIn" class="dropdown-item" (click)="openAddress()"><i class="fa fa-address-book"
+                  aria-hidden="true"></i> Address</a>
+              <a *ngIf="isUserLoggedIn" class="dropdown-item" (click)="openCart()"><i class="fa fa-shopping-bag"></i>
+                Cart</a>
+              <!-- <a *ngIf="isUserLoggedIn" class="dropdown-item" href="#"><i class="fa fa-key" aria-hidden="true"></i>
+                Change Password</a> -->
+              <a *ngIf="isUserLoggedIn" class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i>
+                Logout</a>
+              <a *ngIf="!isUserLoggedIn" class="dropdown-item" (click)="login()"><i class="fas fa-sign-out-alt"></i>
+                Login</a>
+            </div>
+          </div>
+
+          <div class="acd">
+            <ul class="user-name navbar inline login-signup-name">
+              <li *ngIf="isUserLoggedIn">
+                <span style="margin-left: 20px;"><i class="fa fa-user"></i></span> <span
+                  style="margin-left: 10px;">{{userName}}</span>
+              </li>
+              <li *ngIf="!isUserLoggedIn">
+                <span style="margin-left: 20px;"><i class="fa fa-user"></i></span> <span style="margin-left: 10px;">Sign
+                  in</span>
+              </li>
+            </ul>            
+          </div>
+          <!--Navbar-->
+          <mdb-navbar SideClass="navbar navbar-expand-lg navbar-light custom-nav  mr-auto">
+            <links>
+              <!-- Links -->
+              <ul class="navbar-nav m-auto">
+                <li class="nav-item" *ngFor=" let value of menuCollectionsPages">
+                   <a class="nav-link" (click)="openMenu(value);">{{value.name  | titlecase }}</a>                
+                </li>
+              </ul>
+              <!-- Links -->
+            </links>
+          </mdb-navbar>
+        </div>
+        
+        <div class="row flex-lg-row-reverse">
+          <div class="testt">
+            <form class="form-inline waves-light float-left mt-3 mb-3" mdbWavesEffect>
+              <div class="db w-100 relative">
+                <div class="relative z-2">
+                  <label for="search_query" class="sr-only">Search</label>
+                  <input placeholder="Searching" name="search_query" type="text"
+                    class="input-reset input-focus all-animate w-100 bg-white db shadow-inset-2 ba bw1 br2 pv3 pl4 pr15 lh-solid sans-serif b--gray3 fw6 f5 gray7">
+                  <i class="fa fa-search o-65 absolute center-v right-1 pe-none svg-inline fa-w-16 fa-fw fa-lg"></i>
+                </div>
+                <button id="search_submit" type="submit" name="button" class="sr-only">Search</button>
+              </div>
+            </form>
+            <span class="social-iconss float-right">
+              <a *ngIf="ecomHeaderData?.fb_link && ecomHeaderData?.fb_link !== 'undefined'"
+                 href="{{ecomHeaderData?.fb_link }}"><span class="facebook social"><i
+                    class="fab fa-facebook-square"></i></span></a>
+              <a *ngIf="ecomHeaderData?.tw_link && ecomHeaderData?.tw_link !== 'undefined'"
+                 href="{{ecomHeaderData?.tw_link}}"><span class="twitter social"><i class="fab
+                    fa-twitter-square"></i></span></a>
+              <a *ngIf="ecomHeaderData?.pt_link && ecomHeaderData?.pt_link!== 'undefined'"
+                 href="{{ecomHeaderData?.pt_link}}"><span class="pinterest social"><i class="fab
+                    fa-pinterest-square"></i></span></a>
+              <a *ngIf="ecomHeaderData?.ld_link && ecomHeaderData?.ld_link!== 'undefined'"
+                 href="{{ecomHeaderData?.ld_link}}"><span class="linkedin social"><i class="fab
+                    fa-linkedin"></i></span></a>
+              <a *ngIf="ecomHeaderData?.ig_link && ecomHeaderData?.ig_link!== 'undefined'"
+                 href="{{ecomHeaderData?.ig_link}}"><span class="instagram social"><i class="fab
+                    fa-instagram"></i></span></a>
+              <a *ngIf="ecomHeaderData?.yt_link && ecomHeaderData?.yt_link!== 'undefined'"
+                 href="{{ecomHeaderData?.yt_link}}"><span class="youtube social"><i class="fab
+                    fa-youtube"></i></span></a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

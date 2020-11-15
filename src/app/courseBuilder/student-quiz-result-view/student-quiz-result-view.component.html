@@ -1,0 +1,64 @@
+<app-student-dashboard-header></app-student-dashboard-header>
+
+<div class="profile-section">
+  <div class="container">
+    <div class="col-md-12 mb-2">
+      <div class="quiz-container quiz-header-style">
+        <span class="quiz-title"><strong>Quiz 1</strong></span>
+        <span class="question-no pull-right">
+          <strong>Score: {{correctAnswerCount}} of {{quizResultData.length}}</strong>
+          <br>
+          <h4><strong>{{correctAnswerAverage | number}}% Correct</strong></h4>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="w-100 pl-0">
+      <div class="inner-content fill-bg">
+        <div class="form-row" *ngFor="let quizResult of quizResultData">
+          <div class="col-md-12 mb-2">
+            <div class="quizmain">
+              <div class="quiz-container">
+                <p class="qtext" [innerHTML]= "quizResult.question"></p>
+                <div class="result-container">
+                  <div id="altcontainer">
+
+                    <div class="radio" *ngFor="let option of quizResult.options">
+                      <label class="radiocontainer" [ngClass]="{'correct': quizResult.correctAnswer === option.key, 
+                      'selected' : quizResult.userSelectedAnswer === option.answer,
+                     'wrong': quizResult.userSelectedAnswer !== option.answer && quizResult.userSelectedAnswer === option.key }">
+
+                        <input type="radio" name="radio-input" checked="checked"> 
+                        <span [innerHTML]= "option.value"></span>
+                        <span *ngIf="quizResult.userSelectedAnswer === option.answer && quizResult.correctAnswer === option.answer">
+                          <div class="markcontainer"><i class="fa fa-check"></i></div>
+                          &nbsp;&nbsp;<span class="answercomment">&nbsp;&nbsp;Your Answer&nbsp;&nbsp;</span>
+                        </span>
+
+                        <span *ngIf="quizResult.userSelectedAnswer !== option.answer && quizResult.userSelectedAnswer === option.key">
+                            <div class="markcontainer"><i class="fa fa-times"></i></div> &nbsp;&nbsp;<span
+                            class="answercomment">&nbsp;&nbsp;Your Answer&nbsp;&nbsp;</span>
+                        </span>
+
+                        <span *ngIf="quizResult.userSelectedAnswer !== option.answer && quizResult.correctAnswer === option.answer">
+                            <div class="markcontainer"></div> &nbsp;&nbsp;<span
+                            class="answercomment">&nbsp;&nbsp;Correct Answer&nbsp;&nbsp;</span>
+                        </span>
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

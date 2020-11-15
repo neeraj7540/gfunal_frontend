@@ -1,0 +1,57 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-cogs"></i> General Settings</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <form>
+          <div class="p-box-title">Store Detail</div>
+          <div class="box-content px-sm-5 mb-5">
+            <div class="row mt-2">
+              <div class="col-md-12 form-group">
+                <label>Store Name</label>
+                <input class="form-control" type="text" [(ngModel)]="settings.shopName" name='store'>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label>Account Email</label>
+                <input class="form-control" type="email" [(ngModel)]="settings.accountEmail" name='email' readonly>
+              </div>
+              <div class="col-md-6 form-group">
+                <label>Customer Email</label>
+                <input class="form-control" type="email" [(ngModel)]="settings.customerEmail" name='customeremail'>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row mt-12">
+            <div class="col-md-12 text-center border-top pt-2">
+              <!-- <a class="custom-btn btn black-btn">Clear</a> -->
+              <a class="custom-btn btn" (click)="onUpdate()">Update</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,97 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container {{opacity}}">
+  <div class="d-flex content-wrapper course-wrapper">
+    <div class="w-100 mt-5">
+      <h5><strong>Course Details</strong></h5>
+      <div class="inner-content course-content fill-bg">
+        <div class="add-contact">
+          <div class="row">
+            <div class="col-lg-12 mg0pd0">
+              <div class="row mt-3">
+                <div class="col-md-8">
+                  <div class="col-md-12 form-group">
+                    <label>Course Name</label>
+                    <input class="form-control {{isNameDisabled}}" type="text" [(ngModel)]="coursename" name='coursename'>
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <label>Course Description</label>
+                    <textarea class="form-control" rows="4" type="text" [(ngModel)]="coursedescription"
+                      name='coursedescription'></textarea>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="col-md-12 form-group">
+                    <label>Course Logo</label>
+                    <div class="logo-image">
+                      <div class="picture-container">
+                        <div class="picture">
+                          <!-- <span class="cross-icon">
+                                            <img src="../assets/images/funnels-optin-cross.png" title="">
+                                          </span> -->
+                          <img [src]="imgURL" class="picture-src" id="wizardPicturePreview" title="" *ngIf="imgURL">
+                          <input type="file" id="wizard-picture" accept=".png,.jpg,.jpeg"
+                            (change)="onFileUpload($event)">
+                        </div>
+                      </div>
+                      <h6 class="text-center mt-5"><strong>Upload Image</strong></h6>
+                      <h6 class="text-center"><strong>(Max size should be less than 200kb and
+                          dimensions 250px x 100px)</strong></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12 pt-2 pb-20">
+          <!-- <a class="custom-btn btn black-btn">Save</a> -->
+          <a class="custom-btn btn" (click)="onNext_Clicked()">Next ></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

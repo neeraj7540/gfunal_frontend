@@ -1,0 +1,110 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-percent"></i> Discounts</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg mt-1">
+
+        <div class="row">
+          <div class="col-md-5">
+            <div class="lead-serach">
+              <input class="" placeholder="Search..." type="text">
+              <button type="submit" class="lead-s-btn"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <a class="custom-btn simple btn float-right"  (click)="openAddDiscount();">Add Discount</a>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <div class="cover-box p-0">
+              <div class="table-responsive border-rounded dark-header">
+                <table class="table table-striped mb-0 toggle-table">
+                  <thead class="thead-dark">
+                    <div class="tbl">
+                      <tr>
+                        <th>Discount Code</th>
+                        <th>Type</th>
+                        <th>Start Date</th>
+                        <th>End date</th>
+                        <th width="50"></th>
+                      </tr>
+                    </div>
+
+                  </thead>
+                  <tbody>
+                    <div class="tbls" *ngFor="let item of discounts">
+                        <tr>
+                          <td>{{item.discountCode}}</td>
+                          <td>Coupon</td>
+                          <td>{{item.activeDates.startDate | date: 'dd/MM/yyyy'}}</td>
+                          <td>{{item.activeDates.endDate | date: 'dd/MM/yyyy'}}</td>
+                          <td width="50"><button class="drop-arrow" type="button" (click)="order1.toggle()" mdbWavesEffect>
+                              <i class="fas fa-sort-down"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      <tr>
+                        <td colspan="6" class="p-0 border-0">
+                          <div class="detail-outer" mdbCollapse [isCollapsed]="true" #order1="bs-collapse">
+                            <div class="lead-detail-sec">
+                              <label class="font-design">Discription:</label>
+                              <p>{{item.summary}}</p>
+                              <label class="font-design">Minimum Requirement:</label>
+                              <p>Buy course of {{item.minTotal}}$ to avail this discount</p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </div>
+
+
+
+
+                  </tbody>
+                </table>
+
+              </div>
+              <!-- Pagination -->
+              <div class="pagination-sec mt-2">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination pg-blue justify-content-md-end justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link" tabindex="-1" mdbWavesEffect>Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+                    <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
+                    <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" mdbWavesEffect>Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

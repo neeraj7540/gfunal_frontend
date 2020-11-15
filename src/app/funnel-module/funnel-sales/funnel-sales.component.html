@@ -1,0 +1,136 @@
+<div *ngIf="check(); then loading else nothing">
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+  </ng-template>
+  
+  <app-dashboardheader name="{{name}}"></app-dashboardheader>
+  
+    <div class="container">
+  
+        <div class="d-flex content-wrapper">
+          <div class="sidebar">
+              <app-funnel-sidebar></app-funnel-sidebar>
+          </div>
+          <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-receipt"></i> Sales</h1> 
+        </div>
+      </div>
+        <div class="inner-content fill-bg">
+            <div class="row"> 
+                    
+                        <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label" for="funnel">Select Funnel</label>
+                          <select type="funnel" class="form-control"></select>  
+                        </div>
+                      </div>   
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <label class="control-label" for="funnel">Starting Date</label>
+                            <input type="date" class="form-control">
+                          </div>
+                      </div>    
+                      <div class="col-md-4">
+                      <div class="form-group">
+                          <label class="control-label" for="funnel">Ending Date</label>
+                            <input type="date" class="form-control">
+                          </div>
+                      </div>          
+                   
+                
+            </div>
+          <div class="row mt-20"> 
+            <div class="col-md-5">
+              <div class="lead-serach">
+                <input class="" placeholder="Search..." type="text">
+                <button type="submit" class="lead-s-btn"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+            <div class="col-md-7">
+                <a class="custom-btn simple btn float-right" href="#"><i class="fa fa-download"></i> Export Data</a>
+            </div>
+          </div>
+         <div class="row mt-3">
+          <div class="col-md-12">
+            <div class="cover-box p-0">
+              <div class="table-responsive border-rounded dark-header">
+              <table class="table table-striped mb-0 toggle-table">
+                <thead class="thead-dark-sales">
+                  <tr>
+                    <th>Time</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Customer</th>
+                    <th>Transaction id</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of receivedData">
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-center"><i class="fa fa-trash big-trash"></i></td>
+                    <td width="50"><button class="drop-arrow" type="button" mdbWavesEffect>
+                        <i class="fa fa-sort-desc"></i>
+                      </button>
+                    </td>
+                 </tr>
+                 <tr>
+                   <td colspan="4" class="p-0 border-0">
+                     <div class="detail-outer" mdbCollapse [isCollapsed]="true" #contact01="bs-collapse">
+                      <div class="lead-detail-sec">
+                       <div class="row">
+                       <div class="col-md-4">
+                         <div class="given-info">First Name: <span>  </span></div>
+                       </div>
+                       <div class="col-md-4">
+                          <div class="given-info">Last Name: <span> </span></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="given-info">Email: <span> </span></div>
+                        </div>
+                          <div class="col-md-4">
+                              <div class="given-info">Phone: <span></span></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="given-info">Country: <span> </span></div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="given-info">State: <span>  </span></div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="given-info">Postal Code: <span>  </span></div>
+                              </div>
+                              </div>
+                     </div>
+                     </div>
+                   </td>
+                 </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pagination -->
+            <div class="pagination-sec mt-2">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination pg-blue justify-content-md-end justify-content-center">
+                  <li class="page-item disabled"><a class="page-link" tabindex="-1" mdbWavesEffect>Previous</a></li>
+                  <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+                  <li class="page-item disabled"><a class="page-link" tabindex="-1" mdbWavesEffect>Next</a></li>
+                </ul>
+              </nav>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div> </div>
+  
+    </div>
+    <app-dashboardfooter></app-dashboardfooter>
+  
+  
+  

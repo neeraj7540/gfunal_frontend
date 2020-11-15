@@ -1,0 +1,223 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-user"></i> Products</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="bread-crem">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg mt-1">
+        <div class="row">
+          <!--Row-->
+          <div class="col-md-6">
+            <div class="product-detail-box">
+              <div class="p-box-title">Add Description</div>
+              <div class="box-content">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input [(ngModel)]="product.descriptionTitle" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                  <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                    [(ngModel)]="product.descriptionContent" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-detail-box mt-3">
+              <div class="p-box-title">Images</div>
+              <div class="box-content">
+                <div class="uploaded-file">                  
+                  <input type="file" (change)="readURL($event);" multiple>
+                  <label class="drop-file-here"><i class="fas fa-cloud-upload-alt"></i>
+                    <span>Drag and Drop a file here</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="uploaded-slides" *ngIf="selectedSliderImages">
+                <div class="slide w-sm-100" *ngFor="let sliderImage of selectedSliderImages; let i = index">
+                  <a (click)="removeImage(sliderImage,i)">x</a>
+                  <img src="{{sliderImage}}" style="width: 300px;height: 200px;">
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="product-detail-box mt-3">
+              <div class="p-box-title">Pricing</div>
+              <div class="box-content">
+                <div class="form-row">
+                  <div class="col-md-6">
+
+                    <label>Price</label>
+                    <input [(ngModel)]="product.price" class="form-control" type="text">
+                  </div>
+                  <div class="col-md-6">
+                    <label>Compare at Price</label>
+                    <input [(ngModel)]="product.comparePrice" class="form-control" type="text">
+                  </div>
+                  <div class="col-md-12"><label class="note-check">
+                      <input type="checkbox" [(ngModel)]="product.changeTax"> Charge taxes on this
+                      project</label></div>
+                </div>
+              </div>
+            </div> -->
+            <!-- 
+            <div class="product-detail-box mt-3">
+              <div class="p-box-title">Inventory</div>
+              <div class="box-content">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label>Quantity</label>
+                    <input [(ngModel)]="product.quantity" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="product-detail-box">
+              <div class="p-box-title">Organization</div>
+              <div class="box-content">
+                <div class="form-group">
+                  <label>Product Type</label>
+                  <input class="collection-search form-control" [(ngModel)]="product.productType" type="text">
+                </div>
+                <div class="form-group border-bottom pb-4">
+                  <label>Store Location</label>
+                  <select class="form-control" [(ngModel)]="product.storeLocationId">
+                    <option *ngFor="let address of shippingFromAddresses" [value]="address._id">
+                      {{address.businessName}}</option>
+                  </select>
+                </div>
+
+                <div class="form-group border-bottom pb-4">
+                  <label>Select Tax</label>
+                  <select class="form-control" [(ngModel)]="product.tax">
+                    <optgroup *ngFor="let tax of taxes" label="Name: {{tax.particular}}">
+                      <option [value]="tax._id">
+                        {{tax.tax}}%
+                      </option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <div class="form-group border-bottom pb-4">
+                  <label>Brand</label>
+                  <input class="collection-search form-control" [(ngModel)]="product.brand" type="text">
+                </div>
+                <div class="form-group">
+                  <div class="select-collection">
+                    <label>Select Collection</label>
+                    <select class="form-control" [(ngModel)]="product.CollectionId">
+                      <option *ngFor="let collection of collections" value="{{collection._id}}">
+                        {{collection.collectionTitle}}</option>
+                    </select>
+
+                    <p class="note-check">Add this product to a collection so its easy to find in your store</p>
+                  </div>
+                </div>
+
+                <div class="product-detail-box mt-3 mb-3">
+                  <div class="p-box-title form-row">
+                    <div class="col-md-6">Variant</div>
+                    <!-- <div class="col-md-6" (click)="addVariant()">Add Variant</div> -->
+                  </div>
+    
+                  <div class="box-content">
+    
+                    <div class="form-row">
+                      <div class="col-md-3">
+                        <select class="form-control" [(ngModel)]="variant.variant">
+                          <option *ngFor="let variantType of variantTypes" value="{{variantType}}" >
+                            {{variantType}}</option>
+                        </select>
+                      </div>
+                      <div class="col-md-9">
+                        <tag-input [(ngModel)]='variant.values' [identifyBy]="'id'" [displayBy]="'variant'"
+                          (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" placeholder="Add sizes"
+                          theme='dark'></tag-input>
+                      </div>
+                    </div>
+                    <!-- <div *ngIf="variants.length < 4" (click)="addVariant()">Add More</div> -->
+    
+                    <div class="col-md-12 mt-3" *ngIf="productVariants.length > 0">
+                      <div class="size-option">
+                        <table border="1" bordercolor="#ccc" class="custom-table">
+                          <thead>
+                            <tr>
+                              <th>Variant</th>
+                              <th>Price</th>
+                              <th>Quantity</th>
+                              <th>Color</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let value of productVariants">
+                              <td>
+                                <div class="size-item">
+                                  <span>{{value.size_Price_Quantity.size}}</span>
+                                </div>
+                              </td>
+                              <td><input [(ngModel)]="value.size_Price_Quantity.price" class="size-price" type="number">
+                              </td>
+                              <td><input [(ngModel)]="value.size_Price_Quantity.quantity" class="size-price" type="number">
+                              </td>
+                              <td>
+                                <input [(ngModel)]="value.colorCode" class="size-price" type="text">
+                              </td>
+                              <td> <a (click)="onColorAdded($event,value)">
+                                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 text-center mt-3 border-top pt-3">
+            <a *ngIf="!existingProductID" class="btn custom-btn" (click)="addProduct();">Save</a>
+            <a *ngIf="existingProductID" class="btn custom-btn" (click)="updateProduct();">Update</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

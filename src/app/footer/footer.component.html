@@ -1,0 +1,73 @@
+<div class='footer'>
+  <div class="container">
+    <div class="row">
+    <div class="col-lg-2 mb-4">
+      <!-- <div class="row">
+        <div class="col-12 footer-logo">
+          <img src="../../assets/images/logo.png">
+        </div>
+      </div> -->
+    </div>
+<div class="col-lg-7 mb-4">
+    <div class="row">  
+    <div class="col-md-4">
+        <div class="widget">
+          <h5>About</h5>
+          <ul>
+            <li *ngFor='let about of About'>
+              <a href={{about.link}}>{{about.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="widget">
+            <h5>PRODUCTS</h5>
+            <ul>
+              <li *ngFor=' let product of Products'>
+                <a href={{product.link}}>{{product.name}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="widget">
+            <h5>HELP</h5>
+            <ul>
+              <li *ngFor='let help of Help'>
+                <a href={{help.link}}>{{help.name}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+</div>
+<div class="col-lg-3 mb-4">
+<div class="row">    
+      <div class="col-12">
+        <div class="widget">
+          <h5>Newsletter</h5>
+          <div class="newsletter">
+            <input placeholder="Enter email address.." type="text">
+            <a href="#">Subscribe</a>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+
+
+
+     
+
+     
+    </div>
+
+    <div class="copyright">
+      <div class="container">
+        <p>Copyright © 2020 <span>GFUNL​</span> All Rights Reserved.</p>
+      </div>
+    </div>
+
+  </div>
+</div>

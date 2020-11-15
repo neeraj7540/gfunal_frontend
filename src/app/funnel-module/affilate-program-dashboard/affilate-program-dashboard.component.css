@@ -1,0 +1,18 @@
+.heading-black{color: black;}
+.mt-15{margin-top: 15px;}
+.mt-20{margin-top: 20px;}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    color: #000;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border-bottom: 2px solid #FE7A1C !important;
+    font-weight: 600;
+}
+.nav-link{
+    color: #495057;
+}
+.nav-tabs{margin-top: 20px;}
+
+
+
+

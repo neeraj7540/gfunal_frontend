@@ -1,0 +1,110 @@
+<app-student-dashboard-header></app-student-dashboard-header>
+
+<div class="profile-section">
+  <div class="container">
+    <div class="profile-main-pic" (click)="profileEditModal.show()">
+      <img src="{{studentProfile?.userImage}}">
+    </div>
+    <div class="profile-cont" (click)="profileEditModal.show()">
+      <label>{{studentProfile.firstName | titlecase}} {{studentProfile.lastName | titlecase}}</label>
+      <span>{{studentProfile.email}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="w-100 pl-0">
+      <div class="inner-content fill-bg">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="student-title">My Enrolled Courses</div>
+          </div>
+
+          <div *ngIf="check(); then loading else nothing">
+          </div>
+          <ng-template #loading>
+            <app-manualloader></app-manualloader>
+          </ng-template>
+          <ng-template #nothing>
+          </ng-template>
+
+          <div *ngFor="let course of receivedData" class="col-md-3" (click)="onClickCourse(course)">
+            <div class="blog-wrap mb-30 ">
+              <div class="blog-img">
+                <img src="{{course.image}}" alt="bootcamp Course">
+              </div>
+              <div class="blog-content">
+                <h3>{{course.courseName}}</h3>
+                <p>By {{course.createdByEmail}}</p>
+                <p class="complete">0% Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--/.Modal Start-->
+<div mdbModal #profileEditModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myprofileEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Edit Profile</h4>
+      </div>
+      <div *ngIf="check(); then loading else nothing">
+      </div>
+      <ng-template #loading>
+        <app-manualloader></app-manualloader>
+      </ng-template>
+      <ng-template #nothing>
+      </ng-template>
+      <div class="modal-body">
+        <form>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- First Name -->
+              <label class="font400">First Name</label>
+              <input type="text" name="fname" id="fname" [(ngModel)]="studentEditProfile.firstName" class="form-control"
+                placeholder="First Name">
+            </div>
+            <div class="col">
+              <!-- Last Name -->
+              <label class="font400">Last Name</label>
+              <input type="text" id="lname" name="lname" [(ngModel)]="studentEditProfile.lastName" class="form-control"
+                placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">change profile photo</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01" (change)="readURL($event);">
+                  <label class="custom-file-label" for="inputGroupFile01">{{selectedFilePath}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="warning" class="waves-light btn-md" aria-label="Close"
+          (click)="profileEditModal.hide()" mdbWavesEffect>Close</button>
+        <button (click)="updateProfile()" type="button" mdbBtn color="primary"
+          class="red accent-2 btn-md relative waves-light" mdbWavesEffect>Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.Modal End-->
+<app-dashboardfooter></app-dashboardfooter>

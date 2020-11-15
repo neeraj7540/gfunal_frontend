@@ -1,0 +1,182 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-ecom-dash-header [headerDat]="headerData"></app-ecom-dash-header>
+
+<!---Body Area Start--->
+<div id="mountRoot" class="" style="margin-top: -2px;">
+  <div data-reactroot="" class="application-base full-height">
+    <div class="page-page">
+      <div class="account-account">
+        <div class="account-heading"> Account</div>
+        <div>abhishek.rampal@appsimity.com</div>
+      </div>
+      <div class="sidebar-sidebar">
+        <div class="segment-segment">
+          <div class=""></div>
+          <a href="/my/dashboard" class="segment-link">Overview</a>
+        </div>
+        <div class="segment-segment">
+          <div class="segment-heading">ORDERS</div>
+          <a href="/my/orders" class="segment-link">Orders &amp; Returns</a>
+        </div>
+        <div class="segment-segment">
+          <div class="segment-heading">CREDITS</div>
+          <a href="/my/coupons" class="segment-link">Coupons</a>
+          <a href="/my/myntracredit" class="segment-link">Credit</a>
+          <a href="/my/myntrapoints" class="segment-link">Points</a>
+        </div>
+        <div class="segment-segment">
+          <div class="segment-heading">ACCOUNT</div>
+          <a href="/my/profile" class="segment-activeLink segment-link">Profile</a>
+          <a href="/my/savedcards" class="segment-link">Saved Cards</a>
+          <a href="/my/address" class="segment-link">Addresses</a>
+          <a href="/myntrainsider?cache=false" class="segment-link">Insider</a>
+        </div>
+      </div>
+      <div class="page-profile">
+        <div class="profileEdit-card">
+          <div class="profileEdit-infoLabel">Edit Profile</div>
+          <div class="profileEdit-section">
+            <div class="profileEdit-formElement profileEdit-email">
+              <div> Email *</div>
+              <input type="text" value="abhishek.rampal@appsimity.com" maxlength="200" required="" disabled="">
+            </div>
+            <div class="profileEdit-formElement profileEdit-password">
+              <div> Password * <span class="profileEdit-changePassword" (click)="changePasswordModal.show()">Change Password</span>
+              </div>
+              <input type="password" value="**********" maxlength="200" required="" disabled="">
+            </div>
+          </div>
+          <div class="profileEdit-infoLabel profileEdit-sub">General Information</div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div>First Name</div>
+            <input type="text" name="firstName" maxlength="100" value="Abhishek" placeholder="">
+            <div class="profileEdit-error"></div>
+          </div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div>Last Name</div>
+            <input type="text" name="lastName" maxlength="100" value="Rampal" placeholder="">
+            <div class="profileEdit-error"></div>
+          </div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div>Date of Birth</div>
+            <input type="text" name="dob" maxlength="10" value="" placeholder="dd/mm/yyyy">
+            <div class="profileEdit-error"></div>
+          </div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div>Mobile Number*</div>
+            <input type="tel" name="mobile" maxlength="10" value="" placeholder="">
+            <div class="profileEdit-error"></div>
+          </div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div>Your Bio</div>
+            <textarea name="bio" type="text" maxlength="200"></textarea>
+          </div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div>Location</div>
+            <input type="text" name="location" maxlength="200" value="" placeholder="">
+            <div class="profileEdit-error"></div>
+          </div>
+          <div class="profileEdit-formElement profileEdit-sub">
+            <div> Gender</div>
+            <div class="profileEdit-gender">
+              <label>
+                <input type="radio" value="MALE" name="gender"><span>Male</span>
+              </label>
+            </div>
+            <div class="profileEdit-gender profileEdit-female">
+              <label>
+                <input type="radio" value="FEMALE" name="gender"><span>Female</span>
+              </label>
+
+            </div>
+          </div>
+          <div class="profileEdit-buttons profileEdit-confirm ">
+            <div class="profileEdit-button">
+              <a href="/my/profile"> Cancel </a>
+            </div>
+            <div class="profileEdit-button confirm-bntn ">Confirm<div class=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--/.Modal Start-->
+<div mdbModal #changePasswordModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="mychangePasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100">Change Password</h4>
+      </div>
+      <div *ngIf="check(); then loading else nothing">
+      </div>
+      <ng-template #loading>
+        <app-manualloader></app-manualloader>
+      </ng-template>
+      <ng-template #nothing>
+      </ng-template>
+      <div class="modal-body">
+        <form>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">Old Password</label>
+              <input type="password" name="oldPassword" id="oldPassword" 
+                class="form-control" placeholder="Old Password">
+            </div>
+
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">New Password</label>
+              <input type="password" id="newPassword" name="newPassword" 
+                class="form-control" placeholder="New Password">
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="font400">Confirm Password</label>
+              <input type="password" name="confirmPassword" id="confirmPassword"
+                 class="form-control" placeholder="Confirm Password">
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="warning" class="waves-light btn-md" aria-label="Close"
+          (click)="changePasswordModal.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary"
+          class="red accent-2 btn-md relative waves-light" mdbWavesEffect>Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.Modal End-->
+
+
+<!----Body Area Edn-->
+
+<!--Footer--->
+<app-footer></app-footer>
+<!--Footer--->
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>

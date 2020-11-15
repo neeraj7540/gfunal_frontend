@@ -1,0 +1,125 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+  </ng-template>
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select a template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-blog-sidebar></app-blog-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-thumbtack"></i> Add Post</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg p-3">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="post-title">
+              <input placeholder="Blog Title" type="text"  [(ngModel)]="addPostParam.blogTitle">
+            </div>
+            <div class="post-editor">
+              <!-- <img src="../assets/images/edit.png"> -->
+              <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                [(ngModel)]="addPostParam.BlogContent" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+            </div>
+            <div class="search-engine">
+              <h2 class="side-bar-titles ">Meta Tags</h2>
+
+              <div class="form-group mt-4">
+                <label>Meta Keywords</label>
+                <input class="form-control" type="text"  [(ngModel)]="addPostParam.metaKeywords">
+              </div>
+              <div class="form-group">
+                <label>Meta Description </label>
+                <textarea [(ngModel)]="addPostParam.metaDescription"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <a *ngIf="!blog_id" class="btn custom-btn w-100" (click)="publish(true)">Publish</a>
+            <a *ngIf="!blog_id" class="btn custom-btn w-100" (click)="publish(false)">Draft</a>
+
+            <a *ngIf="!addPostParam.savedAs && blog_id" class="btn custom-btn w-100" (click)="update(true)">Publish</a>
+            <a *ngIf="!addPostParam.savedAs && blog_id" class="btn custom-btn w-100" (click)="update(false)">Update</a>
+            <a *ngIf="addPostParam.savedAs && blog_id" class="btn custom-btn w-100" (click)="update(true)">Update</a>
+
+            <div class="sidebar-shells">
+              <!-- Sidebar -->
+              <h2 class="side-bar-titles">Categories</h2>
+              <div class="categories-sec">
+                <ul>
+                  <li *ngFor="let category of categories"><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="{{category._id}}">{{category.key}}</li>
+                  <!-- <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="digitallife"> Digital life</li>
+                  <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="technology"> Technology</li>
+                  <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="immigration"> Immigration</li>
+                  <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="photography"> Photography</li>
+                  <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="relationships"> Relationships</li>
+                  <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="lifestyle"> Lifestyle</li>
+                  <li><input type="radio" name="category" [(ngModel)]="addPostParam.category" value="music"> Music</li> -->
+                </ul>
+              </div>
+            </div>
+
+            <div class="sidebar-shells">
+              <!-- feature image -->
+              <h2 class="side-bar-titles">Featured Image</h2>
+              <div class="feature-img-sec pt-2">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="readURL($event);">
+                  <label class="custom-file-label" for="customFileLangHTML" data-browse="Browse">Upload Image</label>
+                  <div *ngIf="addPostParam.image" class="uploaded-img">
+                    <img src="{{addPostParam.image}}">
+                  </div>
+                  <p class="image-validation">Image size between 1200x600</p>
+                  <a class="remove-img" (click)="removeImage()">Remove featured image</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

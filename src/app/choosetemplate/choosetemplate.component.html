@@ -1,0 +1,78 @@
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<!-- Steps Start-->
+<div class="steps">
+  <div class="container">
+    <div class="steps-bar">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <div class="points">
+      <div class="pin completed">
+        <span><i class="fa fa-check"></i></span>
+        <p>Store Preference</p>
+      </div>
+      <div class="pin current">
+        <span><i class="fa fa-check"></i></span>
+        <p>Select Template</p>
+      </div>
+      <div class="pin">
+        <span><i class="fa fa-check"></i></span>
+        <p>Customize Template</p>
+      </div>
+      <div class="pin">
+        <span><i class="fa fa-check"></i></span>
+        <p>Publish</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Steps End-->
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-categories-sidebar></app-categories-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-home"></i> Choose Template</h1>
+        </div>
+      </div>
+      <div class="inner-content pl-0 pr-0">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <app-template-thumb temp_name='Template One' temp_category={{categoryType}} temp_call={{callingPage}}
+              landingPage_id={{landdingPageID}}></app-template-thumb>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <app-template-thumb temp_name='Template Two' temp_category={{categoryType}} temp_call={{callingPage}}
+              landingPage_id={{landdingPageID}}></app-template-thumb>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <app-template-thumb temp_name='Template Three' temp_category={{categoryType}} temp_call={{callingPage}}
+              landingPage_id={{landdingPageID}}></app-template-thumb>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <app-template-thumb temp_name='Template Four' temp_category={{categoryType}} temp_call={{callingPage}}
+              landingPage_id={{landdingPageID}}></app-template-thumb>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <app-template-thumb temp_name='Template Five' temp_category={{categoryType}} temp_call={{callingPage}}
+              landingPage_id={{landdingPageID}}></app-template-thumb>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <app-template-thumb temp_name='Template Six' temp_category={{categoryType}} temp_call={{callingPage}}
+              landingPage_id={{landdingPageID}}></app-template-thumb>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

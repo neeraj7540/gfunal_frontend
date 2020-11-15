@@ -1,0 +1,40 @@
+<app-student-dashboard-header></app-student-dashboard-header>
+<div class="profile-section">
+  <div class="container">
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="w-100 pl-0">
+      <div class="inner-content fill-bg">
+        <div class="row">
+
+
+          <div *ngIf="check(); then loading else nothing">
+          </div>
+          <ng-template #loading>
+            <app-manualloader></app-manualloader>
+          </ng-template>
+          <ng-template #nothing>
+          </ng-template>
+
+          <ul class="w3-ul w3-card-4">
+            <li class="w3-bar" *ngFor="let item of receivedData">
+              <!-- <span class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span> -->
+              <img src="https://www.w3schools.com/w3css/img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small"
+                style="width:85px">
+              <div class="w3-bar-item">
+                <h4 class="w3-large">{{item.title | titlecase}}</h4>
+                <span>{{item.announcement}}</span><br>
+                <span>{{item.createdAt | date: 'MMMM d, y, h:mm:ss a z'}}</span>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,88 @@
+<!-- <div>
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+  </ng-template>
+  
+  <app-dashboardheader name={{name}}></app-dashboardheader>
+  <app-course-sub-header></app-course-sub-header> -->
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+  
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<!-- <div class="container">
+      <div class="d-flex content-wrapper">
+        <div class="sidebar">
+            <app-course-lesson-add-quiz-sidebar></app-course-lesson-add-quiz-sidebar>
+        </div>
+  <div class="w-100"> -->
+    <div class="inner-content inner-content-subheader fill-bg">
+        <div class="add-contact">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <a class="custom-btn btn black-btn" (click)="onDelete_Clicked()">Delete</a>
+                <a class="custom-btn btn" (click)="OnUpdateQuiz_Click()"> UPDATE QUIZ </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4><strong>Quiz</strong></h4>
+              <div class="form-group module-section">
+                <label>Quiz Title</label>
+                <input class="form-control" type="text" [(ngModel)]="quiztitle" name='quiztitle'>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div *ngIf="questionsData === null; then published else unpublished"></div>
+        <ng-template #published>
+          <div *ngFor="let item of receivedData; let i = index">
+            <app-course-lesson-add-quiz-questions id={{item}} questionCount='{{i+1}}' selectedIndex={{i}}
+              (incrementQuestion)='incrementQuestionCounter($event)'></app-course-lesson-add-quiz-questions>
+          </div>
+        </ng-template>
+        <ng-template #unpublished>
+          <div *ngFor="let item of questionsData; let i = index">
+            <app-course-lesson-edit-quiz-questions id={{i+1}} questionCount='{{i+1}}' selectedIndex={{i}}
+            (incrementQuestion)='incrementQuestionCounter($event)' [questionsData] = item></app-course-lesson-edit-quiz-questions>
+          </div>
+          <div *ngFor="let item of receivedData2; let i = index">
+            <app-course-lesson-add-quiz-questions id={{item}} questionCount='{{item}}' selectedIndex={{i}}
+              (incrementQuestion)='incrementQuestionCounter2($event)'></app-course-lesson-add-quiz-questions>
+          </div>
+        </ng-template>
+      
+      </div>
+      <!-- </div>-->

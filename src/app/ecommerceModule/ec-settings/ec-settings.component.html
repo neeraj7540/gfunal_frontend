@@ -1,0 +1,119 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select a template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-cogs"></i> Settings</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg mt-1">
+        <div class="row">
+          <!--Row-->
+          <div class="col-md-3">
+            <!--box column-->
+            <div class="setting-box">
+              <a (click)="openGeneralSettings();">
+                <span><i class="fas fa-cog"></i></span>
+                <div class="setting-box-title">General</div>
+                <p>View and update your store detail</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <!--box column-->
+            <div class="setting-box">
+              <a (click)="openTaxRegion();">
+                <span><i class="fas fa-money-check-alt"></i></span>
+                <div class="setting-box-title">Taxes</div>
+                <p>Manage how your store charge taxes</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <!--box column-->
+            <div class="setting-box">
+              <a (click)="openNotifications();">
+                <span><i class="fa fa-bullhorn"></i></span>
+                <div class="setting-box-title">Notifications</div>
+                <p>Manage Notifications sent to you and your customers</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <!--box column-->
+            <div class="setting-box">
+              <a (click)="openShipping();">
+                <span><i class="fa fa-truck"></i></span>
+                <div class="setting-box-title">Shipping</div>
+                <p>Manage how you ship orders to your customers</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- <div class="col-md-3">
+            <div class="setting-box">
+              <a>
+                <span><i class="fas fa-file-alt"></i></span>
+                <div class="setting-box-title">Accounts</div>
+                <p>Manage your accounts and permissions</p>
+              </a>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-md-3">
+            <div class="setting-box">
+              <a (click)="openCheckout();">
+                <span><i class="fa fa-shopping-cart"></i></span>
+                <div class="setting-box-title">Checkout</div>
+                <p>Customize your online checkout process</p>
+              </a>
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

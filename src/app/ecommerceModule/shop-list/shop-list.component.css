@@ -1,0 +1,73 @@
+.search-domain label {
+    font-size: 18px;
+    color: #4a4a4a;
+    font-weight: 400;
+  }
+  .search-domain input {
+  
+    width: 100%;
+    padding: 11px 11px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  
+  }
+  .search-domain p {
+    font-size: 13px;
+    font-weight: normal;
+    color: #333;
+    line-height: 18px;
+    margin-top: 11px;
+  }
+  .inner-content {
+    padding: 10px !important;
+    color: #939292;
+}
+  .domain-outer{
+    background: #fff;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    color: #000;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .width100{
+    width: 100%;
+  }
+  .btons {
+    display: flex;
+    float: left;
+}
+  p.text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    /* width: 60%; */
+    font-size: 14px;
+    color: #707070;
+}
+  .domain-outer label {
+    margin: 0;
+    float: left;
+    padding: 15px 0;
+    padding-top: 0;
+    font-size: 18px;
+    width: 100%;
+    color: #fe710c;
+  }
+  .domain-outer label span {
+    margin-right: 10px;
+    font-weight: normal;
+    font-weight: 600;
+  }
+  .expired {
+    float: right;
+    font-size: 14px;
+    padding: 0 0;
+  }
+  .opacity{
+    opacity: 0.5;
+  }
+  

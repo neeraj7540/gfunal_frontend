@@ -1,0 +1,200 @@
+<app-dashboardheader></app-dashboardheader>
+
+<div class="container">
+
+    <div class="d-flex content-wrapper">
+      <div class="sidebar">
+          <app-ec-sidebar></app-ec-sidebar>
+      </div>
+      <div class="w-100">
+  <div class="content">
+    <div class="page-title">
+      <h1><i class="fa fa-file-text"></i> Create Order</h1> 
+    </div>
+  </div>
+    <div class="inner-content fill-bg">
+     <div class="row mt-3">
+
+  <div class="col-md-7">
+    <div class="box-wt-head">
+      <div class="box-wt-header">
+        <h3>Order Details</h3>
+
+          <button type="button" class="btn custom-btn simple" (click)="basicModal.show()" mdbWavesEffect>Add Custom item</button>
+
+      </div>
+      <div class="box-wt-body">
+        <div class="row">
+          <div class="col-md-12 mb-2">
+              <div class="feature-img-sec pt-2">
+                  <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFileLangHTML">
+                      <label class="custom-file-label" for="customFileLangHTML" data-browse="Browse">Search Product</label>
+                  </div>
+              </div>
+          </div>
+        </div>
+          <table  class="table table-sm">
+              <thead class="grey lighten-2 black-text">
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th class="text-center">Action</th>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Gym Session 1</td>
+                 <td>1</td>
+                 <td>$200.00</td>
+                 <td class="text-center"><a href=""><i class="fa fa-trash"></i></a></td>
+               </tr>
+               <tr>
+                   <td>Gym Session 2</td>
+                   <td>1</td>
+                   <td>$200.00</td>
+                   <td class="text-center"><a href=""><i class="fa fa-trash"></i></a></td>
+                 </tr>
+             </tbody>
+            </table>
+            <div class="row mt-5 total-section">
+              <div class="col-md-6"><textarea placeholder="Note" class="form-control"></textarea></div>
+              <div class="col-md-6">
+                  <div class="row discount">
+                      <div class="col-md-6"> <a (click)="discount.show()" mdbWavesEffect>Add Discount</a></div>
+                      <div class="col-md-6">-0.00</div>
+                    </div>
+                <div class="row">
+                  <div class="col-md-6">Subtotal</div>
+                  <div class="col-md-6">$200.00</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">Shipping</div>
+                    <div class="col-md-6">$30.00</div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">Taxes</div>
+                      <div class="col-md-6">$0.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">Total</div>
+                        <div class="col-md-6"><b>$230.00</b></div>
+                      </div>
+              </div>
+            
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5">
+      <div class="box-wt-head">
+        <div class="box-wt-header">
+          <h3>Find or create a customer</h3>         
+        </div>
+        <div class="box-wt-body">
+  
+            <div class="lead-serach">
+                <input class="" placeholder="Search..." type="text">
+                <button type="submit" class="lead-s-btn"><i class="fa fa-search"></i></button>
+              </div> 
+              <a class="nav-link new-contact" href="#">+ Create New Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 border-top pt-2 mt-2">                  
+        <a href="#" class="btn custom-btn black-btn">Email Invoice</a>
+        <!-- <a href="#" class="btn custom-btn">Save Draft Order</a> -->
+      </div>
+</div>
+ 
+    </div>
+  </div> </div>
+
+</div>
+
+<!-- Modal -->
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Add Custom Item</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+          <div class="row">
+            <div class="col-md-5">
+              <label>Item Name</label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="col-md-4">
+                <label>Quantity</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="col-md-3">
+                  <label>Price</label>
+                  <input class="form-control" type="text">
+                </div>
+                <div class="col-md-12 mt-2">
+                  <label><input type="checkbox"> Item is taxable</label>
+                </div>
+          </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn custom-btn black-btn" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Cancel</button>
+          <button type="button"  class="btn custom-btn" mdbWavesEffect>Save Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div mdbModal #discount="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="discount" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="discount.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Add Discount</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label>Discount this item by</label>
+              <div class="form-row">
+                <div class="col-md-4">
+                    <select class="form-control">
+                      <option>Percentage</option>
+                      <option>Flat</option>
+                    </select>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3 text-center">OR</div>
+            <div class="col-md-12">
+                <label>Discount this item by</label>
+                <select class="form-control">
+                    <option>Promo1</option>
+                    <option>Promo2</option>
+                  </select>
+              </div>
+          </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+           <button type="button"  class="btn custom-btn" mdbWavesEffect>Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-dashboardfooter></app-dashboardfooter>
+
+

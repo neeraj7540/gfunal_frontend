@@ -1,0 +1,92 @@
+<!-- <div class="desktop1-base-addAddressContainer"> -->
+  <div class="addressFormUI-base-container">
+    <div class="addressFormUI-base-header">ADD NEW ADDRESS</div>
+    <div>
+      <div class="addressFormUI-base-scrollable">
+        <div class="addressFormUI-base-form">
+          <span>
+            <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+              <label for="name" class="input-base-label"></label>
+              <input [(ngModel)]="address.name" class="input-base-input" id="name" placeholder="Name *" type="text">
+            </div>
+          </span>
+          <span>
+            <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+              <label for="mobile" class="input-base-label"></label>
+              <input [(ngModel)]="address.phone" class="input-base-input" id="mobile" placeholder="Mobile No *"
+                type="tel" maxlength="10" (keypress)="keyPress($event)">
+              </div>
+          </span>
+        </div>
+        <div class="addressFormUI-base-form">
+          <div class="addressFormUI-base-pincodeBlock">
+            <span>
+              <div class="input-base-inputRow addressFormUI-base-pincode addressFormUI-base-inputRow  ">
+                <label for="pincode" class="input-base-label"></label>
+                <input [(ngModel)]="address.pinCode" class="input-base-input" id="pincode" placeholder="Pin Code *"
+                  type="tel" maxlength="6">
+              </div>
+            </span>
+          </div>
+          <span>
+            <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+              <label for="streetAddress" class="input-base-label"></label>
+              <input [(ngModel)]="address.streetAddress" class="input-base-input" id="streetAddress"
+                placeholder="Address (House No, Building, Street, Area) *" type="text" row="3">
+            </div>
+          </span>
+          <div class="addressFormUI-base-localityBlock"><span>
+              <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+                <label for="locality" class="input-base-label"></label>
+                <input [(ngModel)]="address.locality" class="input-base-input" id="locality"
+                  placeholder="Locality / Town *" type="text">
+              </div>
+            </span>
+          </div>
+          <span>
+            <div class="input-base-inputRow addressFormUI-base-inputRow">
+              <label for="city" class="input-base-label"></label>
+              <input [(ngModel)]="address.city" class="input-base-input" id="city" placeholder="City / District *"
+                type="text"></div>
+          </span>
+          <span>
+            <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+              <label for="state" class="input-base-label"></label>
+              <input [(ngModel)]="address.state" class="input-base-input" id="state" placeholder="State *" type="text">
+            </div>
+          </span>
+        </div>
+        <div class="addressFormUI-base-form">
+          <div>
+            <div class="addressFormUI-base-addressTypes">
+              <div>Type of Address *</div>
+              <div class="addressFormUI-base-home">
+                <span class="icon-radio_inactive addressFormUI-base-radioIcon" id="addressType-icon-home">
+                  <input [(ngModel)]="address.addressType" type="radio" name="optradio" value="home">
+                </span>
+                <span class="addressFormUI-base-addressType" id="addressType-label-home">Home</span>
+              </div>
+              <div class="addressFormUI-base-office">
+                <span class="icon-radio_inactive addressFormUI-base-radioIcon" id="addressType-icon-office">
+                  <input [(ngModel)]="address.addressType" type="radio" name="optradio" value="office">
+                </span>
+                <span class="addressFormUI-base-addressType" id="addressType-label-office">Office/Commercial</span>
+              </div>
+            </div>
+            <div class="addressFormUI-base-isDefault">
+              <span class="icon-checkbox_inactive addressFormUI-base-checkboxIcon" id="isDefault-icon">
+                <input [(ngModel)]="address.isDefault" type="checkbox" value="">
+              </span>
+              <span class="addressFormUI-base-defaultAddress" id="isDefault-label">Make this my default
+                address</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="addressFormUI-base-btns">
+        <div *ngIf= "previousAddressData" (click)="saveAddress(true);" class="button-base-button addressFormUI-base-saveBtn">UPDATE</div>
+        <div *ngIf= "!previousAddressData" (click)="saveAddress(false);" class="button-base-button addressFormUI-base-saveBtn">SAVE</div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->

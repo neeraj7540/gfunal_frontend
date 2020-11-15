@@ -1,0 +1,16 @@
+.minutes, .students{margin-right: 10px;font-size: 20px;color:#000;}
+.minutes-text{margin-right: 20px;}
+.engagement-graph{margin-top: 30px;}
+.m-l-20{margin-left: 20px;}
+.engagement-data{margin-top: 30px;}
+.opacity{
+    opacity: 0.5;
+  }
+
+ .canvasjs-chart-credit{
+    display: none !important;
+}
+
+.chartContainer canvas{
+    position:  relative !important;
+}

@@ -1,0 +1,50 @@
+.category-type {
+    text-align: center;
+    font-size: 35px;     
+    margin: 33px auto;    
+    line-height: 56px;    
+    font-weight: 300;    
+    font-family: 'Montserrat', sans-serif;
+}
+.categories{
+    position: relative;
+}
+.categories ul {
+    padding: 0;
+    display: flex;
+    justify-content: initial;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: 0 auto;
+
+}
+.categories ul li {
+    width: 265px; 
+    list-style: none;    
+    min-width: 184px;
+    height: 220px;
+    border: 1px solid #fc8a3a;
+    text-align: center;
+    background-color: #f5e7de;
+    display: block;
+    cursor: pointer;
+    margin: 10px 8px;
+}
+.categories ul li{
+    background: url(../../../assets/images/course-view.png) 0 0 repeat;
+}
+
+.categories ul li a {
+    color: #666;
+    font-size: 22px;    
+    font-weight: 300;    
+    padding: 15px 0;    
+    display: block;
+    bottom: 10px;
+}
+.categories ul li:hover a{
+    color: #fc8a3a; 
+}
+.opacity{
+    opacity: 0.5;
+  }

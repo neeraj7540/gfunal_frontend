@@ -1,0 +1,27 @@
+<div class="model-outer">
+        <a >
+            <div class="site-logo">
+                <img src="../../assets/images/logo.png">
+              </div>
+        </a>
+    
+      <div class="sign-box  px-2 py-4 py-md-5 px-md-5">
+        <h2>Please enter the One-Time Password to verify your account</h2>
+        <p>One-Time password sent to your register email id.</p>
+        <form>
+          <input maxlength="1" type="text" [(ngModel)]="first_digit" name="first_digit">
+          <input maxlength="1" type="text" [(ngModel)]="second_digit" name="second_digit">
+          <input maxlength="1" type="text" [(ngModel)]="third_digit" name="third_digit">
+          <input maxlength="1" type="text" [(ngModel)]="fourth_digit" name="fourth_digit">
+        </form>
+        <div class="form-row form-group pb-2">
+            <div class="text-center col-md-12">
+              <input type="button" class="btn custom-btn verify" value="Validate OTP" (click)="validateOtp()">
+            </div>
+            <div class="text-center col-md-12">
+               <a class="resend-otp" (click)="resendOTP()">Resend OTP</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    

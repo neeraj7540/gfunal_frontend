@@ -1,0 +1,86 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-comments" style="margin-right:4px;"></i>Notifications</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <div class="p-box-title">Customer Notifications</div>
+        <div class="table-responsive border-rounded dark-header notifications">
+          <table class="table table-striped mb-0 custom-table px-sm-5">
+            <thead class="thead-dark">
+              <tr>
+                <th>Orders</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr>
+              <td><label class="notify">Order Confirmation</label></td>
+              <td><textarea class="form-control" [(ngModel)]="notification.orderConfirmation"
+                  placeholder="Your Order is Confirm"></textarea></td>
+            </tr>
+            <tr>
+              <td><label class="notify">Order Cancelled</label></td>
+              <td><textarea class="form-control" [(ngModel)]="notification.orderCanceled"
+                  placeholder="Your order is cancelled"></textarea></td>
+            </tr>
+            <tr>
+              <td><label class="notify">Order Refund</label></td>
+              <td><textarea class="form-control" [(ngModel)]="notification.orderRefund" placeholder=""></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="table-responsive border-rounded dark-header notifications mt-5">
+          <table class="table table-striped mb-0 custom-table px-sm-5">
+            <thead class="thead-dark">
+              <tr>
+                <th>Shipping</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr>
+              <td><label class="notify">Shipping Confirmation</label></td>
+              <td><textarea class="form-control" [(ngModel)]="notification.shippingConfirmation"
+                  placeholder=""></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="notify">Shipment Delivered</label></td>
+              <td><textarea class="form-control" [(ngModel)]="notification.shippingDelivered" placeholder=""></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center mt-3">
+            <a class="btn custom-btn" (click)="onSaveSettings()">Save</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,99 @@
+.dash-box {
+    display: block;
+    float: left;
+    width: 100%;
+    border-radius: 8px;
+    padding: 18px 15px;
+    box-shadow: 2px 2px 4px #aaa;
+    min-height: 136px;
+}
+.c-green{
+    background: #1ab4b4;
+}
+.c-blue{
+    background: #4285e1;
+}
+.c-purple{
+    background: #7f61e0;
+}
+.c-black{
+    background: #474e57;
+}
+
+.d-count {
+    float: left;
+    font-size: 38px;    
+    color: #fff;    
+    padding-top: 17px;
+}
+.d-icon {
+    float: right;
+}
+.d-name {
+    display: block;
+    clear: both;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 26px;
+    font-weight: 600;
+}
+
+.toggle-btn{
+    text-align: center;
+    background: #333;    
+    border-radius: 29px;    
+    display: flex;    
+    justify-content: space-between;
+}
+.days-btn {
+    border-radius: 29px;
+    padding: 6px 17px;    
+    width: 136px;    
+    display: inline-block;    
+    white-space: nowrap;
+    position: relative;
+    color:#fff;
+    font-size: 14px;
+}
+
+.days-btn.thirty-days {
+    margin-left: -27px;
+}
+.days-btn.active, .days-btn:focus{
+    background: orange;
+    color: #fff !important;
+    z-index: 1;
+    background: linear-gradient(40deg, #ff6f08, #ff8c3b) !important;
+} 
+.graph1 img {
+    max-width: 100%;margin: 13px 0 19px;
+}
+.other-maps h3 {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 15px;
+    float: left;
+}
+
+.map-ot {
+    box-shadow: 0px 0px 3px #979797;
+    border-radius: 6px;
+    overflow: hidden;
+    clear: both;
+}
+.g-date {
+    font-size: 10px;
+    text-align: right;
+    float: right;
+    margin-top: 14px;
+    color: #666;
+    font-weight: 500;
+}
+.map-ot img {
+    width: 100%;
+}
+.opacity{
+    opacity: 0.5;
+  }

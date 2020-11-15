@@ -1,0 +1,45 @@
+<div class="sidebar-inner">
+
+     <!-- <div class="profile-sec">
+        <div class="image-sec">
+          profile image-sec
+          <div class="profile-pic">
+            <img src="../../assets/images/harry.jpg">
+          </div>
+          <div class="name">{{name}}</div>
+        </div>
+        <div class="profile-complition">
+           profile-complition
+          <div class="full-bar">
+            <div class="complition" style="width:50%"></div>
+          </div>
+          <div class="figure-status">
+            Profile <span>50%</span> complete
+          </div>
+        </div>
+        <div class="stats">
+          <div class="visitors">
+            Monthly visitors
+          </div>
+          <span class="visitors-counts">5,000</span>
+        </div>
+        <div class="stats">
+          <div class="visitors">
+            Contacts
+          </div>
+          <span class="visitors-counts">2,75,000</span>
+        </div>
+
+      </div> -->
+
+      <ul (click)="onClick($event)">
+        <li><a class={{dashboardCSS}}><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <!-- <li><a><i class="fa fa-phone"></i> Templates</a></li> -->
+        <li><a class={{announcementsCSS}}><i class="fa fa-globe"></i> Announcements</a></li>
+        <li><a class={{studentsCSS}}><i class="fa fa-home"></i> Students</a></li>
+        <li><a class={{courseEngagementsCSS}}><i class="fa fa-user"></i> Course Engagements</a></li>
+        <li><a class={{reviewsCSS}}><i class="fa fa-file"></i> Reviews</a></li>
+        <li><a class={{coursesCSS}}><i class="fa fa-book"></i> Courses</a></li>
+        <li><a class={{settingsCSS}}><i class="fa fa fa-cogs"></i> Settings</a></li>
+      </ul>  
+  </div>

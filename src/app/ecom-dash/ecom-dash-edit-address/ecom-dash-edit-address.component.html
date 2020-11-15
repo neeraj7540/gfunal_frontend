@@ -1,0 +1,142 @@
+<div class="layout">
+  <div class="header">
+    <div class="site-nav-container container">
+      <div class="gfunl-logo">
+        <a class="linkClean" href="/">
+          <img class="gfunl-logo" src="/assets/images/logo.png">
+        </a>
+      </div>
+      <ol class="checkout-steps">
+        <li class="step step1">CART</li>
+        <li class="divider"></li>
+        <li class="step step2 active">ADDRESS</li>
+        <li class="divider"></li>
+        <li class="step step3">PAYMENT</li>
+      </ol>
+      <div class="secureContainer">
+        <div class="sprite-secure secureIcon"></div>
+        <div class="secure">100% SECURE</div>
+      </div>
+    </div>
+  </div>
+  <div class="desktop1-base-addressLayout">
+  <div class="desktop1-base-left"><div class="">
+    <div class="addressList-base-title">Select Delivery Address</div>
+  <div class="addressBlocks-base-block addressBlocks-base-serviceable"  data-action="select" 
+  *ngFor="let address of addressList; let i = index;">
+    <span class="icon-radio_active addressBlocks-base-radioIcon"> <input type="radio" name="optradio1" checked></span>
+    <div>
+      <div class="addressDetails-base-name">{{address.name | titlecase}}</div>
+      <div class="addressDetails-base-addressType">{{address.addressType | titlecase}}</div>
+      <div class="addressDetails-base-address">
+        <div class="addressDetails-base-addressField">{{address.streetAddress}}</div>
+        <div>{{address.city | titlecase}}</div><span>{{address.city | titlecase}} </span>{{address.pinCode}}<span></span><div>{{address.state | titlecase}}</div>
+        <div class="addressDetails-base-mobile"><span>Mobile: </span>
+          <span>{{address.phone}}</span></div></div></div>
+          <div class=""></div>
+          <div class="addressBlocks-base-btns">
+            <button class="addressBlocks-base-remove" data-action="remove" (click)="deleteAddress(address._id, i)">Remove</button>
+            <button class="addressBlocks-base-edit" data-action="showModal" (click)="editAddress(address)">Edit</button>
+          </div>
+      </div>
+      <div data-action="add" class="addressBlocks-base-addBlock" (click)="addAddress()">
+        <div class="addressBlocks-base-addIcon">
+          <div class="addressBlocks-base-line1"></div>
+          <div class="addressBlocks-base-line2"></div>
+        </div>
+        <div class="addressBlocks-base-label">Add new address</div>
+      </div>
+    </div>
+  </div>
+
+
+        <!---Cart Items Listing End--->
+
+      <!----Billing Section------>
+      <div class="desktop-base-right">
+          <div class="deliveryOptions-base-container">
+            <div class="deliveryOptions-base-title">CHOOSE DELIVERY SPEED</div>
+            <div class="deliveryBlocks-base-deliveryOption deliveryBlocks-base-selected" data-method="normal">
+              <span class="icon-radio_active deliveryBlocks-base-radioIcon"> <input type="radio" name="optradio" checked></span>
+              <div class="deliveryBlocks-base-title">Standard Delivery</div>
+              <div>
+                <span class="get-it">Get it by 15 Dec - 20 Dec | </span>
+                <span>Free delivery</span>
+              </div>
+            </div>
+          </div>
+          <div class="serviceability-base-container">
+            <div class="serviceability-base-title">ESTIMATED DELIVERY DATES</div>
+            <div class="serviceability-base-list">
+              <div class="serviceability-base-deliveryContainer">
+                <img src="https://fakeimg.pl/350x200/?text=World&font=lobster" class="serviceability-base-imgStyle">
+                <div class="serviceability-base-deliveryInfo"><div>
+                  <span class="serviceability-base-estimatedDate">5 Dec 2019</span>
+                </div>
+               </div>
+              </div>
+                <div class="serviceability-base-deliveryContainer">
+                  <img src="https://fakeimg.pl/350x200/?text=World&font=lobster" class="serviceability-base-imgStyle">
+                  <div class="serviceability-base-deliveryInfo"><div>
+                    <span class="serviceability-base-estimatedDate">9 Dec 2019</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="priceBlock-base-container">
+          <div class="priceBlock-base-priceHeader"><strong>PRICE DETAILS</strong></div>
+          <div class="priceBreakUp-base-orderSummary">
+            <div class="priceDetail-base-row">
+              <span>Order Total</span>
+              <span class="priceDetail-base-value ">
+              <span></span>
+              <span class="priceDetail-base-icon"><i class="fa fa-inr" aria-hidden="true"></i></span>
+              <span>1,678</span>
+            </span>
+            </div>
+            <div class="priceDetail-base-row">
+                <span>Delivery Charges</span>
+                <span class="priceDetail-base-value">
+                <span class="priceDetail-base-striked priceDetail-base-spaceRight">
+                  <span class="priceDetail-base-icon"><i class="fa fa-inr" aria-hidden="true"></i></span>
+                  <span>149</span>
+                </span>
+                <span class="priceDetail-base-discount">FREE</span>
+              </span>
+              </div>
+            <div class="priceDetail-base-total">
+              <span>Total</span>
+              <span class="priceDetail-base-value ">
+              <span></span>
+              <span class="priceDetail-base-icon"><i class="fa fa-inr" aria-hidden="true"></i></span>
+              <span>1,678</span>
+            </span>
+            </div>
+            <div class="button-base-button desktop1-base-continueBtn mt-15">continue</div>
+          </div>
+        </div>
+      </div>
+      <!----Billing Section------>
+    </div>
+  
+  <!---Footer Start---->
+  <div class="checkout-footer">
+    <div class="content">
+      <div class="images">
+        <!--<div class="footer-bank-ssl"></div>-->
+        <div class="footer-bank-visa"></div>
+        <div class="footer-bank-mc"></div>
+        <div class="footer-bank-ae"></div>
+        <!--<div class="footer-bank-dc"></div>-->
+        <div class="footer-bank-nb"></div>
+        <div class="footer-bank-cod"></div>
+        <div class="footer-bank-rupay"></div>
+        <div class="footer-bank-paypal"></div>
+       <!-- <div class="footer-bank-bhim"></div>-->
+      </div>
+      <a href="/contactus" class="contact-us"> <span>Need Help ? Contact Us</span> </a>
+    </div>
+  </div>
+  <!---Footer Start---->
+

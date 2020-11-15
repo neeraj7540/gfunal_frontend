@@ -1,0 +1,50 @@
+<div class="sidebar-inner">
+    <div class="profile-sec">
+        <div class="image-sec">
+          <!-- profile image-sec -->
+          <div class="profile-pic">
+            <img src="../../assets/images/harry.jpg">
+          </div>
+          <div class="name">{{name}}</div>
+        </div>
+        <div class="profile-complition">
+          <!-- profile-complition -->
+          <div class="full-bar">
+            <div class="complition" style="width:50%"></div>
+          </div>
+          <div class="figure-status">
+            Profile <span>50%</span> complete
+          </div>
+        </div>
+        <div class="stats">
+          <div class="visitors">
+            Monthly visitors
+          </div>
+          <span class="visitors-counts">5,000</span>
+        </div>
+        <div class="stats">
+          <div class="visitors">
+            Contacts
+          </div>
+          <span class="visitors-counts">2,75,000</span>
+        </div>
+
+      </div>
+    <ul>
+      <li><a class="active" href="#"><i class="fa fa-caret-right"></i> Dashboard</a></li>
+      <li class="dropdown" mdbDropdown><a href="#"><i class="fa fa-caret-right"></i> Website Builder</a>
+        <a mdbDropdownToggle mdbBtn class="dropdown-toggle btn custom-blank-btn waves-light" type="button"
+        mdbWavesEffect></a>
+          <ul class="dropdown-menu sub-menu" (click) = "onSubCategory_Selected($event)">
+            <li><a>Landing Page</a></li>
+            <li><a>Blog</a></li>
+            <li><a>E-commerce</a></li>
+            <li><a>Course Builder</a></li>
+          </ul>
+        </li>
+      <li (click) = "openFunnels($event)"><a><i class="fa fa-caret-right"></i> Funnels</a></li>
+      <li><a href="#"><i class="fa fa-caret-right"></i> Campaign Creator</a></li>
+      <li><a (click) = "onAffiliate_Clicked()"><i class="fa fa-caret-right"></i> Affiliate Program</a></li>
+      <li><a (click) = "onSettings_Clicked()"><i class="fa fa-caret-right"></i> Settings</a></li>
+    </ul>
+  </div>

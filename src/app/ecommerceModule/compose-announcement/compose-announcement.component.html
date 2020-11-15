@@ -1,0 +1,50 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+    <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<div class="container">
+    <div class="d-flex content-wrapper">
+        <div class="sidebar">
+            <app-ec-sidebar></app-ec-sidebar>
+        </div>
+        <div class="w-100">
+            <div class="content">
+                <div class="page-title">
+                    <h1><img class="quiz-icon" src="../assets/images/course-announcements.png"> Announcements</h1>
+                </div>
+            </div>
+
+            <div class="inner-content inner-content-subheader fill-bg">
+                <div class="add-contact">
+                    <div class="row">
+                        <div class="col-md-12 mg0pd0">
+                            <div class="form-group module-section">
+                                <label>Title</label>
+                                <input class="form-control" type="text" [(ngModel)]="addPostParam.title">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group content-section">
+                                <label>Content</label>
+                                <div class="post-editor">
+                                    <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'"
+                                        [spellcheck]="true" [(ngModel)]="addPostParam.announcement"
+                                        imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="custom-btn btn" (click)="OnSend_Clicked()">Send</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

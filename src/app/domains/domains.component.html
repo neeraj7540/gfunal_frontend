@@ -1,0 +1,65 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<div class="container {{opacity}}">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-inner-sidebar landdingPageID={{landdingPageID}} domainsCSS="active"></app-inner-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-globe"></i> Domains</h1>
+        </div>
+      </div>
+
+      <div class="inner-content">
+        <div class="row justify-content-md-center search-domain">
+          <div class="col-lg-5 col-md-5 col-sm-8">
+            <label>Search for your domain</label>
+            <input class="form-control" type="text" [(ngModel)]="domain" name='domain'>
+            <p>You’ll also be able to publish your landing pages for example.com/promo or subpage.example.com/promo</p>
+            <a class="btn custom-btn" (click)="SaveDomain($event)">{{SaveUpdateBtn}}</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="domain-outer" *ngFor="let item of receivedData"
+              [style.visibility]="isDivVisible ? 'visible' : 'hidden'" [style.display]="isDivVisible ? '' : 'none'">
+              <label><span>Domain Name:</span> {{item.domain}} </label>
+              <span class="expired"><a class="btn custom-btn" (click)="UpdateDomain(item)">Update</a></span>
+            </div>
+            <div class="domain-outer" [style.visibility]="!isDivVisible ? 'visible' : 'hidden'"
+              [style.display]="!isDivVisible ? '' : 'none'">
+              <label><span>No Data Found.</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination-sec mt-2">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pg-blue justify-content-md-between justify-content-center">
+              <li class="page-item {{isPreviousDisabled}}"><a class="page-link" mdbWavesEffect
+                  (click)="onPaginaion_Clicked($event)"><b>
+                    << Previous</b></a></li>
+              <li class="page-item {{isNextDisabled}}"><a class="page-link" mdbWavesEffect
+                  (click)="onPaginaion_Clicked($event)"><b>Next >></b></a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

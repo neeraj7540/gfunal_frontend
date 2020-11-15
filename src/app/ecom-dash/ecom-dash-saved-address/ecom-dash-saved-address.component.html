@@ -1,0 +1,56 @@
+<app-ecom-dash-header [headerDat]="headerData"></app-ecom-dash-header>
+
+<div class="page-fullWidthComponent">
+  <div class="addAddressBar-cardWrapper">
+    <span class="addAddressBar-heading"> Saved Addresses </span>
+    <div class="addAddressBar-card">
+      <div class="addAddressBar-addText"  (click)="addAddress()" >  + Add New Address </div>
+    </div>
+  </div>
+  <div class="addressList-addressSegmentation">Default Address</div>
+
+  <div *ngFor="let address of addressList; let i = index;" class="addressAccordian-addressAccordian addressAccordian-myAddress">
+    <div class="addressAccordian-address">
+      <div class="addressAccordian-nameComponent">
+        <span class="addressAccordian-name">{{address.name | titlecase}}</span>
+        <span class="addressAccordian-addressType">{{address.addressType | titlecase}}</span>
+      </div>
+      <div>{{address.streetAddress}}</div>
+      <div>{{address.city | titlecase}}</div>
+      <div>{{address.city | titlecase}} - {{address.pinCode}}</div>
+      <div class="addressAccordian-addressDetails">
+        <div>{{address.state | titlecase}}</div>
+        <div class="addressAccordian-mobile">Mobile: {{address.phone}}</div>
+        <span *ngIf="!address.isDefault" class="addressAccordian-makeDefaultText">Make This Default</span>
+      </div>
+
+    </div>
+    <div class="addressAccordian-buttons">
+      <div class="addressAccordian-button" (click)="editAddress(address)"> EDIT </div>
+      <div class="addressAccordian-buttonDivider"></div>
+      <div class="addressAccordian-button" (click)="deleteAddress(address._id, i)"> REMOVE </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!---Footer Start---->
+<div class="checkout-footer">
+  <div class="content">
+    <div class="images">
+      <!--<div class="footer-bank-ssl"></div>-->
+      <div class="footer-bank-visa"></div>
+      <div class="footer-bank-mc"></div>
+      <div class="footer-bank-ae"></div>
+      <!--<div class="footer-bank-dc"></div>-->
+      <div class="footer-bank-nb"></div>
+      <div class="footer-bank-cod"></div>
+      <div class="footer-bank-rupay"></div>
+      <div class="footer-bank-paypal"></div>
+      <!-- <div class="footer-bank-bhim"></div>-->
+    </div>
+    <a href="/contactus" class="contact-us"> <span>Need Help ? Contact Us</span> </a>
+  </div>
+</div>
+<!---Footer Start---->

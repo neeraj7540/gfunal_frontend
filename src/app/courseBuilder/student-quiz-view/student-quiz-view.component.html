@@ -1,0 +1,60 @@
+<app-student-dashboard-header></app-student-dashboard-header>
+
+<div class="profile-section">
+  <div class="container">
+    <div class="col-md-12 mb-2">
+      <div class="quiz-container quiz-header-style">
+        <span class="quiz-title"><strong>Quiz 1</strong></span>
+        <span class="question-no pull-right"><strong>Question {{quizQuestionIndex+1}} of
+            {{selectedLessonQuiz.length}}:</strong></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="w-100 pl-0">
+      <div class="inner-content fill-bg">
+        <div class="quizOpacity" *ngFor="let question of selectedLessonQuiz; let i = index"
+          [ngClass]="{'quizOpacityVisible': i === quizQuestionIndex}">
+          <div class="form-row">
+            <div class="col-md-12 mb-2" style="background-color: #FFF;">
+              <div class="quizmain">
+                <div class="quiz-container">
+                  <p class="qtext" [innerHTML]= "question.question"></p>
+                  <div>
+                    <input type="hidden" name="starttime" value="11/4/2019 3:29:56 AM">
+                    <input type="hidden" name="answers" value="0000000000000000000000000">
+                    <input type="hidden" name="nextnumber">
+                    <input type="hidden" name="prevnumber" value="2">
+                    <div style="position:relative;width:100%;">
+                      <div class="altcontainer">
+                        <div class="radio" *ngFor="let option of question.options; let j = index">
+                          <label class="radiocontainer">
+                            <input type="radio" name="{{question._id}}" [(ngModel)]="question.userSelectedAnswer"
+                              [checked]="question.userSelectedAnswer" value="{{option.key}}"
+                              > <span [innerHTML]= "option.value"></span>
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="answerbuttoncontainer quiz-header-style">
+                      <a (click)="onBack()" *ngIf="i > 0" class="custom-btn btn">Back</a>
+                      <a (click)="onNext(question)" *ngIf="selectedLessonQuiz.length-1 > i"
+                        class="custom-btn btn pull-right">Next ❯</a>
+                      <a (click)="onSubmit(question)" *ngIf="selectedLessonQuiz.length-1 == i"
+                        class="custom-btn btn pull-right">Submit ❯</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

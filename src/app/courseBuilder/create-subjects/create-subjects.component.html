@@ -1,0 +1,80 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<!-- Steps Start-->
+<div class="steps">
+  <div class="container">
+    <div class="steps-bar">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+    </div>
+
+    <div class="points">
+      <div class="pin completed">
+          <span><i class="fa fa-check"></i></span>
+        <p>Store Preference</p>
+      </div>
+      <div class="pin completed">
+          <span><i class="fa fa-check"></i></span>
+          <p>Select Template</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Customize Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Publish</p>
+            </div>
+    </div>
+  </div>
+</div>
+<!-- Steps End-->
+
+<div class="container {{opacity}}">
+  <div class="d-flex content-wrapper course-wrapper">
+    <div class="w-100">
+      <h3><strong>Let’s start by adding the subjects or modules that you will be teaching.</strong></h3>
+      <div class="inner-content course-content fill-bg">
+        <div class="add-contact">
+          <div class="row mt-15" *ngFor="let item of itemsArray">
+            <div class="col-md-3">
+              <label>Class</label>
+              <input class="form-control" type="text" name='classname' [(ngModel)]="item.classname" disabled>
+            </div>
+            <div class="col-md-7">
+              <label>Subjects</label>
+              <input class="form-control" type="text" name='subjects' [(ngModel)]="item.subjects" disabled>
+            </div>
+          </div>
+
+          <div class="row mt-15">
+            <div class="col-md-3">
+              <label>Class</label>
+              <input class="form-control" type="text" name='classname' [(ngModel)]="classname">
+            </div>
+            <div class="col-md-7">
+              <label>Subjects</label>
+              <tag-input [(ngModel)]='variant' theme='dark' placeholder="Add more subjects"></tag-input>
+            </div>
+            <div class="row mt-2">
+              <div class="col-md-12 pt-2 pb-20">
+                <a class="custom-btn btn mt-15" (click)="onAddSubject_Clicked()">Add +</a>
+              </div>
+            </div>
+          </div>
+          <a class="custom-btn btn mt-15" (click)="onSave_Clicked()">Save</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

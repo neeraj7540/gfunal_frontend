@@ -1,0 +1,45 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+    <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<div class="container">
+    <div class="d-flex content-wrapper">
+        <div class="sidebar">
+            <app-inner-sidebar landdingPageID = {{landdingPageID}} contactsCSS="active"></app-inner-sidebar>
+        </div>
+        <div class="w-100">
+            <div class="content">
+                <div class="page-title">
+                    <h1><i class="fa fa-phone"></i> Contacts</h1>
+                </div>
+            </div>
+            <div class="inner-content fill-bg">
+                <div class="add-contact">
+                    <div class="row">
+                        <div class="col-md-12"><div class="">Import Contacts</div></div>
+                        <div class="inner-content m-auto">
+                            <div class="row justify-content-md-center search-domain">
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <label>Required *CSV File</label>
+                                    <label class="file">
+                                        <input type="file" id="contactsfile" (change)="readFile($event)"
+                                            aria-label="File browser example">
+                                        <span class="file-custom"></span>
+                                    </label>
+                                    <a class="btn custom-btn" (click)="onUpload();">Upload</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

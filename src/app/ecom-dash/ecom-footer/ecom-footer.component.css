@@ -1,0 +1,63 @@
+.footer {
+    background: #000;
+    padding: 33px 0;
+}
+.footer h5 {
+    color: #ff7411;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.footer .widget ul{
+    list-style: none;
+    padding: 0;
+    margin-top:30px;
+}
+.footer .widget ul li a{
+color:#a3a3a3;
+font-size: 15px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 300;
+line-height: 25px;
+}
+.footer-logo img{
+    max-width: 100%;;
+}
+
+.newsletter {
+
+    position: relative;
+    margin-top: 29px;
+
+}
+.newsletter input {
+    color: #ccc;
+    background: none;
+    border: 1px solid #8a8a8a;
+    padding: 8px 6px;
+        padding-right: 6px;
+    width: 100%;
+    padding-right: 100px;
+
+}
+.newsletter a {
+
+    background: #ff7411;
+    color: #fff;
+    font-size: 14px;
+    padding: 9px 17px;
+    position: absolute;
+    right: 0;
+
+}
+.copyright{
+    font-size: 13px;
+    text-align: center;    
+    color: #888;    
+    margin-top: 41px;
+}
+.copyright span{
+    color: #ff7411;
+}

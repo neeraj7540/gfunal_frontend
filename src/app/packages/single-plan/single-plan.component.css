@@ -1,0 +1,124 @@
+
+.packs {
+    padding: 25px;
+    box-shadow: 0 0 11px 2px #d9d9d9;
+    border-radius: 9px;
+    margin: 0 0 15px;
+    background: #fff;
+    min-width: 210px;
+    margin: 0 auto 20px;
+}
+
+.pack-icon {
+    text-align: center;
+    min-height: 116px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.pack-price {
+    font-size: 41px;
+    font-weight: 600;
+    text-align: center;
+    padding: 26px 0 0;
+}
+
+.basic{
+    color: #76a90a;
+}
+.plus{
+    color: #1063aa;
+}
+.Premium{
+    color: #fd9043;
+}
+
+.pack-type {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #050625;
+    line-height: 27px;
+    padding-top: 24px;
+}
+
+.pack-features {
+    margin-top: 25px;
+    border-top: 1px solid #ccc;
+    padding-top: 16px;
+}
+.pack-features ul {
+    padding: 0;
+    list-style: none;
+}
+.pack-features ul li {
+    padding-left: 30px;
+    border-bottom: 1px dotted #ccc;
+    padding: 4px 0;
+    line-height: 26px;
+    text-align: center;
+}
+.pack-detail {
+    padding: 30px 0 9px;
+}
+
+.add-btn {
+    display: inline-block;
+    position: relative;
+}
+.add-btn input {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    height: 100%;
+cursor: pointer;
+}
+.add-btn input + span::after {
+    content: "Select";
+    position: relative;
+    background:none;
+    border:1px solid #fd9043;
+    display: inline-block;
+    padding:6px 40px 6px 40px;
+    border-radius: 26px;
+    text-align: center;
+    color: #fd9043;
+    width:150px;
+}
+/* .add-btn input:checked + span::after {
+    content: "Selected";
+    position: relative;
+    border:1px solid #fd9043;
+    background: #fd9043 url(../../../assets/images/btn-check.png) 16px center no-repeat ;
+    display: inline-block;
+    padding:6px 40px 6px 40px;
+    border-radius: 26px;
+    text-align: center;
+    color: #fff;
+    width:150px;
+} */
+
+.selected input:checked + span::after{
+    content: "Selected";
+    position: relative;
+    border:1px solid #fd9043;
+    background: #fd9043 url(../../../assets/images/btn-check.png) 16px center no-repeat ;
+    display: inline-block;
+    padding:6px 40px 6px 40px;
+    border-radius: 26px;
+    text-align: center;
+    color: #fff;
+    width:150px;
+}
+
+.basic{
+   color: #76a90a;
+}
+.plus{
+   color: #1063aa;
+}
+.Premium{
+   color: #fd9043;
+}

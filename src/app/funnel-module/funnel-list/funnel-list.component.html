@@ -1,0 +1,132 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-funnel-sidebar></app-funnel-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-home"></i> Funnels <span class="add-new-funnel">
+              <a class="custom-btn btn black-btn" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"
+                mdbWavesEffect>+ Add
+                Funnel</a></span></h1>
+
+        </div>
+        <!-- <div class="w-100">
+    <div class="content"> -->
+
+        <div class="inner-content fill-bg">
+          <div class="add-contact">
+            <div class="row">
+              <div class="col-lg-12 funnels">
+                <ul class="funnel-list">
+
+                  <li class="funnel-data" *ngFor="let funnel of funnels; let i = index">
+                    <div (click)="openSteps(funnel)"  class="funnel-icon">
+                      <img src="../../assets/images/funnels-list-icon.png">
+                    </div>
+                    <div class="funnel">
+                      <div class="funnel-name">
+                        <span class="name">{{funnel.funnel_name}}</span>
+                      </div>
+                      <div class="funnel-datetime">
+                        <div class="icon-time"> <img class="time-icon" src="../../assets/images/funnels-time-icon.png">
+                        </div>
+                        <div class="datetime">
+                          <span class="date">{{funnel.createdAt | date: 'dd-MMM-yyyy'}}</span>
+                          <span class="time">{{funnel.createdAt | date: 'hh:mm:a'}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="steps-section">
+                      <div class="steps-funnel">
+                        <div class="steps-count">
+                          2
+                        </div>
+                        <div class="steps-text">
+                          steps
+                        </div>
+                      </div>
+                      <div class="edit-icon-funnel">
+                        <a style="float:right; margin-left: 10px;" data-toggle="modal" [attr.data-target]="'#' + funnel"
+                          (click)="editFunnelModal(funnel)" mdbWavesEffect>
+                          <i class="fa fa-edit"></i>
+                          <!-- <img class="funnel-edit-icon" src="../../assets/images/funnel-edit-icon.png"> -->
+                        </a>
+
+                        <a style="float:right;" (click)="onDeleteContact(funnel,i)">
+                          <i class="fa fa-trash"></i></a>
+
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div>
+  </div> -->
+      </div>
+
+      <app-dashboardfooter></app-dashboardfooter>
+
+
+      <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="false">
+
+        <div class="modal-dialog cascading-modal modal-avatar modal-lg" role="document">
+          <!--Content-->
+          <div class="modal-content">
+            <!--Body-->
+            <button type="button" class="close" #closeFunnelCreateModal (click)="frame.hide()">&times;</button>
+            <div class="modal-body mb-1 p-5">
+              <h5 class="mt-1 mb-2 text-center page-name">Create Funnel</h5>
+              <div class="ml-0 mr-0">
+                <input type="text" class="form-control site-name" placeholder="Funnel Name" name="funnelname"
+                  [(ngModel)]="funnelName">
+              </div>
+              <div class="text-center mt-4">
+                <button data-dismiss="modal" mdbBtn color="cyan" rounded="true" class="mt-1 waves-light custom-btn"
+                  mdbWavesEffect (click)="createFunnel($event)">Create
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div mdbModal #updateFunnel="mdbModal" class="modal fade top" id="updateModalTop" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="false">
+        <div class="modal-dialog cascading-modal modal-avatar modal-lg" role="document">
+          <!--Content-->
+          <div class="modal-content">
+            <!--Body-->
+            <button type="button" class="close" #closeFunnelUpdateModal (click)="updateFunnel.hide()">&times;</button>
+            <div class="modal-body mb-1 p-5">
+              <h5 class="mt-1 mb-2 text-center page-name">Update Funnel</h5>
+              <div class="ml-0 mr-0">
+                <input [(ngModel)]="editFunnel.funnel_name" type="text" data-target class="form-control site-name"
+                  placeholder="Funnel Name" name="funnelname">
+              </div>
+              <div class="text-center mt-4">
+                <button mdbBtn color="cyan" rounded="true" class="mt-1 waves-light custom-btn" mdbWavesEffect
+                  (click)="upodateFunnel(editFunnel)">Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

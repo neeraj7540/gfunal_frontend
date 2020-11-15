@@ -1,0 +1,51 @@
+.m-l-20{margin-left: 20px;}
+.reviews{position:relative;width:100%;}
+.reviews .reviews-content{list-style: none;padding: 0;}
+.reviews .reviews-content li.review-list{background-color: #ebebeb;width: 100%;
+float: left;box-shadow: 0px 3px 4px 3px #CCC;}
+.reviews .reviews-content li.review-list:first-child{border-radius: 8px;}
+.reviews .reviews-content li p.review-text{background-color: #FFF;padding: 10px;float: left;width: 100%;
+margin:0;}
+.student-photo img{border-radius:50%; width:80px; height: auto;float: left;padding: 5px;margin: 5px;}
+.student{float: left;}
+.student-name{
+    font-size: 18px;
+    color: #000;
+    margin: 20px 10px 10px 10px;
+    width: 87%;
+}
+.review-left{float: left;width: 70%;}
+.review-right{float: right;margin: 34px 20px;}
+.review-stars{ list-style: none;margin: 0;padding: 0;}
+.review-stars li{ float: left !important;margin: 0 5px;}
+.review-stars li:first-child {margin: 0 5px 0 0;padding: 0 0 10px 0;}
+.review-stars li img{ width:25px; height: auto;}
+.review-stars li p.student{ background-color: transparent; padding: 10px;}
+.time-icon{width: 17px;height: auto;margin-right: 10px;}
+.date-time{font-size: 16px;vertical-align: middle;}
+.starRating{position: relative;}
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 30px;
+    height: 25px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+  }
+  .star-ratings-css-top {
+    color: #FEA400;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }

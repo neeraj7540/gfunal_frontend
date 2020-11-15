@@ -1,0 +1,22 @@
+.funnels .funnel-list{background-color: #FFF;list-style: none;padding:10px;float: left;width: 100%;}
+.funnels .funnel-data{background-color: #ebebeb;padding:5px;width:100%;float: left;    border-bottom: 2px solid #FFF;}
+.inner-content{padding:10px !important;}
+.funnels .funnel{float:left;width:78%;}
+.funnels .funnel-icon{float: left;margin-right: 5px;}
+.funnels .funnel-icon img{width:66px; height: auto;}
+.funnels .funnel-name{color: black;display: block;}
+.funnels .name{padding-left: 5px;}
+.funnels .icon-time{float: left;}
+.funnels .date, .funnels .time{margin-left: 5px;}
+.funnels .time-icon{width:30px;height: auto;}
+.funnels .steps-section{float: right;width:14%;}
+.funnels .steps-funnel{float: left;}
+.funnels .steps-funnel,.funnels .steps-count{text-align: center;text-transform: uppercase;color: black;margin-top: 5px;font-weight: 600;}
+.funnels .funnel-edit-icon{margin-top: 16px; width: 30px; height: auto;float: right;}
+.add-new-funnel{ position: absolute;right: 10px;top: 48px;}
+.add-new-funnel .black-btn{color:#FFF;}
+
+.edit-icon-funnel {
+    padding: 20px;
+    font-size: 20px;
+}

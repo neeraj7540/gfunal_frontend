@@ -1,0 +1,96 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+<!-- Steps Start-->
+<!-- <div class="steps">
+  <div class="container">
+    <div class="steps-bar">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+    </div>
+
+    <div class="points">
+      <div class="pin completed">
+          <span><i class="fa fa-check"></i></span>
+        <p>Store Preference</p>
+      </div>
+      <div class="pin current">
+          <span><i class="fa fa-check"></i></span>
+          <p>Select a template</p>
+        </div>
+        <div class="pin">
+            <span><i class="fa fa-check"></i></span>
+            <p>Customize Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Publish</p>
+            </div>
+    </div>
+  </div>
+</div> -->
+<!-- Steps End-->
+
+<div class="container">
+    <div class="d-flex content-wrapper">
+      <div class="sidebar">
+          <app-course-inner-sidebar announcementsCSS="active"></app-course-inner-sidebar>
+      </div>
+<div class="w-100">
+    <div class="content">
+        <div class="page-title">
+          <h1><img class="quiz-icon" src="../assets/images/course-announcements.png"> Announcements</h1> 
+        </div>
+      </div>
+
+    <div class="inner-content inner-content-subheader fill-bg">
+        <div class="add-contact">
+        <div class="row">
+            <div class="col-md-6 mg0pd0">
+                <div class="module-section">
+                  <label>Include users who are enrolled in one of these courses :</label>
+                  <mat-form-field>
+                    <mat-label>Select Courses</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      <mat-select-trigger>
+                        {{toppings.value ? toppings.value[0] : ''}}
+                        <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                          (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let topping of receivedData" [value]="topping.name">{{topping.name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+               </div>
+             </div>
+             <div class="col-md-12 mg0pd0">
+                <div class="form-group module-section">
+                  <label>Title</label>
+                  <input class="form-control" type="text" [(ngModel)]="addPostParam.title">  
+               </div>
+             </div>
+          <div class="col-md-12">
+              <div class="form-group content-section">
+                <label>Content</label>
+                <div class="post-editor">
+                  <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                                  [(ngModel)]="addPostParam.announcement" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+                </div>
+             </div>
+           </div>
+          </div>
+        </div>
+        <a class="custom-btn btn" (click) = "OnSend_Clicked()">Send</a>
+      </div>
+     
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

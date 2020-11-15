@@ -1,0 +1,100 @@
+<app-dashboardheader></app-dashboardheader>
+
+  <div class="container">
+
+      <div class="d-flex content-wrapper">
+        <div class="sidebar">
+          <app-ec-sidebar></app-ec-sidebar>
+        </div>
+        <div class="w-100">
+    <div class="content">
+      <div class="page-title">
+        <h1><i class="fa fa-percent"></i> Create Discount</h1> 
+      </div>
+    </div>
+      <div class="inner-content fill-bg mt-1">       
+      <div class="row"> <!--Row-->
+        <div class="col-md-6">
+          <div class="product-detail-box">
+            <div class="p-box-title">Add Description</div>
+            <div class="box-content">
+              <div class="form-group">
+                <label>Discount Code</label>
+                <input class="form-control" type="text" placeholder="e.g. spring sale">
+              </div>
+            </div>
+          </div>
+      
+              <div class="product-detail-box mt-3">
+                  <div class="p-box-title">Types</div>
+                  <div class="box-content">
+                     <div class="form-group mb-0"><label><input name="1" type="radio">  Percentage </label></div>
+                     <div class="form-group mb-0"><label><input name="1" type="radio">  Fixed Amount </label></div>
+                     <div class="form-group"><input class="form-control" type="text" placeholder="Discount Value"></div>
+                  </div>
+              </div>
+              <div class="product-detail-box mt-3">
+                <div class="p-box-title">Apply To</div>
+                <div class="box-content">
+                   <div class="form-group mb-0"><label><input name="1" checked type="radio">  Entire Order </label></div>
+                   <div class="form-group mb-0"><label><input name="1" type="radio">  Specific Collection </label></div>
+                   <div class="form-group mb-0"><label><input name="1" type="radio">  Specific Products </label></div>
+                </div>
+            </div>
+            <div class="product-detail-box mt-3">
+              <div class="p-box-title">Minimum Requirements</div>
+              <div class="box-content">
+                 <div class="form-group mb-0"><label><input name="2" checked type="radio">  None </label></div>
+                 <div class="form-group mb-0"><label><input name="2" type="radio">  Minimum Purchage Amt. <input type="text"> </label></div>
+             </div>
+          </div>
+
+              <div class="product-detail-box mt-3">
+                  <div class="p-box-title">Active Dates</div>
+                  <div class="box-content">
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <label>Start Date</label>
+                          <input class="form-control" type="date">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Start Time</label>
+                            <input class="form-control" type="time">
+                          </div>
+                          </div>
+                      <div class="form-row mt-3">
+                        <div class="col-md-6">
+                          <label>End Date</label>
+                          <input class="form-control" type="date">
+                        </div>
+                        <div class="col-md-6">
+                            <label>End Time</label>
+                            <input class="form-control" type="time">
+                          </div>
+                          </div>
+                  </div>
+              </div>
+
+     </div>
+
+     <div class="col-md-6">
+      <div class="product-detail-box">
+        <div class="p-box-title">Summary</div>
+        <div class="box-content">
+<textarea class="form-control"></textarea>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-12 text-center pt-3 mt-3 border-top">
+          <a class="btn custom-btn" href="#"> Save </a>
+          <a class="btn custom-btn black-btn" href="#"> Cancel </a>
+        </div>
+</div>
+      </div>
+
+    </div> </div>
+
+  </div>
+  <app-dashboardfooter></app-dashboardfooter>
+
+

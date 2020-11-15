@@ -1,0 +1,200 @@
+<app-ecom-dash-header  [headerDat]="headerData" ></app-ecom-dash-header>
+<div class="slider">
+      <mdb-carousel class="carousel slide carousel-slide custom-slide" [animation]="'slide'">
+        <mdb-carousel-item *ngFor="let image of sliderImage">
+          <img class="d-block w-100" src="{{image.Location}}" alt="First slide">
+        </mdb-carousel-item>
+      </mdb-carousel>
+    </div>
+    
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
+          <div class="text-center">
+            <h1>Featured Products</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-xs-12 col-md-12 col-sm-6 col-lg-12">
+            <ul class="results-base">
+
+              <li class="product-base" *ngFor="let product of bestOfStore">
+                <div class="product-thumbShim"></div>
+                <a target="_blank" (click)="openProductDetails(product)" style="display: block;">
+                  <div class="product-imageSliderContainer">
+                    <div class="product-sliderContainer" style="display: block;">
+                      <div style="background: rgb(244, 255, 249);">
+                        <div class="featured-prod-img">
+                          <picture class="img-responsive" style="width: 100%; height: 100%; display: block;">
+                            <img src="{{product.productImages[0]?.Location}}" alt="{{product.descriptionTitle}}" class="img-responsive"
+                              alt="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                              title="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                              style="width: 100%; display: block;">
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="product-productMetaInfo">
+                  <h3 class="product-brand">{{product.descriptionTitle}}</h3>
+                  <h4 class="product-product"><a target="_blank">{{product.brand}}</a></h4>
+                  <div class="product-price"><span>$ {{product.productDetails[0].size_Price_Quantity.price}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="container mt-4">
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-6 col-lg-12">
+          <ul class="results-base">
+            <li class="product-base">
+              <div class="product-thumbShim"></div>
+              <a target="_blank" href="#" style="display: block;">
+                <div class="product-imageSliderContainer">
+                  <div class="product-sliderContainer" style="display: block;">
+                    <div style="background: rgb(244, 255, 249);">
+                      <div style="height: 280px; width: 100%;">
+                        <picture class="img-responsive" style="width: 100%; height: 100%; display: block;">
+                          <img src="../../../assets/images/1-product.jpg" alt="" class="img-responsive"
+                            alt="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            title="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            style="width: 100%; display: block;">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="product-productMetaInfo">
+                <h3 class="product-brand">Moda Rapido</h3>
+                <h4 class="product-product"><a href="#" target="_blank">Printed Round</a></h4>
+                <div class="product-price"><span>$ 49</span> </div>
+              </div>
+            </li>
+
+            <li class="product-base">
+              <div class="product-thumbShim"></div>
+              <a target="_blank" href="#" style="display: block;">
+                <div class="product-imageSliderContainer">
+                  <div class="product-sliderContainer" style="display: block;">
+                    <div style="background: rgb(244, 255, 249);">
+                      <div style="height: 280px; width: 100%;">
+                        <picture class="img-responsive" style="width: 100%; height: 100%; display: block;">
+                          <img src="../../../assets/images/2-product.jpg" alt="" alt="" class="img-responsive"
+                            alt="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            title="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            style="width: 100%; display: block;">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="product-productMetaInfo">
+                <h3 class="product-brand">Moda Rapido</h3>
+                <h4 class="product-product"><a href="#" target="_blank">Printed Round</a></h4>
+                <div class="product-price"><span>$ 49</span> </div>
+              </div>
+            </li>
+
+            <li class="product-base">
+              <div class="product-thumbShim"></div>
+              <a target="_blank" href="#" style="display: block;">
+                <div class="product-imageSliderContainer">
+                  <div class="product-sliderContainer" style="display: block;">
+                    <div style="background: rgb(244, 255, 249);">
+                      <div style="height: 280px; width: 100%;">
+                        <picture class="img-responsive" style="width: 100%; height: 100%; display: block;">
+                          <img src="../../../assets/images/1-product.jpg" alt="" class="img-responsive"
+                            alt="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            title="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            style="width: 100%; display: block;">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="product-productMetaInfo">
+                <h3 class="product-brand">Moda Rapido</h3>
+                <h4 class="product-product"><a href="#" target="_blank">Printed Round</a></h4>
+                <div class="product-price"><span>$ 49</span> </div>
+              </div>
+            </li>
+
+            <li class="product-base">
+              <div class="product-thumbShim"></div>
+              <a target="_blank" href="#" style="display: block;">
+                <div class="product-imageSliderContainer">
+                  <div class="product-sliderContainer" style="display: block;">
+                    <div style="background: rgb(244, 255, 249);">
+                      <div style="height: 280px; width: 100%;">
+                        <picture class="img-responsive" style="width: 100%; height: 100%; display: block;">
+                          <img src="../../../assets/images/2-product.jpg" alt="" alt="" class="img-responsive"
+                            alt="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            title="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            style="width: 100%; display: block;">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="product-productMetaInfo">
+                <h3 class="product-brand">Moda Rapido</h3>
+                <h4 class="product-product"><a href="#" target="_blank">Printed Round</a></h4>
+                <div class="product-price"><span>$ 49</span> </div>
+              </div>
+            </li>
+
+            <li class="product-base">
+              <div class="product-thumbShim"></div>
+              <a target="_blank" href="#" style="display: block;">
+                <div class="product-imageSliderContainer">
+                  <div class="product-sliderContainer" style="display: block;">
+                    <div style="background: rgb(244, 255, 249);">
+                      <div style="height: 280px; width: 100%;">
+                        <picture class="img-responsive" style="width: 100%; height: 100%; display: block;">
+                          <img src="../../../assets/images/1-product.jpg" alt="" class="img-responsive"
+                            alt="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            title="Moda Rapido Men Maroon Printed Round Neck T-shirt"
+                            style="width: 100%; display: block;">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="product-productMetaInfo">
+                <h3 class="product-brand">Moda Rapido</h3>
+                <h4 class="product-product"><a href="#" target="_blank">Printed Round</a></h4>
+                <div class="product-price"><span>$ 49</span> </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+    </div>
+
+    <div class="container-fluid mt-4 mb-3">
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
+          <div class="grid-pic2">
+            <img src="{{imageWithText.image}}" alt="grid1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<app-ecom-footer [footerData]="footer"></app-ecom-footer>
+<!--Footer--->

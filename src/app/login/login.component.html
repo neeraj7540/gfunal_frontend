@@ -1,0 +1,57 @@
+<div *ngIf="check();then thenBlock else elseBlock">
+  </div>
+  <ng-template #thenBlock>
+    <div>
+        <app-manualloader></app-manualloader>
+    </div>
+  </ng-template>
+  <ng-template #elseBlock>
+  </ng-template>
+<div class="model-outer {{opacity}}" >
+
+    <a href={{home}}>
+        <div class="site-logo">
+            <img src="../../assets/images/logo.png">
+          </div>
+    </a>
+    <div class="sign-box">
+      <div class="sign-header">
+        welcome to Gfunl
+      </div>
+      <h3 class="sign-title">Login</h3>
+      <form class="px-lg-5 px-3">
+        <div class="form-row form-group pb-3">
+          <div class="col-md-12">
+            <input class="form-control user-name" placeholder="E-mail" type="text" [(ngModel)]="username" name='username'>
+          </div>
+        </div>
+        <div class="form-row form-group pb-0">
+          <div class="col-md-12">
+            <input class="form-control email" placeholder="Password" type="password" [(ngModel)]="password" name="password">
+          </div>
+        </div>
+        <div class="form-row form-group">
+            <!-- <div class="col-6 pb-3">
+             <label class="remember"> <input type="checkbox"> Remember Me </label>
+            </div> -->
+            <div class="col-6 pb-3">
+            <a class="forgot-pwd" (click)="openForgotPassword()">Forgot Password?</a>
+            </div>
+          </div>
+        <div class="form-row form-group pb-2">
+          <div class="col-md-12 text-center">
+            <input type="button" class="btn custom-btn" value="Login" (click)="login()">
+          </div>
+
+        </div>
+
+        <div class="form-row form-group ">
+            <div class="col-md-12 text-center sign-btn">
+            Don't have an account | <span><a href="signup">Signup</a></span>
+            </div>
+
+          </div>
+      </form>
+    </div>
+  </div>
+

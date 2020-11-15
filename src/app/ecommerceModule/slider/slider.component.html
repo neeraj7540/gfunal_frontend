@@ -1,0 +1,70 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-theme-editor-sidebar></app-ec-theme-editor-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-star"></i> Slider</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg mt-1">
+        <div class="row">
+          <!--Row-->
+          <div class="col-md-7 m-auto">
+            <div class="product-detail-box">
+              <div class="p-box-title">Slider Images</div>
+              <div class="box-content">
+                <div class="uploaded-file">
+                  <a class="close">x</a>
+                  <input type="file" (change)="readURL($event);" multiple>
+                  <label class="drop-file-here"><i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload images</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="uploaded-slides" *ngIf="selectedSliderImages">
+              <div class="slide w-sm-100" *ngFor="let sliderImage of selectedSliderImages; let i = index">
+                <a style="z-index: 99999999999999999;" class="close" (click)="removeImage(sliderImage,i)">x</a>
+                <img src="{{sliderImage}}">
+              </div>
+            </div>
+
+
+            <!-- <div class="product-detail-box mt-5">
+              <div class="p-box-title">Slider Text</div>
+              <div class="box-content">
+                <div class="form-group">
+                  <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                    [(ngModel)]="formattingText" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mt-3">
+            <a class="float-right btn custom-btn" (click)="onDelete()">Delete</a>
+            <a *ngIf="!sliderDataId" class="float-right btn custom-btn" (click)="onSubmit()">Submit</a>
+            <a *ngIf="sliderDataId" class="float-right btn custom-btn" (click)="onUpdate()">Update</a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

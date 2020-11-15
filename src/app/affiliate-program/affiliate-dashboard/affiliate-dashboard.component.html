@@ -1,0 +1,280 @@
+<app-dashboardheader name={{name}}></app-dashboardheader>
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-dashboardsidebar name={{name}}></app-dashboardsidebar>
+    </div>
+    <div class="w-100">
+
+      <div class="content">
+        <div class="page-title">
+          <h1> Affiliate Dashboard</h1>
+          <!-- <span class="expired"><a class="btn custom-btn2"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+              Back</a></span> -->
+        </div>
+
+      </div>
+
+      <div class="inner-cont fill-bg">
+        <!--tabs-->
+        <ul class="nav nav-tabs" id="myTab" role="tablist" (click)="OnNavBar_Clicked($event)">
+          <li class="nav-item">
+            <a class="{{DashboardCss}}" id="dashboardtab" data-toggle="tab" role="tab" aria-controls="dashboard"
+              aria-selected="true">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="{{ReferredAccountCss}}" id="accounttab" data-toggle="tab" role="tab" aria-controls="account"
+              aria-selected="false">Referred Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="{{WithdrawlsCss}}" id="withdrawlstab" data-toggle="tab" role="tab" aria-controls="withdrawls"
+              aria-selected="false">Withdrawls</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <!---Tab 1-->
+          <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab"
+            [style.visibility]="isDashboardTabVisible ? 'visible' : 'hidden'"
+            [style.display]="isDashboardTabVisible ? '' : 'none'">
+            <div class="row">
+              <div class="col-md-4">
+                <!-- Card -->
+                <div class="card">
+                  <div class="card-body">
+                    <!-- <h4 class="card-title"><a>Card title</a></h4> -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="card-text">First<br>Month Commission</p>
+                        <span><strong class="font25">30%</strong></span>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="card-text">Subsequent Months Commission</p>
+                        <span><strong class="font25">25%</strong></span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Card -->
+                <div class="card mt-3">
+                  <div class="card-body">
+                    <p class="card-text">Obtained Accounts</p>
+                    <span><strong class="font20 color-blue">0</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <!-- Card -->
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-text">Your Reference links</p>
+                    <div class="row mb-4">
+                      <!-- <div class="col-md-2 pad-r">
+                        <p>Registration <br>Page</p>
+                      </div> -->
+                      <div class="col-md-4 pad-r">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked"
+                            name="defaultExampleRadios">
+                          <label class="custom-control-label custom-link" for="defaultUnchecked">Registration Page</label>
+                        </div>
+                      </div>
+                      <div class="col-md-8 pad-l">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="https://gfunl2019.clickfunnels.com/optin"
+                            aria-label="Url" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-3">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked"
+                            name="defaultExampleRadios">
+                          <label class="custom-control-label custom-link" for="defaultUnchecked">Copy link</label>
+                        </div>
+                      </div> -->
+                    </div>
+                    <div class="row mb-4">
+                      <div class="col-md-4 pad-r">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked1"
+                            name="defaultExampleRadios">
+                          <label class="custom-control-label custom-link" for="defaultUnchecked1">Gfunl.com</label>
+                        </div>
+                      </div>
+                      <div class="col-md-8 pad-l">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="https://gfunl2019.clickfunnels.com/optin"
+                            aria-label="Url" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <a href="#" class="btn custom-btn float-right mb-3">Save</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---Tab 2-->
+          <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab"
+            [style.visibility]="isAccountTabVisible ? 'visible' : 'hidden'"
+            [style.display]="isAccountTabVisible ? '' : 'none'">
+            
+            <div class="row mb-4">
+
+                <div class="col-md-6">
+                    <div class="clearfix"></div>
+                </div>
+              <div class="col-md-3">
+                <label class="col-lg-5 col-md-5 pt-2 pl-0">Month&nbsp;:<span class="asterisk">*</span>
+                </label>
+                <select class="browser-default custom-select">
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">March</option>
+                  </select>
+              </div>
+              <div class="col-md-3">
+                <label class="col-lg-5 col-md-5 pt-2 pl-0">Year&nbsp;:<span class="asterisk">*</span>
+                </label>
+                <select class="browser-default custom-select">
+                    <option value="1">2018</option>
+                    <option value="2">2019</option>
+                    <option value="3">2020</option>
+                  </select>
+              </div>
+            </div>
+
+            <table class="table">
+              <thead class="black white-text">
+                <tr>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Registration date</th>
+                  <th scope="col">Payments sum</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Tyrion</td>
+                  <td>Mark@gmail.com</td>
+                  <td>02-05-2020</td>
+                  <td>50$</td>
+                </tr>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Creek</td>
+                  <td>Jacob@gmail.com</td>
+                  <td>02-05-2020</td>
+                  <td>50$</td>
+                </tr>
+                <tr>
+                  <td>Larry</td>
+                  <td>Hendrson</td>
+                  <td>Larry@gmail.com</td>
+                  <td>02-05-2020</td>
+                  <td>50$</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="paginationn float-right">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination pg-blue">
+                      <li class="page-item"><a class="page-link">Previous</a></li>
+                      <li class="page-item"><a class="page-link">1</a></li>
+                      <li class="page-item"><a class="page-link">2</a></li>
+                      <li class="page-item"><a class="page-link">3</a></li>
+                      <li class="page-item"><a class="page-link">Next</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!---Tab 3-->
+          <div class="tab-pane fade show active" id="withdrawls" role="tabpanel" aria-labelledby="withdrawls-tab"
+            [style.visibility]="isWithdrawlsTabVisible ? 'visible' : 'hidden'"
+            [style.display]="isWithdrawlsTabVisible ? '' : 'none'">
+
+            <div class="row mb-4">            
+<div class="col-md-12">
+  <p class="afd-p">Minimum Withdrawal limit is $100</p>
+</div>
+              <div class="col-md-5">
+                <div class="card mt-3">
+                  <div class="card-body">
+                    <p class="card-text">Total balance</p>
+                    <span><strong class="font20 color-blue">2000$</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="card mt-3">
+                  <div class="card-body">
+                    <p class="card-text">Total withdrawal amount</p>
+                    <span><strong class="font20 color-blue">500$</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="btn custom-btn float-right mt-5">Withdrawl</a>
+              </div>
+            </div>
+            <table class="table">
+              <thead class="black white-text">
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>13-05-2020</td>
+                  <td>10$</td>
+                  <td>Status</td>
+                </tr>
+                <tr>
+                  <td>13-05-2020</td>
+                  <td>10$</td>
+                  <td>Status</td>
+                </tr>
+                <tr>
+                  <td>13-05-2020</td>
+                  <td>10$</td>
+                  <td>Status</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="paginationn float-right">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination pg-blue">
+                      <li class="page-item"><a class="page-link">Previous</a></li>
+                      <li class="page-item"><a class="page-link">1</a></li>
+                      <li class="page-item"><a class="page-link">2</a></li>
+                      <li class="page-item"><a class="page-link">3</a></li>
+                      <li class="page-item"><a class="page-link">Next</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--tabs-->
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

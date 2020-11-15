@@ -1,0 +1,10 @@
+.sec-btns{
+    text-align: right;
+    padding-top: 8px;    
+    margin-right: 13px;    
+    display: inline;    
+    float: right;    
+    display: inherit !important;    
+    width: auto !important;
+    clear: none;
+}

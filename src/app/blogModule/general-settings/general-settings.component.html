@@ -1,0 +1,62 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-blog-sidebar></app-blog-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-cog"></i> General Settings</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <form>
+          <div class="row mt-2">
+            <div class="col-md-6 form-group">
+              <label>Site Title</label>
+              <input class="form-control" type="text" [(ngModel)]="settingsData.siteName" name='title'>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label>Tag Line</label>
+              <input class="form-control" type="text" [(ngModel)]="settingsData.tagLine" name='tagline'>
+            </div>
+
+            <div class="col-md-12 form-group">
+              <label>Email</label>
+              <input class="form-control" type="text" [(ngModel)]="settingsData.emailId" name='email'>
+              <p class="mb-0">The address is used for admin purpose, If you change this we will send you an email at
+                your new address to confirm it. The new address will not become active until confirmed.</p>
+            </div>
+
+            <div class="col-md-12 form-group">
+              <label>Website Address</label>
+              <input class="form-control" type="text" [(ngModel)]="settingsData.siteAddress" name='address'>
+              <p class="mb-0">Enter the address here if you want your site home page to be different form your Gfunl
+                installation directory.</p>
+            </div>
+          </div>
+          <div class="row mt-12">
+            <div class="col-md-12 border-top pt-2">
+              <a class="custom-btn btn black-btn" (click)="onClear()">Clear</a>
+              <a class="custom-btn btn" (click)="onSave()">Save</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

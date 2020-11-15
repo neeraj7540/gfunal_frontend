@@ -1,0 +1,79 @@
+.model-outer {
+    max-width: 650px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 15px;
+}
+.site-logo {
+    text-align: center;
+}
+.opacity{
+  opacity: 0.5;
+}
+.sign-header {
+    background: #195889;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 20px 9px;
+    font-size: 18px;
+}
+.sign-box {
+    box-shadow: 0 0 5px #aaa;
+    border-radius: 9px;
+    margin-top: 25px;
+}
+.sign-box form {
+
+    padding: 30px 55px 15px;
+}
+.sign-title {
+    text-align: center;
+    padding: 26px 0 1px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color:#01477d;
+
+}
+.sign-box .form-control {
+    border: 0 !important;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: 0px;
+    box-shadow: none !important;
+    border-bottom: 1px solid #a4a4a4 !important;
+    border-radius: 0 !important;
+    font-size: 17px;
+}
+
+.sign-box .form-control.user-name{
+    background: url(../../assets/images/user-icon.png) left center no-repeat;
+    padding-left: 25px !important;
+}
+.sign-box .form-control.email{
+    background: url(../../assets/images/email-icon.png) left center no-repeat;
+    padding-left: 25px !important;
+}
+.sign-box .form-control.password{
+    background: url(../../assets/images/password-icon.png) left center no-repeat;
+    padding-left: 25px !important;
+}
+.sign-box .btn.custom-btn {
+    width: 220px;
+}
+.sign-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+.sign-btn span a{
+    color:#ff6a00;
+}
+.remember,.forgot-pwd {
+    color: #ff6a00;
+}

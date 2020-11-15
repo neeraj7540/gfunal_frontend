@@ -1,0 +1,268 @@
+.course-top-heading {
+  background-color: #FFF;
+}
+
+.current-course {
+  border: 1px solid #ccc;
+  padding: 30px;
+  box-shadow: 0 0 3px #ccc;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 15px;
+
+}
+
+.video-sidebar {
+  width: 460px;
+  background: #f2f2f2;
+  border-right: 1px solid #ddd;
+  padding: 15px;
+}
+
+.video-sidebar ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.video-sidebar ul.module-list>li>a {
+  color: #fff;
+  display: block;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.video-sidebar ul.lessons {
+  position: relative;
+  -webkit-transform: inherit;
+  transform: inherit;
+  border-radius: 4px !important;
+  border: 0;
+  overflow: hidden;
+  float: none;
+}
+
+.video-sidebar>ul>li {
+  background: #FD8E41;
+  border-radius: 5px;
+  padding: 9px;
+  margin-bottom: 5px;
+}
+
+.video-sidebar ul.lessons li {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 24px 10px 63px;
+  background: #fff;
+  /* margin-bottom: 6px; */
+}
+
+.video-sidebar ul.lessons li a {
+  color: #666;
+  font-size: 18px;
+}
+
+.video-sidebar ul.lessons li a p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 17px;
+  margin-top: 5px;
+  color: #888;
+}
+
+.video-sidebar ul.lessons li i {
+  position: absolute;
+  left: 9px;
+  width: 40px;
+  height: 40px;
+  background: #444;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 1px 1px #FF8700;
+  font-size: 12px;
+  color: #FD8E41;
+}
+
+.video-sidebar ul li a.dropdown-toggle {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  margin: 0 !important;
+  font-size: 22px;
+  padding: 6px 15px;
+  color: #444 !important;
+}
+
+.video-lesson iframe {
+  width: 100%;
+}
+
+.module-name h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 33px;
+  color: #444;
+}
+
+.module-name p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.review-share-btns {
+  align-items: stretch;
+  text-align: right;
+}
+
+.review-share-btns a {
+  border: 1px solid #ccc;
+  padding: 9px;
+  display: inline-block;
+  margin: 0 4px;
+  color: #444;
+}
+
+.lesson-name {
+  font-size: 22px;
+  color: #333;
+}
+
+.quiz-assignment a {
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 3px;
+  padding: 17px;
+  display: inline-block;
+  margin-right: 9px;
+  min-width: 181px;
+  font-size: 15px;
+  color: #333;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.quiz-assignment a i {
+  color: #FD8E41;
+  font-size: 26px;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+}
+
+.modal-dialog .modal-content .modal-header {
+  border-top-left-radius: .125rem;
+  border-top-right-radius: .125rem;
+  background-color: #FD8E41;
+  color: #FFF;
+}
+
+.profile-rating {
+  width: 100%;
+  /* float: left; */
+}
+
+.avatar {
+  text-align: center;
+}
+
+.avatar .card-img-top {
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.profile-rating div {
+  text-align: center;
+}
+
+.rate input,
+.rate1 label,
+.rate1 input {
+  display: inline-block;
+}
+
+/* Modified from: https://codepen.io/tammykimkim/pen/yegZRw */
+.rate {
+  /* float: left; */
+  /* display: inline-block; */
+  height: 36px;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.rate>label {
+  margin-bottom: 0;
+  margin-top: -5px;
+  height: 30px;
+}
+
+.rate:not(:checked)>input {
+  /* position: absolute; */
+  top: -9999px;
+  margin-left: -24px;
+  width: 20px;
+  padding-right: 14px;
+  z-index: -10;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+/* #star1:focus{
+  
+  } */
+.rate2 {
+  float: none;
+}
+
+.rate:not(:checked)>label::before {
+  content: '★ ';
+  position: relative;
+  top: 0;
+  left: 2px;
+}
+
+.rate>input:checked~label {
+  color: #ffc700;
+  /* outline: -webkit-focus-ring-color auto 5px; */
+}
+
+.rate>input:checked:focus+label,
+.rate>input:focus+label {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #deb217;
+  /* outline: -webkit-focus-ring-color auto 5px; */
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+  color: #c59b08;
+
+}
+
+.disabled-lesson {
+  cursor: not-allowed;
+  background: #dedede !important;
+}

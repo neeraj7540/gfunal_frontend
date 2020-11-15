@@ -1,0 +1,60 @@
+.box-wt-head {
+    background: #fff;
+    border-radius: 7px;
+}
+.box-wt-header {
+    background: #65615e;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 13px 3px;
+    align-items: center;
+}
+.box-wt-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.box-wt-body {
+    padding: 14px 15px;
+}
+
+.inner-content {
+    color: #65615e;
+
+}
+.row.discount {
+
+    color: #FC8330;
+
+}
+.total-section {
+
+    text-align: right;
+
+}
+.total-section textarea {
+
+    font-size: 13px;
+
+}
+.nav-link.new-contact {
+    color: #FC8330;
+}
+
+.lead-serach{overflow:visible;}
+.auto-complete {    position: absolute;
+    top: 50px;
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 9px;
+    left: 5px;
+    right: 7px;}
+ .auto-complete ul {    padding: 0; margin-bottom:0;
+    list-style: none;}
+ .auto-complete ul li {    border-bottom: 1px solid #ddd;
+    padding: 4px 15px;
+    font-size: 13px;}
+ .auto-complete ul li:last-child {    border-bottom: 0;}

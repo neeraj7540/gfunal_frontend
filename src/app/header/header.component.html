@@ -1,0 +1,43 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+  <div class='col-lg-3 col-5'>
+      <a href="#" class="logo">
+          <img src="assets/images/logo.png" alt="logo">
+        </a>
+  </div>
+  <div class="col-lg-9 col-7 justify-content-lg-space-between">
+
+
+<div class="row flex-lg-row-reverse">
+    <ul class="navbar inline login-signup  ml-auto">
+        <li>
+          <a class="sign-in" href={{signin.link}}><i class="fa fa-lock"></i>  {{signup.linkheading}}</a>
+        </li>
+        <li>
+          <a class="sign-up" href={{signup.link}}> <i class="fa fa-user"></i> {{signin.linkheading}}</a>
+        </li>
+      </ul>
+      <!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light custom-nav  mr-auto">
+
+   <links>
+        <!-- Links -->
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item" *ngFor=" let value of header">
+                <a class="nav-link" href={{value.link}}>{{value.linkheading}}</a>
+              </li>
+        </ul>
+          <!-- Links -->
+    </links>
+</mdb-navbar>
+
+<!--/.Navbar-->
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>

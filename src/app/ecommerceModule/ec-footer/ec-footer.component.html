@@ -1,0 +1,58 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-theme-editor-sidebar></app-ec-theme-editor-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-minus"></i> Ecommerce Footer</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <div class="p-box-title">Contact Us</div>
+        <div class="box-content px-sm-5 mb-5">
+          <div class="row mt-2">
+            <div class="col-md-6 form-group footer-info">
+              <label>Name</label>
+              <input class="form-control" type="text" [(ngModel)]="footer.name" name='name'>
+
+              <label>Email</label>
+              <input class="form-control" type="text" [(ngModel)]="footer.emailInput" name='email'>
+
+              <label>Phone Number</label>
+              <input class="form-control" type="number" min="1" [(ngModel)]="footer.phoneNumber" name='phone'>
+
+              <label>Message</label>
+              <textarea class="form-control" type="text" rows="5" [(ngModel)]="footer.message" name='message'>
+                </textarea>
+            </div>
+            <div class="col-md-6 form-group">
+              <label>Talk about your business</label>
+              <textarea class="form-control" rows="5" type="text" [(ngModel)]="footer.returnPolicy" name='returnPolicy'>
+                </textarea>
+              <label>Terms & Conditions</label>
+              <textarea class="form-control" rows="5" type="text" [(ngModel)]="footer.termsAndCondition" name='tnc'>
+                </textarea>
+              <a *ngIf="!existedFooterId" class="custom-btn btn" (click)="onSubmit()">Submit</a>
+              <a *ngIf="existedFooterId" class="custom-btn btn" (click)="onUpdate()">Update</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

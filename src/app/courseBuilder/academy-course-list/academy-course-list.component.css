@@ -1,0 +1,123 @@
+.gfunl-orange{
+    color: #fd8d41;
+}
+mdb-badge.badge.badge-primary.badge-pill {
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: absolute;
+    left: 0;
+    border-radius: 0px 5px 0px 0px;
+}
+mdb-badge.badge.badge-warning.badge-pill {
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: absolute;
+    left: 0;
+    border-radius: 0px 5px 0px 0px;
+    background-color: #fc8532!important;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+  .view.rgba-white-slight.waves-light:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+  }
+/*Update Button*/
+  .GFbutton {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .GFbutton a {
+    padding: 5px 20px;
+    color: white;
+    border: solid 1px white;
+    z-index: 1;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  .view.rgba-white-slight.waves-light:hover .GFbutton {
+    opacity: 1;
+  }
+/*Publish Button*/
+  .PBbutton {
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .PBbutton a {
+    padding: 5px 20px;
+    color: white;
+    border: solid 1px white;
+    z-index: 1;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  .view.rgba-white-slight.waves-light:hover .PBbutton {
+    opacity: 1;
+  }
+
+  /*UPdate Button*/
+  .UPbutton {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .UPbutton a {
+    padding: 5px 20px;
+    color: white;
+    border: solid 1px white;
+    z-index: 1;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  .view.rgba-white-slight.waves-light:hover .UPbutton {
+    opacity: 1;
+  }
+
+  /*Delete Button*/
+  .DTbutton {
+    position: absolute;
+    left: 35%;
+    top: 60%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .DTbutton a {
+    padding: 5px 20px;
+    color: white;
+    border: solid 1px white;
+    z-index: 1;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  .view.rgba-white-slight.waves-light:hover .DTbutton {
+    opacity: 1;
+  }

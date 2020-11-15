@@ -1,0 +1,40 @@
+<div class="inner-content inner-content-subheader fill-bg" style="padding:10px 0;">
+    <div class="add-contact">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group content-section">
+            <div class="question-up">
+              <h5> <strong>Question #{{questionCount}} </strong> </h5>
+              <span class="pull-right">
+                <a (click)="OnQuestionHideShow_Click()"><img class="module-icon float-left"
+                    src="../assets/images/module-up-icon.png"></a>
+              </span>
+            </div> 
+         
+          <div class="collapse-section" *ngIf="visibleIndex === selectedIndex">
+            <label>Question</label>
+            <div class="post-editor">
+              <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                [(ngModel)]="addQuestionParam.Question" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+            </div>
+            <div *ngFor="let item of array;let i = index">
+              <app-course-lesson-edit-quiz-questions-choice id={{i+1}} choiceCount='{{i+1}}' [choicetxt] = "item"
+                [correctAnswer] = "correctAnswer" (valueChange)='displayCounter($event)'></app-course-lesson-edit-quiz-questions-choice>
+            </div>
+      
+            <!-- <a class="custom-btn btn" (click)="onAddChoice_Click()"
+              [style.visibility]="isDelQuesVisible ? 'visible' : 'hidden'" [style.display]="isDelQuesVisible ? '' : 'none'">
+              ADD CHOICE</a> -->
+              <a id="{{questionID}}" class="custom-btn btn" (click)="onDeleteQuestion_Click($event)">
+              <img class="cross-icon" src="../assets/images/quiz-question-icon.png">DELETE QUESTION</a>
+              <!-- <a class="custom-btn btn" (click)="onAddQuestion_Click()" [style.visibility]="isDelQuesVisible ? 'visible' : 'hidden'"
+              [style.display]="isDelQuesVisible ? '' : 'none'">
+              <img class="cross-icon" src="../assets/images/quiz-question-icon.png">ADD QUESTION</a> -->
+          </div>
+         </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>  

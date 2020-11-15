@@ -1,0 +1,97 @@
+<div *ngIf="check(); then loading else nothing"></div>
+<ng-template #loading>
+    <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+
+<div class="container">
+
+    <div class="d-flex content-wrapper">
+        <div class="sidebar">
+            <app-ec-sidebar></app-ec-sidebar>
+        </div>
+        <div class="w-100">
+            <div class="content">
+                <div class="page-title">
+                    <h1><img class="quiz-icon" src="../assets/images/course-announcements.png"> Announcements</h1>
+                </div>
+            </div>
+            <div class="inner-content fill-bg">
+                <div class="row">
+                    <div class="col-md-5">
+
+                    </div>
+                    <div class="col-md-7">
+                        <a class="custom-btn simple btn float-right" (click)="OnCompose_Click()"> Compose</a>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="cover-box p-0">
+                            <div class="table-responsive border-rounded dark-header">
+                                <table class="table table-striped mb-0 toggle-table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Date</th>
+                                            <th width="50"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let announcement of receivedData"
+                                        [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                                        [style.display]="isDivVisible ? '' : 'none'">
+                                        <tr>
+                                            <td>{{announcement.title}}</td>
+                                            <td>{{announcement.date | date: 'dd MMM yyyy'}}</td>
+                                            <td width="50"><button class="drop-arrow" type="button"
+                                                    (click)="contact01.toggle()" mdbWavesEffect>
+                                                    <i class="fa fa-sort-desc"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="p-0 border-0">
+                                                <div class="detail-outer" mdbCollapse [isCollapsed]="true"
+                                                    #contact01="bs-collapse">
+                                                    <div class="lead-detail-sec">
+                                                        <div class="row">
+                                                            <div class="given-info">Announcement: <span>
+                                                                    {{announcement.announcement}}</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody [style.visibility]="!isDivVisible ? 'visible' : 'hidden'"
+                                        [style.display]="!isDivVisible ? '' : 'none'">
+                                        <tr>
+                                            <td>No Data Found. </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Pagination -->
+                            <div class="pagination-sec mt-2" [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                                [style.display]="isDivVisible ? '' : 'none'">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination pg-blue justify-content-md-between justify-content-center">
+                                        <li class="page-item {{isPreviousDisabled}}"><a class="page-link" mdbWavesEffect
+                                                (click)="onPaginaion_Clicked($event)"><b>
+                                                    << Previous</b></a></li>
+                                        <li class="page-item {{isNextDisabled}}"><a class="page-link" mdbWavesEffect
+                                                (click)="onPaginaion_Clicked($event)"><b>Next >></b></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

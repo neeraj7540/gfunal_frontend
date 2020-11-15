@@ -1,0 +1,125 @@
+.ec-action a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #666;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 2px;
+    margin: 0 3px !important;
+    font-size: 17px;
+  }
+  
+  .ec-action a:hover {
+    border: 1px solid#FD7C1F;
+    color: #FD7C1F;
+  }
+  
+  .all-check {
+    /* background: #fff; */
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 4px;
+    /* box-shadow: 0 0 3px #ccc;     */
+    padding: 0;
+  }
+  
+  .all-check input {
+  
+    margin: 0 !important;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+  
+  }
+  
+  .product-img img {
+    max-width: 47px;
+  
+  }
+  
+  table.table th,
+  table.table td {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  
+  }
+  
+  .filter {
+    border: 0;
+    border-radius: 19px;
+    padding: 7px 11px;
+    padding-right: 11px;
+    background: #d5d5d5 url(../../../assets/images/filter.png) calc(100% - 15px) center no-repeat !important;
+    background-size: 13px !important;
+    margin-bottom: 2px;
+  }
+  
+  .lead-serach input {
+    padding: 8px 60px 7px 20px;
+  }
+  
+  .lead-s-btn {
+    width: 33px;
+    height: 33px;
+    font-size: 18px;
+  }
+  
+  ul.tabs {
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  
+  .tabs li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 12px;
+  }
+  
+  .tabs li a {
+    color: #666;
+    font-size: 17px;
+  }
+  
+  .tabs li a.active {
+    border-bottom: 2px solid;
+  }
+  
+  .orange-btn.simple {
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 4px 20px;
+    min-width: auto;
+    font-weight: 300 !important;
+    font-size: 13px !important;
+    min-width: 90px;
+  
+  }
+  
+  .black-btn.simple {
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 4px 20px;
+    min-width: auto;
+    font-weight: 300 !important;
+    font-size: 13px !important;
+    min-width: 90px !important;
+  
+  }
+  
+  .font-design {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  /*---------Custom TableStyle binding TR with div------*/
+  
+  .tbl {
+    display: contents;
+  }
+  .tbls {
+      display: contents;
+  }
+  
+  /*---------Custom TableStyle binding TR with div------*/
+  

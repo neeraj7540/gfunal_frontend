@@ -1,0 +1,414 @@
+/* body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  } */
+.index-desktop {
+    padding: 0 28px;
+    max-width: 1600px;
+    min-width: 1128px;
+    margin: 0 auto;
+}
+.index-headingDiv {
+    margin: auto;
+    padding: 50px 0px 50px 0px;
+}
+.index-heading {
+    width: 162px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #282C3F;
+}
+.index-count {
+    font-weight: normal;
+}
+.index-wishListContainer {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 50px 0 0 -40px;
+    bottom: 100px;
+}
+.itemcard-itemCard {
+    background-color: #FFFFFF;
+    transition: all 2s ease;
+    padding: 0 0 14px 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    flex: 1 0 210px;
+    box-sizing: border-box;
+    margin: 40px 0 0 40px;
+    outline: 1px solid #e9e9eb;
+    position: relative;
+    height: 400px;
+    max-width: 210px;
+}
+.itemcard-itemImage {
+    width: 100%;
+    cursor: pointer;
+    min-height: 294px;
+    -webkit-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 1.0;
+}
+.itemcard-itemImageDiv {
+    position: relative;
+}
+.itemcard-itemImageDiv a {
+    cursor: pointer;
+}
+.itemcard-removeIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    height: 24px;
+    width: 24px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: solid 1.2px #d4d5d9;
+    cursor: pointer;
+    text-align: center;
+}
+
+ .itemcard-removeMark{
+        margin-left: 7px;
+        zoom: 0.8;
+        float: left;
+}
+
+.itemcard-shim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 261px;
+    background-color: #282C3F;
+    transition: visibility 0s, opacity 0.5s linear;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    -moz-transition: visibility 0s, opacity 0.5s linear;
+    -o-transition: visibility 0s, opacity 0.5s linear;
+    -ms-transition: visibility 0s, opacity 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+.sizeselect-sizeDisplayDiv {
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    bottom: 140px;
+    background: white;
+    display: none;
+    margin-bottom: -106px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+}
+.sizeselect-sizeDisplayHeader {
+    border-bottom: solid 1px #D5D6D9;
+    border-top: solid 1px #D5D6D9;
+    padding: 10px;
+}
+.sizeselect-sizeDisplayDiv .sizeselect-sizeSelectLabel {
+    font-size: 16px;
+    color: #29303f;
+}
+.sizeselect-sizeDisplayRemoveMark {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.sizeselect-sizeDisplayDiv .sizeselect-sizeButtonsContaier {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    height: auto;
+}
+.sizeselect-sizeDisplayDiv .sizeselect-sizeButton {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    margin: 5px;
+    min-width: 35px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border: solid 1px #696E79;
+    outline: none;
+    font-size: 16px;
+    color: #696e79;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px;
+    font-weight: 200;
+}
+.itemcard-itemActions {
+    position: absolute;
+    height: 140px;
+    bottom: 0;
+    z-index: 2;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+}
+.itemdetails-itemDetails {
+    height: 94px;
+    font-size: 14px;
+    text-align: left;
+    color: #696B79;
+    padding: 10px 10px 0px;
+    border: none !important;
+    border-bottom: 1px solid #e9e9eb !important;
+}
+.itemdetails-itemDetailsLabel {
+    font-size: 16px;
+    color: #282C3F;
+    text-align: left;
+    margin: 0;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+.itemdetails-itemDetailsDescription {
+    width: 100%;
+    margin: 4px 0px 8px 0px;
+    color: #535766;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.itemdetails-itemPricing {
+    font-size: 16px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.itemdetails-boldFont {
+    font-weight: 500;
+    padding: 0px 3px 0 0;
+    font-size: 16px;
+    color: #282C3F;
+}
+.itemdetails-strike {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 12px;
+    padding: 0 3px;
+    color: #282C3F;
+}
+.itemdetails-discountPercent {
+    color: #FF905A;
+    padding: 0px 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.itemcard-actionDiv {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 14px;
+}
+.itemcard-boldFont {
+    font-weight: 500;
+}
+.itemcard-moveToBag {
+    color: #f0940a;
+}
+
+.checkout-footer {
+    border-top: 1px solid
+    #f5f5f6;
+    margin: 0 0 10px 0;
+  }
+  .checkout-footer .content {
+    max-width: 980px;
+    padding-top: 10px;
+    margin: auto;
+  }
+  .checkout-footer .images {
+    display: inline-block;
+  }
+  .footer-bank-ssl {
+    background-position: -382px -4px;
+    width: 70px;
+    height: 37px;
+  }
+  .footer-bank-visa {
+    background-position: -4px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-mc {
+    background-position: -66px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-ae {
+    background-position: -130px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-dc {
+    background-position: -319px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-nb {
+    background-position: -532px -4px;
+    width: 68px;
+    height: 37px;
+  }
+  .footer-bank-cod {
+    background-position: -454px -4px;
+    width: 77px;
+    height: 37px;
+  }
+  .footer-bank-rupay {
+    background-position: -256px -4px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-paypal {
+    background-position: -72px -271px;
+    width: 60px;
+    height: 37px;
+  }
+  .footer-bank-bhim {
+    background-position: -4px -271px;
+    width: 60px;
+    height: 37px;
+  }
+  .checkout-footer .content .contact-us {
+    color:#282c3f;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .checkout-footer .content .contact-us span {
+    float: right;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  [class^="footer-bank"] {
+    background-image: url(/assets/images/sprite-img.png);
+    background-size: 2327px 321px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+
+ 
+@media (min-width: 480px){
+
+}
+  
+  /*-------Media Query Begins--------*/
+  
+  @media screen and (max-width: 1366px) {
+    .header .checkout-steps {
+      margin: 0 0 0 24%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  
+  @media screen and (max-width: 1240px) {
+    .header .checkout-steps {
+      margin: 0 0 0 21%;
+      width: 100%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    .header .checkout-steps {
+      margin: 0 0 0 18%;
+      width: 100%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .header .checkout-steps {
+      margin: 0 0 0 17%;
+      width: 100%;
+      top: 2%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header .checkout-steps {
+      margin: 0 0 0 26%;
+      width: 100%;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+  }
+  @media screen and (max-width: 480px) {
+    #mountRoot {
+      margin-top: 30px;
+    }
+    .header .checkout-steps {
+      margin: 2% 0 0 -16%;
+      width: 85%;
+      top: 12%;
+      position: absolute;
+    }
+    .secureContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    
+    .checkout-footer .content .contact-us span {
+      float: right;
+      font-size: 14px;
+      padding: 10px 0;
+      margin-top: -40px;
+      margin-right: 25px;
+    }
+    .checkout-footer{
+      margin: 0px 0px 10px 10px;
+    }
+  }

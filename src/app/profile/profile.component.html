@@ -1,0 +1,138 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Card with form-->
+      <div class="card">
+
+        <div class="card-body">
+
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label>Email address</label>
+                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+                </div>
+                <div class="col">
+                  <label>Phone Number</label>
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <div class="ui-stack ui-stack--wrap ui-stack--alignment-center">
+                    <div class="user-avatar--main">
+                      <span class="user-avatar user-avatar--style-6 ">
+                        <img class="user-avatar__gravatar-image" src="/assets/images/user.png">
+                        <span class="user-avatar__initials">HS</span>
+                      </span>
+                    </div>
+                    <div class="styled-file-input row" id="user-image-drop">
+                      <div class="btn ">
+                        <input type="file" id="user-upload-image" class="users-file-input js-no-dirty">
+                        <span>Upload photo</span>
+                      </div>
+                      <div class="dlt">
+                        <button class="ui-button users-file-input" type="button" name="button" disabled="">Delete
+                          photo</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="float-right col">
+                  <button type="submit" class="btn btn-primary float-right ">Save</button>
+
+                  <button type="button" mdbBtn color="warning" class="relative waves-light btn btn-warning float-right"
+                    (click)="basicModal.show()" mdbWavesEffect>Change Password</button>
+
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+
+        </div>
+
+      </div>
+      <!-- Card -->
+      <!-- Card Recent login history-->
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">Recent login history</h5>
+          <div class="row pad-10">
+            <div class="col">
+              <div class="row custom-border-pad">
+                <div class="col"><strong>Date</strong></div>
+                <div class="col">Today at 12:18 pm</div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="row custom-border-pad">
+                <div class="col"><strong>IP address</strong> </div>
+                <div class="col">122.173.169.226</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card Recent login history-->
+    </div>
+  </div>
+
+  <!--Modal for change password-->
+  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title " id="myModalLabel">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <div class="col">
+                <label>Old Psssword</label>
+                <input type="password" class="form-control" placeholder="Old Psssword">
+              </div>
+              <div class="col">
+                <label>New Psssword</label>
+                <input type="password" class="form-control" placeholder="New Psssword">
+              </div>
+              <div class="col">
+                <label>Confrim New Psssword</label>
+                <input type="password" class="form-control" placeholder="Confrim New Psssword">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+            (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+          <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

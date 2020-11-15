@@ -1,0 +1,106 @@
+.mt-40{margin-top:40px;}
+
+.profile-section {
+    background: #eee url(../../../assets/images/head-bg-orange.jpg) repeat;
+    padding-top: 50px;
+    max-height: 143px;
+    margin-bottom: 80px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+.profile-main-pic {
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+    border: 4px solid #fff;
+    box-shadow: 0 0 1px #777;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profile-main-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+.profile-cont {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 0 25px 10px;
+}
+.profile-cont label {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+.profile-cont span {
+    color: #007bff;
+}
+.blog-wrap {
+    background: #fff;
+    margin-top: 20px;
+}
+.blog-img {
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    background-color: #f1e4d2;
+}
+.blog-img:before {
+    left: 0;
+}
+.blog-img:before, .blog-img:after {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #000;
+    content: "";
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    opacity: .5;
+}
+.blog-img img {
+    width: 100%;
+    height: 150px;
+}
+.blog-content {
+    position: relative;
+    padding: 20px 20px 10px;
+    border-top: 2px solid #296dc1;
+    border-bottom: 2px solid #c3c3c3;
+}
+.blog-content:before, .blog-content:after {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 10%;
+    height: 2px;
+    background: #296dc1;
+    content: "";
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    opacity: .7;
+}
+.blog-meta {
+    margin-bottom: 10px;
+}
+.blog-content h3 {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color:#296dc1;
+}
+.blog-content p {
+    margin-bottom: 15px;
+    line-height: 24px;
+}
+.blog-content .complete {
+    color:#296dc1;
+    font-size:13px;
+    margin-bottom: 0;
+}

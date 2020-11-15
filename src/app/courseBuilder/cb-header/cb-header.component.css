@@ -1,0 +1,126 @@
+.login-signup li a i {
+    font-size: 15px;
+   margin: 0 4px;
+  }
+  
+  .header {
+    z-index: 1020;
+    background-color: #fff;
+    border-bottom: 2px solid #FD8E41;
+    padding: 7px 0px;
+  }
+  
+  .header .logo {
+    margin: 5px 0 0 0px;
+  }
+  .logo img {
+    max-width: 100%;
+    max-height: 69px;
+  }
+  
+  .login-signup li {
+    list-style: none;
+    margin: 0 12px;
+  
+  }
+  .login-signup li a{
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+  }
+  .sign-up {
+    padding: 9px 25px;
+    border: 2px solid orange;
+    border-radius: 35px;
+  }
+  .login-signup {
+    padding-top: 28px;
+  }
+  .dropdown-menu{
+    padding: 0;
+  }
+  .dropdown-item {
+    padding: 0.35rem 0.7rem;
+   border-bottom: 1px solid #ccc;
+    font-size: 14px;
+  
+  }
+  .dropdown.show .dropdown-menu{
+    right: 0 !important;
+    top: 43px;    
+    left: inherit;    
+    -webkit-transform: inherit !important;    
+    transform: inherit !important;
+    width: 240px;
+  }
+
+  ul.cust-menu li {
+    list-style: none;
+    display: inline-block;    
+    vertical-align: top;
+    padding: 0 10px;
+  }
+  ul.cust-menu li > a,  ul.cust-menu li.dropdown > a  {
+    font-size: 20px !important;
+    margin: 0;
+    padding: 0 7px !important;
+    line-height: 35px;
+    color: #999 !important;
+
+}
+.cust-menu {
+    width: auto;
+    padding: 0;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.user-profile {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+.prof-pic img {
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 0 1px #555;
+}
+  
+.user-profile label {
+    display: block;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 18px;
+
+}
+.user-profile span {
+    font-size: 12px;
+    color: #007bff;
+    vertical-align: top;
+
+}
+  
+  
+  
+  
+  
+  
+  @media only screen and (max-width:1200px){
+  .login-signup li a {
+    font-size: 0;
+    color: #666;
+    text-transform: uppercase;
+  }
+  .sign-up {
+    padding: 17px 3px 7px;
+    border: 2px solid orange;
+    border-radius: 35px;
+  }
+  
+  
+  }
+  
+  
+  
+  
+  

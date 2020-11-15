@@ -1,0 +1,28 @@
+.mt-20{margin-top: 20px;}
+.settings-icon {
+    float: left;
+}
+.settings-icon img{
+    width:22px; 
+    height: auto;
+    margin-right:10px;
+}
+.box{text-align: center;}
+.box-section {
+    background-color: #FFF;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+.icon-section{
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    padding: 30px 0;
+}
+.box h6{
+    text-align: center; 
+    margin-top: 10px;
+    font-weight: 600;
+    color:#444;
+    display: inline-block;
+}

@@ -1,0 +1,33 @@
+.mg0pd0{margin:0;padding:0;}
+.inner-content {
+    padding: 10px 25px;
+}
+.mt-6{margin-top: 6px;}
+.mt-20{margin-top: 20px;}
+.build-course figure{text-align: center;}
+.curriculum-wrapper{max-width: 680px; margin: 0 auto;}
+.module-section{background-color: #FFF;padding:10px;color: #000;}
+.fa-info{
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    padding: 1px 6px;
+    color: #CCC;
+}
+.fa-ellipsis-v{color:#6f6d6d;}
+.detail-icon{
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+}
+.save-draft{color:#6f6d6d;margin: 0 5px;}
+.content-section{background-color: #FFF; float: left; width: 100%;}
+.content-section label{background-color: #FFF; float: left; width: 100%; padding: 10px;}
+.question-up{padding: 5px;}
+.question-up h5{display: inline-block;}
+.question-type label{padding: 0;}
+.correct-choice{padding: 10px;}
+.choice{float: left; width: 100%;}
+.choice-answer{border: 1px solid #6f6d6d;padding:15px;margin:15px;}
+.opacity{
+    opacity: 0.5;
+  }

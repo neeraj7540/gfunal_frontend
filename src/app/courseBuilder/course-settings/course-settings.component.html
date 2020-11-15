@@ -1,0 +1,163 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{userName}}></app-dashboardheader>
+
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select a template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-course-inner-sidebar settingsCSS="active"></app-course-inner-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><img class="quiz-icon" src="../assets/images/course-announcements.png"> Settings</h1>
+        </div>
+      </div>
+      <div class="inner-content course-content fill-bg">
+        <div class="add-contact">
+          <div class="row">
+            <div class="col-lg-12 mg0pd0">
+              <div class="row mt-3">
+                <div class="col-md-8">
+                  <div class="col-md-12 form-group">
+                    <label>Academy Name</label>
+                    <input class="form-control" type="text" [(ngModel)]="name" name='name'>
+
+                  </div>
+                  <div class="col-lg-12 mt-3">
+                    <label>Academy Description</label>
+                    <textarea class="form-control" rows="4" type="text" [(ngModel)]="biography" name='biography'></textarea>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="col-md-12 form-group">
+                    <label>Academy Logo</label>
+                    <div class="logo-image">
+                      <div class="picture-container">
+                        <div class="picture">
+                          <!-- <span class="cross-icon"><img src="../assets/images/funnels-optin-cross.png" title=""></span> -->
+                          <img [src]="imgURL" class="picture-src" id="wizardPicturePreview" title="" *ngIf="imgURL">
+                          <input type="file" id="wizard-picture" accept=".png,.jpg,.jpeg"
+                          (change)="onFileUpload($event)">
+                        </div>
+                      </div>
+                      <h6 class="text-center mt-5"><strong>Upload Photo</strong></h6>
+                      <h6 class="text-center"><strong>(Max size should be less than 200kb and
+                          dimensions 250px x 100px)</strong></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-12 mt-3">
+                    <label>URL</label>
+                    <input class="form-control" type="text" [(ngModel)]="url" name='url'>
+                  </div>
+                  <div class="col-lg-12 mt-3">
+                    <div class="row">
+                      <div class="col-lg-6 mt-3">
+                        <label>Twitter</label>
+                        <div class="col-md-12 col-lg-12 col-xl-12 mg0pd0">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">https://twitter.com</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Url" aria-describedby="basic-addon1"
+                            [(ngModel)]="twitter" name='twitter'>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 mt-3">
+                        <label>Facebook</label>
+                        <div class="col-md-12 col-lg-12 col-xl-12 mg0pd0">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">https://facebook.com</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Url" aria-describedby="basic-addon1"
+                            [(ngModel)]="facebook" name='facebook'>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-6 mt-3">
+                        <label>Linkedin</label>
+                        <div class="col-md-12 col-lg-12 col-xl-12 mg0pd0">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">https://linkedin.com</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Url" aria-describedby="basic-addon1"
+                            [(ngModel)]="linkDin" name='linkDin'>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 mt-3">
+                        <label>Youtube</label>
+                        <div class="col-md-12 col-lg-12 col-xl-12 mg0pd0">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">https://youtube.com</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Url" aria-describedby="basic-addon1"
+                            [(ngModel)]="youTube" name='youTube'>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12 pt-2 pb-20 pull-right">
+            <!-- <a class="custom-btn btn black-btn">Cancel</a> -->
+            <a class="custom-btn btn" (click) = "onUpdate_Clicked()">Update</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,93 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+  <!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select Template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Steps End-->
+
+  <div class="container {{opacity}}">
+
+      <div class="d-flex content-wrapper">
+        <div class="sidebar">
+          <app-dashboardsidebar></app-dashboardsidebar>
+        </div>
+        <div class="w-100">
+    <div class="content">
+      <div class="page-title">
+        <h1><i class="fa fa-home"></i> Landing Pages</h1>
+      </div>
+    </div>
+      <div class="inner-content fill-bg">
+      <div class="row">
+        <div class="col-lg-12" [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+                               [style.display] = "isDivVisible ? '' : 'none'" >
+          <div class="domain-outer" *ngFor="let item of receivedData">
+            <label><span>{{item.site_name}}</span> </label>
+            <span class="expired" (click) = "onPreview_Clicked(item)"><a class="btn custom-btn">Preview</a></span>
+            <span class="expired" (click) = "onManage_Clicked(item)"><a class="btn custom-btn">Manage</a></span>
+          </div>
+        </div>
+
+        <div class="pagination-sec mt-2" [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+        [style.display] = "isDivVisible ? '' : 'none'">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination pg-blue justify-content-md-between justify-content-center">
+                <li class="page-item {{isPreviousDisabled}}"><a class="page-link" mdbWavesEffect (click) = "onPaginaion_Clicked($event)"><b><< Previous</b></a></li>
+                <li class="page-item {{isNextDisabled}}"><a class="page-link" mdbWavesEffect (click) = "onPaginaion_Clicked($event)"><b>Next >></b></a></li>
+              </ul>
+            </nav>
+          </div>
+
+        <div class="col-md-12 text-center">
+          <div class="col-md-12 wc-text mb-5 mt-5" [style.visibility]="!isDivVisible ? 'visible' : 'hidden'"
+          [style.display] = "!isDivVisible ? '' : 'none'" >
+            <div class="col-md-6 m-auto"><img src="/assets/images/lp-settings.png"></div>
+            <div class="col-md-6 m-auto">
+              Start building your landing page by selecting one of our many free templates.
+            </div>
+          </div>
+          <a class="btn custom-btn" (click) = "onCreateLandingPage_Clicked()">Create New</a>
+        </div>
+      </div>
+      
+      </div>
+
+    </div> </div>
+  </div>
+  <app-dashboardfooter></app-dashboardfooter>
+
+

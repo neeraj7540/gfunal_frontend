@@ -1,0 +1,97 @@
+<app-dashboardheader></app-dashboardheader>
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-book"></i>&nbsp; Courses</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg">
+        <div class="form-row">
+          <!-- Card 1 -->
+          <div *ngFor="let year of loopArray" class="col-xl-3 col-lg-6 col-md-6 mb-4 pr-3">
+            <!-- Card -->
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+                  alt="Card image cap"></mdb-card-img>
+                <a>
+                  <div class="mask"></div>
+                  <div class="overlay"></div>
+                <div class="GFbutton"><a href="#" class="btn-md" mdbBtn color="amber" mdbWavesEffect> Update </a></div>
+            
+                </a>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4 class="text-center">Maths</h4>
+                </mdb-card-title>
+
+                <!--Text-->
+                <mdb-card-text class="text-center gfunl-orange "> Coaching and consulting bootcamp : Start Your Course
+                </mdb-card-text>
+                <mdb-badge pill="true" primary="true">Published</mdb-badge>                
+            </mdb-card-body>
+            </mdb-card>
+            <!-- Card -->
+
+          </div>
+
+          <!-- Card 2 -->
+          <div *ngFor="let year of loopArray" class="col-xl-3 col-lg-6 col-md-6 mb-4 pr-3">
+            <!-- Card -->
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg"
+                  alt="Card image cap"></mdb-card-img>
+                <a>
+                  <div class="mask"></div>
+                  <div class="overlay"></div>
+                  <div class="PBbutton"><a href="#" class="btn-md" mdbBtn color="red" mdbWavesEffect> Publish </a></div>
+                  <div class="UPbutton"><a href="#" class="btn-md" mdbBtn color="amber" mdbWavesEffect> Update </a></div>
+                  <div class="DTbutton"><a href="#" class="btn-md" mdbBtn color="cyan" mdbWavesEffect> Delete </a></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4 class="text-center">Sports</h4>
+                </mdb-card-title>
+
+                <!--Text-->
+                <mdb-card-text class="text-center gfunl-orange "> Coaching and consulting bootcamp : Start Your Course
+                </mdb-card-text>
+                <mdb-badge pill="true" warning="true">Draft</mdb-badge>
+                <!-- <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a> -->
+              </mdb-card-body>
+            </mdb-card>
+            <!-- Card -->
+
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 pr-3">
+            <!-- Card -->
+            <mdb-card>
+              <mdb-card-body>
+                <mdb-card-img src="assets/images/+placeholder.jpg" alt="Card image cap"></mdb-card-img>
+              </mdb-card-body>
+              <p class="text-center" color="primary" mdbWavesEffect>Add Subject</p>
+            </mdb-card>
+            <!-- Card -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,18 @@
+<div class="choice">
+  <div class="choice-answer">
+    <div class="question-up">
+      <h5> <strong>Choice{{choiceCount}}</strong> </h5>
+      <div class="post-editor">
+        <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true" 
+                        [(ngModel)]="addQuestionParam.ChoiceContent" imageEndPoint="http://myApiEndPoint"
+                        (focusout)="hide()"></app-ngx-editor>
+      </div>
+    </div>
+    <div class="correct-choice">
+      <div class="mt-6">        
+        <input type="checkbox" [checked]='isCorrectAnswer' (click)="taxableItemChecked($event)" > 
+          <span class="save-draft"> This is the correct answer</span> 
+      </div>
+    </div>
+  </div>
+</div>

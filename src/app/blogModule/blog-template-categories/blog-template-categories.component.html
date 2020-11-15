@@ -1,0 +1,57 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+  <!-- Steps Start-->
+  <div class="steps">
+      <div class="container">
+        <div class="steps-bar">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+        </div>
+
+        <div class="points">
+          <div class="pin completed">
+              <span><i class="fa fa-check"></i></span>
+            <p>Store Preference</p>
+          </div>
+          <div class="pin current">
+              <span><i class="fa fa-check"></i></span>
+              <p>Select Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Customize Template</p>
+              </div>
+              <div class="pin">
+                  <span><i class="fa fa-check"></i></span>
+                  <p>Publish</p>
+                </div>
+        </div>
+      </div>
+    </div>
+    <!-- Steps End-->
+
+<div class="container">
+  <div class="category-type py-5">
+      What kind of blog you want to create?
+  </div>
+
+  <div class="categories pb-5">
+    <ul (click)="onSelectCategory($event)">
+      <li><a><i class="fas fa-arrow-right"></i> Art</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Digital Life</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Technology</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Immigration</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Books</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Beauty & Wellness</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Photography</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Relationship</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Pets</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Music</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Lifestyle</a></li>
+      <li><a><i class="fas fa-arrow-right"></i> Other</a></li>
+    </ul>
+  </div>
+</div>
+
+
+  <app-dashboardfooter></app-dashboardfooter>

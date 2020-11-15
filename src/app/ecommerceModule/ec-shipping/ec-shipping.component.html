@@ -1,0 +1,277 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-cogs"></i> Shipping</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <div class="p-box-title">Shipping Origin</div>
+        <div class="box-content mb-4">
+          <div class="row border-top mt-5 pt-3">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="shipping-label">
+                    Shipping From
+                  </div>
+                </div>
+                <div class="col-md-6 text-right">
+                  <a class="custom-btn orange-btn btn simple black-btn  m-0 float-right"
+                    (click)="openShippingFromAddress()">Create Shipping origin</a>
+                </div>
+              </div>
+              <div class="shipping-origin">
+
+                <div *ngFor="let address of shippingFromAddresses; let i = index" class="row">
+                  <div class="col-6">
+                    <label>Standard Shipping</label>
+                    <p class="mb-0">{{address.street}}, {{address.city}},{{address.zipCode}}, {{address.state}}</p>
+                    <p>{{address.phone}}</p>
+                  </div>
+                  <div class="col-6 text-right">
+                    <div class="dropdown float-right ellipsis-btn" mdbDropdown>
+                      <a mdbDropdownToggle mdbBtn class="btn ellipsis-btn" type="button" mdbWavesEffect><i
+                          class="fa fa-ellipsis-h"></i>
+                      </a>
+                      <ul class="dropdown-menu sub-menu">
+                        <li (click)="openEditShippingFromAddress(address, i)"><a> Edit</a></li>
+                        <li (click)="onDeleteShippingFromAddress(address,i)"><a> Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="p-box-title">Shipping Zone</div>
+        <div class="box-content mb-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="shipping-label">
+                    Shipping From
+                  </div>
+                </div>
+                <div class="col-md-6 text-right">
+                  <a class="custom-btn orange-btn btn simple black-btn  m-0 float-right"
+                    (click)="addZoneModal.show()">Add
+                    Shipping Zone</a>
+                </div>
+              </div>
+              <div class="shipping-origin">
+                <div class="row border-top mt-5 pt-3"
+                  *ngFor="let shippingZone of shippingZoneAddresses">
+                  <div class="col-6">
+                    <label class="mb-0">{{shippingZone.name}}</label>
+                    <p>-{{shippingZone.name}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="border-rounded ">
+                      <table class="table mb-0 custom-table">
+                        <thead class="gray-bg">
+                          <tr>
+                            <th>Shipping Name</th>
+                            <th>Weight</th>
+                            <th>Rate</th>
+                            <th class="text-center" width="100">Action</th>
+                          </tr>
+                        </thead>
+                        <tr *ngFor="let item of shippingZone.data; let i = index;">
+                          <td>{{item.shippingParticular}}</td>
+                          <td>{{item.shippingWeightRange}}</td>
+                          <td>{{item.shippingPrice}}</td>
+                          <td class="text-center">
+                            <div class="dropdown ellipsis-btn" mdbDropdown>
+                              <a mdbDropdownToggle mdbBtn class="ellipsis-btn" type="button" mdbWavesEffect><i
+                                  class="fa fa-ellipsis-h"></i>
+                              </a>
+                              <ul class="dropdown-menu sub-menu">
+                                <li (click)="openEditshippingZoneModal(shippingZone, item)"><a> Edit</a></li>
+                                <li (click)="onDeleteshippingZone(item,i);"><a> Delete</a></li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="4">
+                            <a class="btn orange-btn custom-btn simple float-right"
+                              (click)="openAddshippingZoneModal(shippingZone.name)">Add
+                              Rate</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Add Rate Modal-->
+<div mdbModal #addZoneRateModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="addZoneRateModal" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="addZoneRateModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100 pl-0" id="addZoneRateModalLabel">Add Rate</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Shipping Name</label>
+            <input class="form-control" type="text" [(ngModel)]="zoneRate.shippingParticular">
+          </div>
+          <div class="col-md-4">
+            <label>Max Weight</label>
+            <input class="form-control" type="text" [(ngModel)]="zoneRate.shippingWeightRange">
+          </div>
+          <div class="col-md-4">
+            <label>Rate</label>
+            <input class="form-control" type="number" step="any" [(ngModel)]="zoneRate.shippingPrice">
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a (click)="addZoneRateModal.hide()" class="custom-btn btn black-btn  m-0">Cancel</a> &nbsp;
+        <a *ngIf="isSaveOrUpdate" (click)="addZoneRate(isSaveOrUpdate)" class="custom-btn btn m-0">Save</a>
+        <a *ngIf="!isSaveOrUpdate" (click)="addZoneRate(isSaveOrUpdate)" class="custom-btn btn m-0">Update</a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Add Zone Modal-->
+<div mdbModal #addZoneModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addZoneModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="addZoneModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100 pl-0" id="myModalLabel">Create Zone</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-row">
+          <!-- <div class="col-md-12">
+            <label>Zone Name</label>
+            <input class="form-control" type="text">
+          </div> -->
+          <div class="col-md-12 mt-2">
+            <label>Enter Country</label>
+            <input class="form-control" type="text" [(ngModel)]="zoneAddress.shippingType">
+          </div>
+          <!-- <div class="col-md-12 mt-2">
+            <input type="checkbox"> Rest of World
+          </div> -->
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a (click)="addZoneModal.hide()" class="custom-btn btn black-btn  m-0">Cancel</a> &nbsp;
+        <a (click)="addShippingZone()" class="custom-btn btn m-0">Done</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--Add Shipping From Address Modal-->
+<div mdbModal #addShippingFromAddress="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="addShippingFromAddress" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="addShippingFromAddress.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100 pl-0" id="myModalLabel">Create Origin</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row mt-2">
+          <div class="col-md-12 form-group">
+            <label>Legal Name of Business</label>
+            <input class="form-control" type="text" [(ngModel)]="shippingFrom.businessName" name='name'>
+          </div>
+
+          <div class="col-md-6 form-group">
+            <label>Phone No.</label>
+            <input class="form-control" type="number" [(ngModel)]="shippingFrom.phone" name='phone'>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Street</label>
+            <input class="form-control" type="text" [(ngModel)]="shippingFrom.street" name='street'>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>City</label>
+            <input class="form-control" type="text" [(ngModel)]="shippingFrom.city" name='city'>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Postal/Zip Code</label>
+            <input class="form-control" type="text" [(ngModel)]="shippingFrom.zipCode" name='postal'>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Country Region</label>
+            <input class="form-control" type="text" [(ngModel)]="shippingFrom.country" name='country'>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>State</label>
+            <input class="form-control" type="text" [(ngModel)]="shippingFrom.state" name='state'>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a (click)="addShippingFromAddress.hide()" class="custom-btn btn black-btn  m-0">Cancel</a> &nbsp;
+        <a *ngIf="isSaveOrUpdateZone" (click)="saveShippingFromAddress(isSaveOrUpdateZone)" class="custom-btn btn m-0">Save</a>
+        <a *ngIf="!isSaveOrUpdateZone" (click)="saveShippingFromAddress(isSaveOrUpdateZone)" class="custom-btn btn m-0">Update</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<app-dashboardfooter></app-dashboardfooter>

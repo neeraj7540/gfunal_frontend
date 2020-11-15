@@ -1,0 +1,92 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-sidebar></app-ec-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-tachometer-alt"></i> Ecommerce Menu</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <div class="row mt-4">
+          <div class="col-md-8">
+            <label>Menu Name</label>
+            <input class="form-control" type="text" [(ngModel)]="menuName" name='menu'>
+          </div>
+          <div class="col-md-4">
+            <div class="saved-cats">
+              <div class="cat-header">
+                <div class="cat-name">Menus</div>
+              </div>
+              <div class="cat-body" *ngFor="let menu of menus; let i = index;">
+                <div class="cat-row">
+                  <div class="cat-name">{{menu.name}}</div>
+                  <div class="cat-action">
+                    <a (click)="onEdit(menu)">Edit</a> | <a (click)="onDelete(menu,i)">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-12">
+          <div class="col-md-12 border-top pt-2">
+            <a *ngIf="!menuId" class="custom-btn btn" (click)="saveMenu()">Save</a>
+            <a *ngIf="menuId" class="custom-btn btn" (click)="updateMenu()">Update</a>
+          </div>
+        </div>
+        <div [style.visibility]="isDivVisible ? 'visible' : 'hidden'"
+        [style.display] = "isDivVisible ? '' : 'none'">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label>Select Menu</label>
+              <select class="form-control" type="text" name='selectmenu' [(ngModel)]="selectedMenu">
+                <option *ngFor="let menu of menus" value="{{menu._id}}">{{menu.name}}</option>
+              </select>
+            </div>
+            <div class="col-md-6 form-group">
+              <label>Select Page or Collection</label>
+              <select class="form-control" [compareWith]="compareFn" name='selectPageCollection' 
+              [(ngModel)]="selectedPageCollection">
+
+                <optgroup *ngFor='let item of collectionsPagesData' label="{{item.label}}">
+                  <option *ngFor='let value of item.values' [ngValue]="value">{{value.value}}</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <!-- <div class="row">
+            <div class="col-md-6 form-group">
+              <label>Select Collection</label>
+              <select class="form-control" type="text" name='selectCollection' [(ngModel)]="selectedCollection">
+                <option *ngFor="let collection of collections" value="{{collection._id}}">{{collection.collectionTitle}}</option>
+              </select>
+            </div>
+          </div> -->
+          <div class="row mt-12">
+            <div class="col-md-12 border-top pt-2">
+              <a class="custom-btn btn" (click)="saveSubMenu()">Save</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

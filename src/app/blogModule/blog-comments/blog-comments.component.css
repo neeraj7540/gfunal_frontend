@@ -1,0 +1,33 @@
+
+a.had-comment {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 11px !important;
+    color: #1489cc !important;
+}
+a.had-comment:hover {
+    text-decoration: underline;
+}
+td.author-detail {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+td.author-detail span {
+    font-weight: 400 !important;
+    font-size: 12px !important;
+}
+.action-btn a {
+
+    margin: 0 5px !important;
+    font-size: 16px;
+    color: #555 !important;
+
+}
+.blog-reply {
+    padding: 19px 0 0 40px;
+    font-weight: 600;
+}
+.blog-reply span{
+    font-weight: 400;
+    display: block;
+}

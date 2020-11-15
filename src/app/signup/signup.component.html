@@ -1,0 +1,56 @@
+<div *ngIf="check(); then loading else nothing">
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+
+  </ng-template>
+<div class="model-outer {{opacity}}">
+  <a >
+      <div class="site-logo">
+          <img src="../../assets/images/logo.png">
+        </div>
+  </a>
+  <div class="sign-box">
+    <div class="sign-header">
+      welcome to Gfunl
+    </div>
+    <h3 class="sign-title">Create Account</h3>
+    <form class="px-lg-5 px-3">
+      <div class="form-row form-group">
+        <div class="col-md-6 pb-3">
+          <input class="form-control user-name" placeholder="First Name" type="text" name='first_name' [(ngModel)]="first_name">
+        </div>
+        <div class="col-md-6 pb-3">
+          <input class="form-control" placeholder="Last Name" type="text" name='last_name' [(ngModel)]="last_name">
+        </div>
+      </div>
+      <div class="form-row form-group pb-3">
+        <div class="col-md-12">
+          <input class="form-control email" placeholder="Email Address" type="text" name='email' [(ngModel)]="email">
+        </div>
+      </div>
+      <div class="form-row form-group pb-3">
+        <div class="col-md-12">
+          <input class="form-control" placeholder="+91 12345XXXXX" aria-hidden="true" type="text" name='phone' [(ngModel)]="phone">
+        </div>
+      </div>
+      <div class="form-row form-group pb-3">
+        <div class="col-md-12">
+          <input class="form-control password" placeholder="Password" type="password" name="password" [(ngModel)]="password">
+        </div>
+      </div>
+      <div class="form-row form-group pb-2">
+        <div class="col-md-12 text-center">
+          <input type="button" class="btn custom-btn" value="Sign Up" (click)="signup()">
+        </div>
+      </div>
+      <div class="form-row form-group ">
+          <div class="col-md-12 text-center sign-btn">
+          Already have an account | <span><a href="login">Login</a></span>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

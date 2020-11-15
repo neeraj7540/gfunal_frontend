@@ -1,0 +1,60 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<div class="inner-content inner-content-subheader fill-bg">
+  <div class="add-contact">
+    <div class="row">
+      <div class="col-lg-12 mg0pd0">
+
+        <app-funnel-steps-categories (selectedTab)="displayTabContent($event)"></app-funnel-steps-categories>
+
+
+        <div class="inner-content pl-0 pr-0" *ngIf="constants.isTemplatesShowing">
+
+
+          <div class="col-md-12 form-group">
+            <select class="form-control" [(ngModel)]="selectedCategory" (change)="onChangeCategory($event)">
+              <option value="Art"> Art</option>
+              <option value="DigitalLife"> Digital Life</option>
+              <option value="Technology"> Technology</option>
+              <option value="Immigration"> Immigration</option>
+              <option value="Books"> Books</option>
+              <option value="BeautyWellness"> Beauty & Wellness</option>
+              <option value="Photography"> Photography</option>
+              <option value="Relationship"> Relationship</option>
+              <option value="Pets"> Pets</option>
+              <option value="Music"> Music</option>
+              <option value="Lifestyle"> Lifestyle</option>
+              <option value="Other"> Other</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-4" *ngFor="let template of templates">
+              <div class="template-thumb">
+                <div class="template-img">
+                  <img src="../../assets/images/t-thumb.jpg">
+                  <div class="overlay-cont">
+                    <button (click)="previewTemplate(template)" class="btn btn-square" type="button" color="default"
+                      rounded="true" data-toggle="modal" data-target="#basicExample">Details</button>
+                    <a class="btn btn-square transparent" type="button" (click)="onChoose(template)" color="default"
+                      rounded="true">Choose</a>
+                  </div>
+                </div>
+                <div class="template-name">{{template.template_name}}</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

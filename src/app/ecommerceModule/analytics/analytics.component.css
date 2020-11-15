@@ -1,0 +1,31 @@
+
+.filter {
+    border: 0;
+    border-radius: 19px;
+    padding: 7px 11px;
+    padding-right: 11px;
+    background:#d5d5d5 url(../../../assets/images/filter.png) calc(100% - 15px) center no-repeat !important;
+    background-size: 13px !important;
+    margin-bottom: 2px;
+}
+.lead-serach input {    
+    padding: 8px 60px 7px 20px;
+}
+.lead-s-btn {
+    width: 33px;
+    height: 33px;
+    font-size: 18px;
+}
+.box-content {
+    border: 1px solid #ccc;
+    padding: 12px;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+}
+.box-content img {
+
+    max-width: 100%;
+
+}

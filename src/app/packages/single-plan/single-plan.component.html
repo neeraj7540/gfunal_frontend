@@ -1,0 +1,27 @@
+<div class="packs"> <!-- Pack 1-->
+  <div class={{text_class}}>
+    {{price}}
+  </div>
+  <div class="pack-type">
+    {{datais}}
+  </div>
+  <div class="pack-features">
+    <ul>
+      <li>Lead Generation</li>
+      <li>Marketing Automation</li>
+      <li>Analytics</li>
+      <li>Lead Generation</li>
+      <li>Marketing Automation</li>
+      <li>Analytics</li>
+    </ul>
+  </div>
+  <div class="pack-detail text-center">
+      <div class="button-seciton">
+          <div class="add-btn {{packagecss}}">
+            <input type="checkbox" (change)="Package_Selected($event)" id="{{datais}}" 
+                   [checked] = "isCheckBoxChecked">
+            <span></span>
+          </div>
+      </div>
+  </div>
+</div>

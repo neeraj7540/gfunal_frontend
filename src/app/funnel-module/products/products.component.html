@@ -1,0 +1,97 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-funnel-sidebar></app-funnel-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="far fa-file-alt"></i> Products</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+          <a class="custom-btn simple btn float-right" (click)="openAddProduct()"><i class="fa fa-plus"></i> Add
+            Product</a>
+        </div>
+      </div>
+      <div class="inner-content fill-bg mt-1">
+
+        <div class="row">
+          <div class="col-md-7">
+            <select class="filter">
+              <option>Filter</option>
+              <option>Name</option>
+              <option>Category</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <div class="lead-serach">
+              <input class="" placeholder="Search..." type="text">
+              <button type="submit" class="lead-s-btn"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <div class="cover-box p-0">
+              <div class="table-responsive border-rounded dark-header">
+                <table class="table table-striped mb-0">
+                  <thead class="thead-dark">
+                    <tr>
+
+                      <th width="5%"></th>
+                      <th width="45%">Product</th>
+                      <th width="15%">Price</th>
+                      <th class="text-center" width="15%">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of products; let i = index">
+                      <td>
+                        <div class="product-img"><img src="../../../assets/images/product1.jpg"></div>
+                      </td>
+                      <td class="vertical-align-M"><b>{{product.product_name}}</b></td>
+                      <td class="vertical-align-M">{{product.product_price}}</td>
+                      <td class="text-center ec-action vertical-align-M">
+                        <a (click)="editProduct(product)"><i class="fas fa-pencil-alt"></i></a>
+                        <a (click)="deleteProduct(product,i)"><i class="fa fa-trash"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Pagination -->
+              <!-- <div class="pagination-sec mt-2">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination pg-blue justify-content-md-end justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link" tabindex="-1" mdbWavesEffect>Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+                    <li class="page-item">
+                      <a class="page-link" mdbWavesEffect>Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

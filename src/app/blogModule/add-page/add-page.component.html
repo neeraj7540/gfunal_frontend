@@ -1,0 +1,109 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+  </ng-template>
+<!-- Steps Start-->
+<!-- <div class="steps">
+  <div class="container">
+    <div class="steps-bar">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <div class="points">
+      <div class="pin completed">
+        <span><i class="fa fa-check"></i></span>
+        <p>Store Preference</p>
+      </div>
+      <div class="pin current">
+        <span><i class="fa fa-check"></i></span>
+        <p>Select a template</p>
+      </div>
+      <div class="pin">
+        <span><i class="fa fa-check"></i></span>
+        <p>Customize Template</p>
+      </div>
+      <div class="pin">
+        <span><i class="fa fa-check"></i></span>
+        <p>Publish</p>
+      </div>
+    </div>
+  </div>
+</div> ------>
+<!-- Steps End-->
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-blog-sidebar></app-blog-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="far fa-file-alt"></i> Add Page</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg p-3">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="post-title">
+              <input placeholder="Page Title" type="text"  [(ngModel)]="addPageParam.pageTitle">
+            </div>
+            <div class="post-editor">
+              <!-- <img src="../assets/images/edit.png"> -->
+              <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [spellcheck]="true"
+                [(ngModel)]="addPageParam.pageContent" imageEndPoint="http://myApiEndPoint"></app-ngx-editor>
+
+            </div>
+            <div class="search-engine">
+              <h2 class="side-bar-titles ">Meta Tags</h2>
+
+              <div class="form-group mt-4">
+                <label>Meta Keywords</label>
+                <input class="form-control" type="text" [(ngModel)]="addPageParam.metaKeywords">
+              </div>
+              <div class="form-group">
+                <label>Meta Description </label>
+                <textarea  [(ngModel)]="addPageParam.metaDescription"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <a *ngIf="!blog_id" class="btn custom-btn w-100" (click)="publish(true)">Publish</a>
+            <a *ngIf="!blog_id" class="btn custom-btn w-100" (click)="publish(false)">Draft</a>
+
+            <a *ngIf="addPageParam.savedAs && blog_id" class="btn custom-btn w-100" (click)="update(true)">Update</a>
+            <a *ngIf="!addPageParam.savedAs  && blog_id" class="btn custom-btn w-100" (click)="update(true)">Publish</a>        
+            <a *ngIf="!addPageParam.savedAs  && blog_id" class="btn custom-btn w-100" (click)="update(false)">Update</a>
+            
+            <div class="sidebar-shells">
+              <!-- feature image -->
+              <h2 class="side-bar-titles">Featured Image</h2>
+              <div class="feature-img-sec pt-2">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="readURL($event);">
+                  <label class="custom-file-label" for="customFileLangHTML" data-browse="Browse">Upload Image</label>
+                  <div class="uploaded-img">
+                    <img src="{{addPageParam.image}}">
+                  </div>
+                  <a class="remove-img" (click)="removeImage()">Remove featured image</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

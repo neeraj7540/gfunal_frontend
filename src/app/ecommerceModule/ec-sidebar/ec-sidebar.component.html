@@ -1,0 +1,34 @@
+<div class="sidebar-inner">
+  <ul>
+    <li><a (click)="openDashboard()"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+    <li class="dropdown" mdbDropdown><a (click)="openProducts();"><i class="far fa-file-alt"></i> Products</a>
+      <a mdbDropdownToggle mdbBtn class="dropdown-toggle btn custom-blank-btn waves-light" type="button"
+        mdbWavesEffect><i class="fa fa-plus"></i>
+      </a>
+      <ul class="dropdown-menu sub-menu">
+        <!-- <li><a href="ecommerce/inventory"> Inventory</a></li> -->
+        <li><a (click)="openCollections();"><i class="far fa-file-alt"></i> Collections</a></li>
+      </ul>
+    </li>
+    <li><a (click)="openOrders();"><i class="fa fa-shopping-bag"></i> Orders</a></li>
+    <li><a (click)="openThemePage();"><i class="fa fa-desktop"></i> Themes</a></li>
+    <li><a (click)="openCustomerPage();"><i class="fa fa fa-user"></i> Customers</a></li>
+    <li><a (click)="openPagesPage();"><i class="far fa-file-alt"></i> Pages</a></li>
+    <li><a><i class="far fa-chart-bar" style="position: relative;top: 6px;"></i> Analytics</a></li>
+    <li><a (click)="openDiscount();"><i class="fa fa-percent"></i> Discounts</a></li>
+    <li><a (click)="openAnnouncements();"><i class="fa fa-bullhorn"></i> Announcements</a></li>
+    <li><a (click)="openNavigationPage();"><i class="fa fa-bars"></i> Navigation</a></li>
+    <li class="dropdown" mdbDropdown><a (click)="openSettings();"><i class="fas fa-cogs"></i> Settings</a>
+      <a mdbDropdownToggle mdbBtn class="dropdown-toggle btn custom-blank-btn waves-light" type="button"
+        mdbWavesEffect><i class="fa fa-plus"></i>
+      </a>
+      <ul class="dropdown-menu sub-menu">
+        <li><a (click)="openGeneralSettings();"> General Settings</a></li>
+        <li><a (click)="openTaxRegion();"> Tax Regions</a></li>
+        <li><a (click)="openNotifications();"> Notifications</a></li>
+        <li><a (click)="openShipping();"> Shipping</a></li>
+        <!-- <li><a (click)="openCheckout();"> Checkout</a></li> -->
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,29 @@
+.welcometogfunl {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.section-title{
+font-size: 21px;
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+font-weight: 300;
+margin-bottom: 21px;
+color: #444;
+}
+
+.packages-outer {
+    background: #f4f4f4;
+    padding: 52px 15px;
+    border: 1px solid #ddd;
+
+}
+
+.packages-plans{
+    display: flex;
+    justify-content: center;
+}
+
+.opacity{
+  opacity: 0.5;
+}

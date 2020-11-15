@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GFUNL Sign Up</title>
+
+</head>
+
+<body>
+
+  <div class="main">
+    <div *ngIf="check();then thenBlock else elseBlock">
+    </div>
+    <ng-template #thenBlock>
+      <div>
+          <app-manualloader></app-manualloader>
+      </div>
+    </ng-template>
+    <ng-template #elseBlock>
+    </ng-template>
+    <section class="signup">
+      <div class="container">
+        <div class="signup-content">
+          <div id="signup-form" class="signup-form">
+            <h2 class="form-title">Login with your credentials</h2>
+            <div class="form-group">
+              <input type="email" class="form-input" [(ngModel)]="loginRequest.email" name="email" id="email"
+                placeholder="Your Email" />
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-input" [(ngModel)]="loginRequest.password" name="password" id="password"
+                placeholder="Password" />
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="emember-me" id="emember-me" class="emember-me" />
+              <label for="emember-me" class="label-remember-me">Remember Me</label>
+            </div>
+            <div class="form-group">
+              <input type="button" (click)="login()" name="submit" id="submit" class="form-submit" value="Sign in" />
+            </div>
+          </div>
+            <p class="recoverpassword pull-left">
+              <a href="#" class="recoverpassword-link">Recover Password</a>
+            </p>
+            <p class="createaccount pull-right">
+              New to Gfunl ? <a (click)="openSignupPage()" class="createaccount-link">Create Account</a>
+            </p>
+          </div>
+        </div>
+    </section>
+
+  </div>
+
+  <!-- JS -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

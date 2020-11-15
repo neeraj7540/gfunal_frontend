@@ -1,0 +1,368 @@
+.p-box-title {
+    font-size: 16px;
+    color: #171717;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.box-content {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background: #fff;
+}
+.uploaded-file {
+    position: relative;
+}
+.uploaded-file input {
+    width: 100%;
+    height: 144px;
+    display: block;
+    position: relative;
+    z-index: 10000;
+    opacity:0;
+    overflow: hidden;
+}
+.uploaded-file img{
+    width: 100%;
+    height: 100%;
+}
+.close{
+    position: absolute;
+    right: 6px;
+    top: 0;
+    font-size: 15px;
+    color: #000 !important;
+    z-index: 999;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+.drop-file-here {
+    position: absolute;
+    width: 166px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.drop-file-here i {
+    font-size: 50px;
+    color: #ccc;
+}
+.drop-file-here span {
+    display: block;
+    clear: both;
+    font-size: 13px;
+}
+.note-check {
+    font-size: 13px;
+    padding-top: 8px;
+
+}
+.size-option label {
+    margin-right: 4px;
+    font-size: 14px;    
+    cursor: pointer;    
+    /* padding: 5px 13px;     */
+    position: relative;
+margin-bottom:0;
+}
+.size-option span {
+    padding: 3px 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* position: absolute; */
+    left: 0;
+    /* width: 49px; */
+    display: inline-block;
+    text-align: center;
+}
+.size-option label input{
+    /* opacity: 0; */
+    margin: 6px 11px 0 0;
+}
+.size-option input:checked + span {
+    background: #FF7513;
+    border: 1px solid #FF7513;
+    color: #fff;
+}
+.color-code {
+    display: flex;
+    flex-wrap: wrap;
+}
+.color-code input {
+    width: 90px !important;
+    margin-right: 5px;
+}
+
+.color-code .row input[type="file"] {
+    width: auto !important;
+
+}
+.size-item {
+    display: flex;
+    width: 82px;
+}
+
+.size-price {
+    width: 100%;
+
+}
+.custom-table td,.custom-table th {
+    padding: 11px 5px !important;
+
+}
+
+/*Custom File Upload Css Start*/
+.file-upload-wrapper {
+    width: 100%;
+}
+.file-upload {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    text-align: center;
+    color: #ccc;
+}
+.card-body {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 0 !important;
+}
+.card {
+    font-weight: 400;
+    border: 0;
+    /* -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
+}
+.view {
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+.card-body {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.file-upload-wrapper .card.card-body .file-upload-message {
+    position: relative;
+    top: 20px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.file-upload i {
+    font-size: 3rem;
+}
+.fa, .fas {
+    font-weight: 900;
+}
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+}
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+.file-upload-wrapper .card.card-body .file-upload-message p {
+    margin: 5px 0 0;
+}
+.file-upload-wrapper .card.card-body .file-upload-message p.file-upload-error {
+    color: #f34141;
+    font-weight: 700;
+    display: none;
+}
+.file-upload .mask.rgba-stylish-slight {
+    opacity: 0;
+    -webkit-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    transition: all .15s linear;
+}
+.view .mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+.rgba-stylish-slight {
+    background-color: rgba(62,69,81,0.1);
+}
+.file-upload-wrapper .card.card-body .file-upload-errors-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(243, 65, 65, .8);
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear .15s, opacity .15s linear;
+    -o-transition: visibility 0s linear .15s, opacity .15s linear;
+    transition: visibility 0s linear .15s, opacity .15s linear;
+}
+.file-upload-wrapper .card.card-body .file-upload-errors-container ul {
+    padding: 10px 20px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.file-upload-wrapper .card.card-body input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+.file-upload-wrapper .card.card-body .btn.btn-sm.btn-danger {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 7;
+    top: 10px;
+    right: 10px;
+    -webkit-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    transition: all .15s linear;
+}
+.btn.btn-sm {
+    padding: .5rem 1.6rem;
+    font-size: .64rem;
+}
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
+.file-upload-wrapper .card.card-body .file-upload-preview {
+    
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+}
+.file-upload-wrapper .card.card-body .file-upload-preview .file-upload-infos {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, .7);
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+.file-upload-wrapper .card.card-body .file-upload-preview .file-upload-infos .file-upload-infos-inner {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -40%);
+    -ms-transform: translate(0, -40%);
+    transform: translate(0, -40%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    padding: 0 20px;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.file-upload-wrapper .card.card-body .file-upload-preview .file-upload-infos .file-upload-infos-inner p {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 700;
+}
+.file-upload-wrapper .card.card-body .file-upload-preview .file-upload-infos .file-upload-infos-inner p.file-upload-infos-message {
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+    position: relative;
+    opacity: .5;
+}
+.file-upload-wrapper .card.card-body .file-upload-preview .file-upload-render .file-upload-preview-img {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    -webkit-transition: border-color .15s linear;
+    -o-transition: border-color .15s linear;
+    transition: border-color .15s linear;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.file-upload-wrapper .card.card-body.has-error .file-upload-message .file-upload-error, .file-upload-wrapper .card.card-body.has-preview .btn.btn-sm.btn-danger {
+    display: block;
+}
+/*Custom File Upload Css END*/

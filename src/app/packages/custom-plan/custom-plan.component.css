@@ -1,0 +1,54 @@
+.cust-plan {
+    text-align: center;
+    border: 1px solid #ccc;    
+    padding: 14px;    
+    border-radius: 6px;
+    margin-bottom: 28px;
+}
+
+.pln-prc {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+.pln-name {
+    font-size: 17px;
+    font-weight: 300;
+    color: #050625;
+    padding-bottom: 17px;
+}
+
+
+
+.add-btn {
+    display: inline-block;
+    position: relative;
+}
+.add-btn input {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    height: 100%;
+cursor: pointer;
+}
+.add-btn input + span::after {
+    content: "Add";
+    position: relative;    
+       background: #ccc;    
+    display: inline-block;    
+    padding: 5px 34px;    
+    border-radius: 26px;    
+    text-align: center;    
+    color: #fff;
+}
+.add-btn input:checked + span::after {
+    content: "Added";
+    position: relative;    
+    background: #fd9043;    
+    display: inline-block;    
+    padding: 5px 25px;    
+    border-radius: 26px;    
+    text-align: center;    
+    color: #fff;
+}

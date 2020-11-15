@@ -1,0 +1,139 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-ec-theme-editor-sidebar></app-ec-theme-editor-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-heading"></i> Header</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg">
+        <div class="row">
+          <div class="col-md-7 m-auto">
+            <div class="post-title">
+              <label>Shop Name</label>
+              <input placeholder="Store Name" type="text" [(ngModel)]="ecommerceHeader.ecommerceName">
+            </div>
+
+            <div class="b-logo">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Store Logo (512 x 512)</label>
+                  <div class="custom-file">
+                    <input type="file" class="form-control" id="upload-b-logo" (change)="readURL($event)">
+                    <label class="custom-file-label" for="upload-b-logo" data-browse="Browse">Upload Logo</label>
+                  </div>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="uploaded-img">
+                    <img src="{{ecommerceHeader.ecommerceLogo.Location}}">
+                    <a class="remove-img" (click)="removeImage()"><i class="fa fa-times"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <h4 class="mt-4 mb-4 pb-1 border-bottom">Header custom text</h4>
+                <textarea class="form-control" [(ngModel)]="ecommerceHeader.headerCustomText"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="social-url">
+                  <h4 class="mt-4 mb-4 pb-1 border-bottom">Social networks</h4>
+
+                  <div class="form-group">
+                    <!--Facebook-->
+                    <label>Facebook</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="fb"><i class="fab fa-facebook-f"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="http://"
+                        [(ngModel)]="ecommerceHeader.fb_link">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <!--Twitter-->
+                    <label>Twitter</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="fb"><i class="fab fa-twitter"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="http://"
+                        [(ngModel)]="ecommerceHeader.tw_link">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <!--youtube-->
+                    <label>Youtube</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="fb"><i class="fab fa-youtube"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="http://"
+                        [(ngModel)]="ecommerceHeader.yt_link">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <!--Linked in-->
+                    <label>Linkedin</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="fb"><i class="fab fa-linkedin"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="http://"
+                        [(ngModel)]="ecommerceHeader.ld_link">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <!--Instagram-->
+                    <label>Instagram</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="fb"><i class="fab fa-instagram"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="http://"
+                        [(ngModel)]="ecommerceHeader.ig_link">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <!--pinterest-->
+                    <label>Pinterest</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="fb"><i class="fab fa-pinterest-p"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="http://"
+                        [(ngModel)]="ecommerceHeader.pt_link">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 mt-2 pt-2 border-top">
+                <a class="btn custom-btn" (click)="saveHeader()">Save Changes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

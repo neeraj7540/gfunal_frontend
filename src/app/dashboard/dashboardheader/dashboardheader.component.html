@@ -1,0 +1,49 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+  <div class='col-lg-3 col-5'>
+      <a href="#" class="logo">
+          <img src="assets/images/logo.png" alt="logo">
+        </a>
+  </div>
+  <div class="col-lg-9 col-7 justify-content-lg-space-between">
+
+
+<div class="row flex-lg-row-reverse">
+  <div class="dropdown ml-auto mt-auto" mdbDropdown>
+
+    <a mdbDropdownToggle mdbBtn class="dropdown-toggle btn custom-blank-btn waves-light" type="button"
+      mdbWavesEffect>
+      {{
+        name
+      }}
+    </a>
+
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">My Account</a>
+      <a class="dropdown-item" href="home" (click)="logout()">Logout</a>
+    </div>
+  </div>
+      <!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light custom-nav padtop19 mr-auto">
+
+   <links>
+        <!-- Links -->
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item" *ngFor=" let value of header">
+                <a class="nav-link" href={{value.link}}>{{value.linkheading}}</a>
+              </li>
+        </ul>
+          <!-- Links -->
+    </links>
+</mdb-navbar>
+
+<!--/.Navbar-->
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>

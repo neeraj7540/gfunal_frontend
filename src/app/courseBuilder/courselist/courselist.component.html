@@ -1,0 +1,117 @@
+<div *ngIf="check(); then loading else nothing"></div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader>
+
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select a template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container">
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-course-inner-sidebar coursesCSS="active"></app-course-inner-sidebar>
+    </div>
+
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fas fa-book"></i>&nbsp; Courses</h1>
+        </div>
+      </div>
+      <div class="inner-content fill-bg">
+        <div class="form-row">
+          <!-- Card 1 -->
+          <div *ngFor="let course of receivedData" class="col-xl-3 col-lg-6 col-md-6 mb-4 pr-3">
+            <!-- Card -->
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img [src]="course.logo" alt="Card image cap"></mdb-card-img>
+                <div *ngIf="course.publish; then publishedtemplate else unpublishedtemplate"></div>
+                <ng-template #publishedtemplate>
+                  <!-- <a>
+                    <div class="mask"></div>
+                    <div class="overlay"></div>
+                    <div class="GFbutton"><a href="#" class="btn-md" mdbBtn color="amber" mdbWavesEffect> Update </a> </div>
+                  </a> -->
+                </ng-template>
+                <ng-template #unpublishedtemplate>
+                  <a>
+                    <div class="mask"></div>
+                    <div class="overlay"></div>
+                    <div class="PBbutton"><a class="btn-md" mdbBtn color="red" mdbWavesEffect (click) = "onPublish_Click(course)"> Publish </a></div>
+                    <div class="UPbutton"><a class="btn-md" mdbBtn color="amber" mdbWavesEffect (click)= "onUpdate_Clicked(course)"> Update </a></div>
+                    <div class="DTbutton"><a class="btn-md" mdbBtn color="cyan" mdbWavesEffect (click)= "onDelete_Clicked(course)"> Delete </a></div>
+                  </a>
+                </ng-template>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4 class="text-center">{{course.courseName}}</h4>
+                </mdb-card-title>
+
+                <!--Text-->
+                <mdb-card-text class="text-center gfunl-orange "> {{course.courseDescription}} </mdb-card-text>
+                <div *ngIf="course.publish; then published else unpublished"></div>
+                <ng-template #published>
+                  <mdb-badge pill="true" primary="true">Published</mdb-badge>
+                </ng-template>
+                <ng-template #unpublished>
+                  <mdb-badge pill="true" warning="true">Draft</mdb-badge>
+                </ng-template>
+                </mdb-card-body>
+            </mdb-card>
+            <!-- Card -->
+          </div>
+          <!-- Card 3 -->
+          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 pr-3" (click)= "onAdd_Clicked()">
+            <!-- Card -->
+            <mdb-card>
+              <mdb-card-body>
+                <mdb-card-img src="assets/images/add-new.jpg" alt="Card image cap"></mdb-card-img>
+              </mdb-card-body>
+              <p class="text-center" color="primary" mdbWavesEffect>Add Course</p>
+            </mdb-card>
+            <!-- Card -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,23 @@
+<div class='header'>
+  <div class="container">
+    <div class="row">
+      <div class='col-lg-12 col-5'>
+        <ul class="nav nav-tabs" id="steps-categories" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': tab == 'Optin'}" id="optin" data-toggle="tab" (click)="onTabClick('Optin')" role="tab" aria-controls="optin"
+              aria-selected="true">OPTIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': tab == 'Sales'}" id="sales" data-toggle="tab" (click)="onTabClick('Sales')" role="tab" aria-controls="sales"
+              aria-selected="false">SALES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': tab == 'Webinar'}" id="webinar" data-toggle="tab" (click)="onTabClick('Webinar')" role="tab" aria-controls="webinar"
+              aria-selected="false">WEBINAR</a>
+          </li>
+        </ul>
+        <span class="pull-right"><a href="#"><i class="attach-icon fa fa-paperclip" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</div>

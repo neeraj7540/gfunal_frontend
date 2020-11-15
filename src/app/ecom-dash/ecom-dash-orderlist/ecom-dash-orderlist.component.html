@@ -1,0 +1,112 @@
+<div *ngIf="check(); then loading else nothing">
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #nothing>
+</ng-template>
+
+<app-ecom-dash-header [headerDat]="headerData"></app-ecom-dash-header>
+
+
+<div class="page-fullWidthComponent">
+  <div class="addAddressBar-cardWrapper">
+    <span class="addAddressBar-heading"> Your Orders </span>
+    <!-- <div class="addAddressBar-card">
+      <div class="lead-serach">
+        <input class="" placeholder="Search..." type="text">
+        <button type="submit" class="lead-s-btn"><i class="fa fa-search"></i></button>
+      </div>
+    </div> --> 
+  </div>
+  <!-- <div class="addressList-addressSegmentation">
+    <div class="a-row a-spacing-base top-controls">
+      <label for="orderFilter" class="a-form-label num-orders-for-orders-by-date aok-inline-block a-text-normal">
+        <span class="num-orders">1 order</span> <span class="count"> placed in</span>
+      </label>
+      <span class="a-declarative">
+        <form id="timePeriodForm" class="time-period-chooser a-spacing-none">
+          <input type="hidden" name="opt" value="ab">
+          <input type="hidden" name="digitalOrders" value="1">
+          <input type="hidden" name="unifiedOrders" value="1">
+          <input type="hidden" name="returnTo">
+          <span class="a-dropdown-container">
+            <select class="form-control add-package" type="text" name='funnel'>
+              <option>past 6 months</option>
+              <option>2019</option>
+            </select>
+          </span>
+        </form>
+      </span>
+    </div>
+  </div> -->
+</div>
+
+<div class="page-fullWidthComponent" *ngFor="let order of orderListData">
+  <div class="order-order">
+    <div class="order-orderInfo">ORDER NO:
+      <span class="order-orderNumber">
+        {{order.orderNumber}}
+      </span>
+    </div>
+    <div class="item-itemContainer" *ngFor="let prod of order.productData">
+      <div id="4283085040" class="item-item">
+        <div class="item-productInfo" style="cursor: pointer;">
+          <div class="item-thumbnail"><img [src] = 'prod.imageSrc'></div>
+          <div class="item-info">
+            <span class="item-brand"> {{prod.descriptionTitle}}</span>
+            <div class="item-productName" [innerHTML]="prod.descriptionContent"></div>
+            <span class="item-size"> Size: {{prod.size}}</span><span> | Qty: {{prod.productOrderedQuantity}}</span>
+            <div class="item-priceInfo">
+              <span class="item-price">
+                <span class="icon-icon icon-rupee500 " style="font-size: 14px;">
+                </span>{{prod.price | currency}}
+                <!-- <span>
+                  <span class="item-productstrike">
+                    <span class="icon-icon icon-rupee500 " style="font-size: 14px;">
+                    </span>1,899</span>
+                  <span class="item-productDiscountPercentage">
+                    Saved
+                    <span class="icon-icon icon-rupee500 " style="font-size: 14px;"></span>
+                    551</span></span> -->
+                  </span></div>
+            <span>
+              <div class="item-status item-delivered item-deliveredBlack">Delivered<span>
+                  (Oct 26, 2019)</span></div>
+            </span>
+            <span>
+              <div class="item-status item-delivered item-deliveredBlack">Payment Mode<span>
+                {{order.paymentMode}}</span></div>
+            </span>
+          </div>
+          <!-- <div class="item-rightArrow">
+            <span class="fa fa-angle-right"
+              style="font-size: 18px; font-weight: 800; color: rgb(148, 150, 159);"></span></div> -->
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<div class="pagination-pagination"><span>Showing 1 -1 of 1</span></div>
+
+<!---Footer Start---->
+<div class="checkout-footer">
+  <div class="content">
+    <div class="images">
+      <!--<div class="footer-bank-ssl"></div>-->
+      <div class="footer-bank-visa"></div>
+      <div class="footer-bank-mc"></div>
+      <div class="footer-bank-ae"></div>
+      <!--<div class="footer-bank-dc"></div>-->
+      <div class="footer-bank-nb"></div>
+      <div class="footer-bank-cod"></div>
+      <div class="footer-bank-rupay"></div>
+      <div class="footer-bank-paypal"></div>
+      <!-- <div class="footer-bank-bhim"></div>-->
+    </div>
+    <a href="/contactus" class="contact-us"> <span>Need Help ? Contact Us</span> </a>
+  </div>
+</div>
+<!---Footer Start---->

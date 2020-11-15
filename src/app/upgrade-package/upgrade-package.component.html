@@ -1,0 +1,37 @@
+<!-- <div *ngIf="check();then loading else donothing">
+
+</div>
+<ng-template #loading>
+  <app-manualloader></app-manualloader>
+</ng-template>
+<ng-template #donothing></ng-template>
+
+<app-dashboardheader name={{name}}></app-dashboardheader> -->
+<div class="container">
+    <div class="content">
+      <div class="page-title ml-0 mr-0">
+        <h1>Packages</h1>
+      </div>
+    </div>
+    <div class="fullpage-content">
+    <h2 class="welcometogfunl mb-5">Welcome to gfunl Test}</h2>
+    <div class="section-title">Upgrade a Package</div>
+    <div class="packages-outer px-3 px-sm-5">
+
+        <!-- Packages -->
+     <div class="row">
+       <div class="col-md-12 col-lg-12">
+          <app-single-plan datais='Basic' price="$149" text_class="basic pack-price" ></app-single-plan>
+       </div>
+     </div>
+    </div>
+
+
+<div class="row text-center">
+    <div class="col-md-12 mt-3 mb-5">
+      <a mdbBtn type="button" class="btn custom-l-btn px-lg-5 px-3" rounded="true" mdbWavesEffect>Upgrade your Package</a>
+    </div>
+  </div>
+</div>
+</div>
+  <app-footer></app-footer>

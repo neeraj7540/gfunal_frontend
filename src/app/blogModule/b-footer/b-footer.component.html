@@ -1,0 +1,599 @@
+<app-dashboardheader name="{{name}}"></app-dashboardheader>
+<div *ngIf="check(); then loading else nothing">
+  </div>
+  <ng-template #loading>
+    <app-manualloader></app-manualloader>
+  </ng-template>
+  <ng-template #nothing>
+  </ng-template>
+<!-- Steps Start-->
+<!-- <div class="steps">
+    <div class="container">
+      <div class="steps-bar">
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+
+      <div class="points">
+        <div class="pin completed">
+            <span><i class="fa fa-check"></i></span>
+          <p>Store Preference</p>
+        </div>
+        <div class="pin current">
+            <span><i class="fa fa-check"></i></span>
+            <p>Select a template</p>
+          </div>
+          <div class="pin">
+              <span><i class="fa fa-check"></i></span>
+              <p>Customize Template</p>
+            </div>
+            <div class="pin">
+                <span><i class="fa fa-check"></i></span>
+                <p>Publish</p>
+              </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Steps End-->
+
+<div class="container">
+
+  <div class="d-flex content-wrapper">
+    <div class="sidebar">
+      <app-blog-sidebar></app-blog-sidebar>
+    </div>
+    <div class="w-100">
+      <div class="content">
+        <div class="page-title">
+          <h1><i class="fa fa-minus"></i> Blog Footer</h1>
+        </div>
+      </div>
+
+      <div class="inner-content fill-bg">
+        <div class="row choose-layout-outer">
+          <div class="col-md-12">
+            <h4 class="mb-4 pb-1 border-bottom">Choose Layout</h4>
+          </div>
+          <div class="col-md-12 d-flex col-md-10">
+            <div class="gjs-fonts gjs-f-b1 gjs-block bg-white gjs-four-color-h"
+              [ngClass]="columnSelected === 1 ? 'color-orange' : ''" (click)="columnSelected = 1">
+              <div class="gjs-block-label">1 Column</div>
+            </div>
+            <div [ngClass]="columnSelected === 2 ? 'color-orange' : ''"
+              class="gjs-fonts gjs-f-b2 gjs-block bg-white gjs-four-color-h" (click)="columnSelected = 2">
+              <div class="gjs-block-label">2 Column</div>
+            </div>
+            <div [ngClass]="columnSelected === 3 ? 'color-orange' : ''"
+              class="gjs-fonts gjs-f-b3 gjs-block bg-white gjs-four-color-h" (click)="columnSelected = 3">
+              <div class="gjs-block-label">3 Column</div>
+            </div>
+            <div [ngClass]="columnSelected === 4 ? 'color-orange' : ''"
+              class="gjs-fonts gjs-f-b22 gjs-block bg-white gjs-four-color-h" (click)="columnSelected = 4">
+              <div class="gjs-block-label">4 Column</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="mt-5 mb-4 pb-1 border-bottom">Footer Columns</h4>
+          </div>
+
+
+          <div class="col-md-12 mb-2">
+            <!--widget 1-->
+            <div class="footer-colmn-box">
+              <div class="box-title" type="button" (click)="first.toggle()">Column First</div>
+              <div class="footer-text-edit" mdbCollapse [isCollapsed]="true" #first="bs-collapse">
+                <div class="footer-editor-body">
+                  <div class="form-group">
+                    <label>Widget Title</label>
+                    <input class="form-control" type="text" [(ngModel)]="col1.widgetTitle">
+                  </div>
+                  <div *ngFor="let columnFirst of col1.data; let i = index;">
+                    <div class="form-group">
+                      <select class="form-control" [(ngModel)]="columnFirst.type">
+                        <option value="image">Image</option>
+                        <option value="pages">Pages</option>
+                        <option value="categories">Categories</option>
+                        <option value="textbox">Textbox</option>
+                      </select>
+                    </div>
+
+                    <div *ngIf="columnFirst.type === 'image'" class="form-group content-options">
+                      <label>Upload Image</label>
+                      <div class="widget-content custom-image">
+
+                        <div class="row">
+                          <div class="col-md-9">
+                            <div class="custom-file">
+                              <input class="form-control" id="columnfirst-logo{{i}}" type="file" (change)="readURLFirst($event,i)">
+                              <label class="custom-file-label" data-browse="Browse" for="columnfirst-logo{{i}}">Choose
+                                Image</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 text-center">
+                            <div class="uploaded-img m-0">
+                              <img src="{{columnFirst.image}}">
+                              <a class="remove-img" href="#">
+                                <i class="fa fa-times"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div *ngIf="columnFirst.type === 'pages'" class="form-group content-options">
+                      <label>Select Pages</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnFirstPage{{i}}" [(ngModel)]="columnFirst.value"
+                              value="music"> Music</li>
+
+                        </ul>
+                      </div>
+
+                    </div>
+                    <div *ngIf="columnFirst.type === 'categories'" class="form-group content-options">
+                      <label>Select Category</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnFirstPageCategory{{i}}" [(ngModel)]="columnFirst.value"
+                              value="music"> Music
+                          </li>
+                        </ul>
+                      </div>
+
+                    </div>
+                    <div *ngIf="columnFirst.type === 'textbox'" class="form-group content-options">
+                      <label>Content</label>
+                      <div class="widget-content">
+                        <textarea [(ngModel)]="columnFirst.value"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group text-right">
+                  <a class="btn custom-btn " (click)="addMoreFirstColumn();">Add more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- column 2 -->
+
+          <div class="col-md-12 mb-2">
+            <!--widget 2-->
+            <div class="footer-colmn-box">
+              <div class="box-title" type="button" (click)="second.toggle()">Column Second</div>
+              <div class="footer-text-edit" mdbCollapse [isCollapsed]="true" #second="bs-collapse">
+                <div class="footer-editor-body">
+                  <div class="form-group">
+                    <label>Widget Title</label>
+                    <input class="form-control" type="text" [(ngModel)]="col2.widgetTitle"> </div>
+                  <div *ngFor="let columnSecond of col2.data; let i = index;">
+                    <div class="form-group">
+                      <select class="form-control" [(ngModel)]="columnSecond.type">
+                        <option value="image">Image</option>
+                        <option value="pages">Pages</option>
+                        <option value="categories">Categories</option>
+                        <option value="textbox">Textbox</option>
+                      </select>
+                    </div>
+
+                    <div *ngIf="columnSecond.type === 'image'" class="form-group content-options">
+                      <label>Upload Image</label>
+                      <div class="widget-content custom-image">
+
+                        <div class="row">
+                          <div class="col-md-9">
+                            <div class="custom-file">
+                              <input class="form-control" id="columnsecond-logo{{i}}" type="file" (change)="readURLSecond($event,i)">
+                              <label class="custom-file-label" data-browse="Browse" for="columnsecond-logo{{i}}">Choose
+                                Image</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 text-center">
+                            <div class="uploaded-img m-0">
+                              <img src="{{columnSecond.image}}">
+                              <a class="remove-img" href="#">
+                                <i class="fa fa-times"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div *ngIf="columnSecond.type === 'pages'" class="form-group content-options">
+                      <label>Select Pages</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnSecondPage{{i}}" [(ngModel)]="columnSecond.value"
+                              value="music"> Music
+                          </li>
+
+                        </ul>
+                      </div>
+
+                    </div>
+
+
+                    <div *ngIf="columnSecond.type === 'categories'" class="form-group content-options">
+                      <label>Select Category</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="art"> Art
+                          </li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnSecondCategory{{i}}" [(ngModel)]="columnSecond.value"
+                              value="music"> Music
+                          </li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+                    <div *ngIf="columnSecond.type === 'textbox'" class="form-group content-options">
+                      <label>Content</label>
+                      <div class="widget-content">
+                        <textarea [(ngModel)]="columnSecond.value"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group text-right">
+                    <a class="btn custom-btn " (click)="addMoreSecondColumn();">Add more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- column 3 -->
+          <div class="col-md-12 mb-2">
+            <!--widget 3-->
+            <div class="footer-colmn-box">
+              <div class="box-title" type="button" (click)="third.toggle()">Column Third</div>
+              <div class="footer-text-edit" mdbCollapse [isCollapsed]="true" #third="bs-collapse">
+                <div class="footer-editor-body">
+                  <div class="form-group">
+                    <label>Widget Title</label>
+                    <input class="form-control" type="text" [(ngModel)]="col3.widgetTitle">
+                  </div>
+                  <div *ngFor="let columnThird of col3.data; let i = index;">
+                    <div class="form-group">
+                      <select class="form-control" [(ngModel)]="columnThird.type">
+                        <option value="image">Image</option>
+                        <option value="pages">Pages</option>
+                        <option value="categories">Categories</option>
+                        <option value="textbox">Textbox</option>
+                      </select>
+                    </div>
+
+                    <div *ngIf="columnThird.type === 'image'" class="form-group content-options">
+                      <label>Upload Image</label>
+                      <div class="widget-content custom-image">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <div class="custom-file">
+                              <input class="form-control" id="columnthird-logo{{i}}" type="file" (change)="readURLThird($event,i)">
+                              <label class="custom-file-label" data-browse="Browse" for="columnthird-logo{{i}}">Choose
+                                Image</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 text-center">
+                            <div class="uploaded-img m-0">
+                              <img src="{{columnThird.image}}">
+                              <a class="remove-img" href="#">
+                                <i class="fa fa-times"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div *ngIf="columnThird.type === 'pages'" class="form-group content-options">
+                      <label>Select Pages</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnThirdPage{{i}}" [(ngModel)]="columnThird.value"
+                              value="music"> Music</li>
+
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div *ngIf="columnThird.type === 'categories'" class="form-group content-options">
+                      <label>Select Category</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnThirdCategory{{i}}" [(ngModel)]="columnThird.value"
+                              value="music"> Music
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div *ngIf="columnThird.type === 'textbox'" class="form-group content-options">
+                      <label>Content</label>
+                      <div class="widget-content">
+                        <textarea [(ngModel)]="columnThird.value"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group text-right">
+                  <a class="btn custom-btn " (click)="addMoreThirdColumn();">Add more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- column 4 -->
+          <div class="col-md-12 mb-2">
+            <!--widget 4-->
+            <div class="footer-colmn-box">
+              <div class="box-title" type="button" (click)="forth.toggle()">Column Forth</div>
+              <div class="footer-text-edit" mdbCollapse [isCollapsed]="true" #forth="bs-collapse">
+                <div class="footer-editor-body">
+                  <div class="form-group">
+                    <label>Widget Title</label>
+                    <input class="form-control" type="text" [(ngModel)]="col4.widgetTitle">
+                  </div>
+                  <div *ngFor="let columnFourth of col4.data; let i = index;">
+                    <div class="form-group">
+                      <select class="form-control" [(ngModel)]="columnFourth.type">
+                        <option value="image">Image</option>
+                        <option value="pages">Pages</option>
+                        <option value="categories">Categories</option>
+                        <option value="textbox">Textbox</option>
+                      </select>
+                    </div>
+
+                    <div *ngIf="columnFourth.type === 'image'" class="form-group content-options">
+                      <label>Upload Image</label>
+                      <div class="widget-content custom-image">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <div class="custom-file">
+                              <input class="form-control" id="columnfourth-logo{{i}}" type="file" (change)="readURLFourth($event,i)">
+                              <label class="custom-file-label" data-browse="Browse" for="columnfourth-logo{{i}}">Choose
+                                Image</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 text-center">
+                            <div class="uploaded-img m-0">
+                              <img src="{{columnFourth.image}}">
+                              <a class="remove-img" href="#">
+                                <i class="fa fa-times"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div *ngIf="columnFourth.type === 'pages'" class="form-group content-options">
+                      <label>Select Pages</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnFourthPage{{i}}" [(ngModel)]="columnFourth.value"
+                              value="music"> Music</li>
+
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div *ngIf="columnFourth.type === 'categories'" class="form-group content-options">
+                      <label>Select Category</label>
+                      <div class="widget-content b-pages">
+                        <ul class="select-pages">
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="art"> Art</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="digitallife">
+                            Digital life</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="technology">
+                            Technology</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="immigration">
+                            Immigration</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="photography">
+                            Photography</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="relationships">
+                            Relationships</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="lifestyle">
+                            Lifestyle</li>
+                          <li><input type="radio" name="columnFourthCategory{{i}}" [(ngModel)]="columnFourth.value"
+                              value="music"> Music
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div *ngIf="columnFourth.type === 'textbox'" class="form-group content-options">
+                      <label>Content</label>
+                      <div class="widget-content">
+                        <textarea [(ngModel)]="columnFourth.value"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group text-right">
+                  <a class="btn custom-btn" (click)="addMoreFourthColumn();">Add more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="mt-5 mb-4 pb-1 border-bottom">Copyright</h4>
+        </div>
+        <div class="col-md-12">
+          <div class="copyright"> <textarea></textarea></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group text-right border-top pt-2 mt-4">
+            <a class="btn custom-btn m-0" (click)="save()">Save</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-dashboardfooter></app-dashboardfooter>

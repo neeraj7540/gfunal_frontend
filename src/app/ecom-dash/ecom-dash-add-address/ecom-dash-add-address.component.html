@@ -1,0 +1,179 @@
+<div class="layout">
+  <div class="header">
+    <div class="site-nav-container container">
+      <div class="gfunl-logo">
+        <a class="linkClean" href="/">
+          <img class="gfunl-logo" src="/assets/images/logo.png">
+        </a>
+      </div>
+      <ol class="checkout-steps">
+        <li class="step step1">CART</li>
+        <li class="divider"></li>
+        <li class="step step2 active">ADDRESS</li>
+        <li class="divider"></li>
+        <li class="step step3">PAYMENT</li>
+      </ol>
+      <div class="secureContainer">
+        <div class="sprite-secure secureIcon"></div>
+        <div class="secure">100% SECURE</div>
+      </div>
+    </div>
+  </div>
+  <div id="mountRoot">
+    <div class="desktop-base-cartLayout">
+      <div class="itemBlock-base-leftBlock">
+        <div class="desktop1-base-left">
+
+          <div class="desktop1-base-addAddressContainer">
+            <div class="addressFormUI-base-container">
+              <div class="addressFormUI-base-header">ADD NEW ADDRESS</div>
+              <div>
+                <div class="addressFormUI-base-scrollable">
+                  <div class="addressFormUI-base-form">
+                    <span>
+                      <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+                        <label for="name" class="input-base-label"></label>
+                        <input [(ngModel)]="address.name" class="input-base-input" id="name" placeholder="Name *"
+                          type="text">
+                      </div>
+                    </span>
+                    <span>
+                      <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+                        <label for="mobile" class="input-base-label"></label>
+                        <input [(ngModel)]="address.phone" class="input-base-input" id="mobile"
+                          placeholder="Mobile No *" type="tel" maxlength="10"></div>
+                    </span>
+                  </div>
+                  <div class="addressFormUI-base-form">
+                    <div class="addressFormUI-base-pincodeBlock">
+                      <span>
+                        <div class="input-base-inputRow addressFormUI-base-pincode addressFormUI-base-inputRow  ">
+                          <label for="pincode" class="input-base-label"></label>
+                          <input [(ngModel)]="address.pinCode" class="input-base-input" id="pincode"
+                            placeholder="Pin Code *" type="tel" maxlength="6">
+                        </div>
+                      </span>
+                    </div>
+                    <span>
+                      <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+                        <label for="streetAddress" class="input-base-label"></label>
+                        <input [(ngModel)]="address.streetAddress" class="input-base-input" id="streetAddress"
+                          placeholder="Address (House No, Building, Street, Area) *" type="text" row="3">
+                      </div>
+                    </span>
+                    <div class="addressFormUI-base-localityBlock"><span>
+                        <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+                          <label for="locality" class="input-base-label"></label>
+                          <input [(ngModel)]="address.locality" class="input-base-input" id="locality"
+                            placeholder="Locality / Town *" type="text">
+                        </div>
+                      </span>
+                    </div>
+                    <span>
+                      <div class="input-base-inputRow addressFormUI-base-inputRow">
+                        <label for="city" class="input-base-label"></label>
+                        <input [(ngModel)]="address.city" class="input-base-input" id="city"
+                          placeholder="City / District *" type="text"></div>
+                    </span>
+                    <span>
+                      <div class="input-base-inputRow addressFormUI-base-inputRow  ">
+                        <label for="state" class="input-base-label"></label>
+                        <input [(ngModel)]="address.state" class="input-base-input" id="state" placeholder="State *"
+                          type="text"></div>
+                    </span>
+                  </div>
+                  <div class="addressFormUI-base-form">
+                    <div>
+                      <div class="addressFormUI-base-addressTypes">
+                        <div>Type of Address *</div>
+                        <div class="addressFormUI-base-home">
+                          <span class="icon-radio_inactive addressFormUI-base-radioIcon" id="addressType-icon-home">
+                            <input [(ngModel)]="address.addressType" type="radio" name="optradio" value="home">
+                          </span>
+                          <span class="addressFormUI-base-addressType" id="addressType-label-home">Home</span>
+                        </div>
+                        <div class="addressFormUI-base-office">
+                          <span class="icon-radio_inactive addressFormUI-base-radioIcon" id="addressType-icon-office">
+                            <input [(ngModel)]="address.addressType" type="radio" name="optradio" value="office">
+                          </span>
+                          <span class="addressFormUI-base-addressType"
+                            id="addressType-label-office">Office/Commercial</span>
+                        </div>
+                      </div>
+                      <div class="addressFormUI-base-isDefault">
+                        <span class="icon-checkbox_inactive addressFormUI-base-checkboxIcon" id="isDefault-icon">
+                          <input [(ngModel)]="address.isDefault" type="checkbox" value="">
+                        </span>
+                        <span class="addressFormUI-base-defaultAddress" id="isDefault-label">Make this my default
+                          address</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="addressFormUI-base-btns">
+                  <div (click)="saveAddress()" class="button-base-button addressFormUI-base-saveBtn">SAVE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!---Cart Items Listing Start--->
+
+
+        <!---Cart Items Listing End--->
+      </div>
+      <!----Billing Section------>
+      <div class="desktop-base-right">
+        <div class="priceBlock-base-container">
+          <div class="priceBlock-base-priceHeader"><strong>PRICE DETAILS</strong></div>
+          <div class="priceBreakUp-base-orderSummary" id="priceBlock">
+            <div class="priceDetail-base-row">
+              <span>Order Total</span>
+              <span class="priceDetail-base-value ">
+                <span></span>
+                <span class="priceDetail-base-icon"><i class="fa fa-inr" aria-hidden="true"></i></span>
+                <span>1,678</span>
+              </span>
+            </div>
+            <div class="priceDetail-base-row">
+              <span>Delivery Charges</span>
+              <span class="priceDetail-base-value">
+                <span class="priceDetail-base-discount">FREE</span>
+              </span>
+            </div>
+            <div class="priceDetail-base-total">
+              <span>Total</span>
+              <span class="priceDetail-base-value ">
+                <span></span>
+                <span class="priceDetail-base-icon"><i class="fa fa-inr" aria-hidden="true"></i></span>
+                <span>1,678</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!----Billing Section------>
+    </div>
+  </div>
+  <!---Footer Start---->
+  <div class="checkout-footer">
+    <div class="content">
+      <div class="images">
+        <!--<div class="footer-bank-ssl"></div>-->
+        <div class="footer-bank-visa"></div>
+        <div class="footer-bank-mc"></div>
+        <div class="footer-bank-ae"></div>
+        <!--<div class="footer-bank-dc"></div>-->
+        <div class="footer-bank-nb"></div>
+        <div class="footer-bank-cod"></div>
+        <div class="footer-bank-rupay"></div>
+        <div class="footer-bank-paypal"></div>
+        <!-- <div class="footer-bank-bhim"></div>-->
+      </div>
+      <a href="/contactus" class="contact-us"> <span>Need Help ? Contact Us</span> </a>
+    </div>
+  </div>
+  <!---Footer Start---->
+</div>
